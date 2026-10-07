@@ -11,7 +11,8 @@ Los archivos tal como se subieron quedan en `originales/`. Los de las demás car
 | `video/garantia.*` | Banner "Nuestra convicción" | garantia.mp4, sin audio, en MP4 y WebM |
 | `fotos/hero.jpg` | Fondo del hero | Unsplash (Cal Gao) |
 | `fotos/pala-pelota.jpg` | Polo System | Unsplash (Oskar Hagberg) |
-| `fotos/cancha.jpg` | Franja antes de Visítanos | Unsplash (Bruno Vaccaro) |
+| `fotos/cancha-palas.jpg` | Franja antes de Visítanos | Unsplash (Vincenzo Morelli) |
+| `fotos/cancha.jpg` | Sin usar, disponible | Unsplash (Bruno Vaccaro) |
 | `fotos/pala-naranja.jpg`, `partido.jpg`, `palas.jpg` | Sin usar, disponibles | Unsplash |
 
 ## Pendientes
