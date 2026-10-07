@@ -1,0 +1,19 @@
+{% import "macros.j2" as m with context %}
+{% if club.partners %}
+<!-- =========================================================
+     PARTNERS
+     ========================================================= -->
+<section class="partners" aria-labelledby="partners-title">
+  <div class="wrap partners__head">
+    <p class="eyebrow eyebrow--{{ E.etiquetas }}" id="partners-title">{% if E.etiquetas == "barra" %}<b>/</b> {% endif %}{{ T.partners.etiqueta }}</p>
+    {{ m.sample(club.partners_muestra) }}
+  </div>
+  <div class="marquee">
+    <ul class="js-partners">
+{% for p in club.partners %}
+      <li class="partner{{ ' partner--wide' if p.ancho / p.alto > 3 }}"><img src="{{ p.logo }}" alt="{{ p.nombre }}" width="{{ p.ancho }}" height="{{ p.alto }}"><span class="partner__name">{{ p.nombre }}</span></li>
+{% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}

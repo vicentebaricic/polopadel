@@ -1,0 +1,27 @@
+{% import "macros.j2" as m with context %}
+{% set U = club.ubicacion %}
+<!-- =========================================================
+     HORARIOS + UBICACIÓN
+     ========================================================= -->
+<section class="section" id="visitanos" aria-labelledby="visit-title">
+  <div class="wrap visit">
+    <div>
+      {{ m.eyebrow("visita", T.visita.etiqueta, "reveal") }}
+      <h2 class="h2 reveal" id="visit-title">{{ T.visita.titulo }}</h2>
+      <ul class="hours reveal" data-delay="1" aria-label="Horario de atención">
+{% for d in [1, 2, 3, 4, 5, 6, 0] %}
+        <li data-day="{{ d }}"><span>{{ T.visita.dias[d] }}</span><span>{{ club.horarios[d] }}</span></li>
+{% endfor %}
+      </ul>
+      <p class="hours-note">{{ T.visita.nota_horario }}</p>
+      <address class="address reveal">{{ U.direccion }}<small>{{ U.referencia }}</small></address>
+      <div class="visit__ctas reveal">
+        <a class="btn btn--solid js-wa" data-wa="ubicacion" href="#">{{ m.wa_icon() }}{{ T.botones.escribenos }}</a>
+        <a class="btn btn--ghost" href="https://www.google.com/maps/dir/?api=1&destination={{ U.mapa | urlencode }}" target="_blank" rel="noopener">{{ T.botones.como_llegar }}</a>
+      </div>
+    </div>
+    <div class="map reveal" data-delay="1">
+      <iframe title="Mapa: {{ club.nombre }}, {{ U.direccion_corta }}" src="https://www.google.com/maps?q={{ U.mapa | urlencode }}&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>

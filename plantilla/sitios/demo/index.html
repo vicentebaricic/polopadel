@@ -1,57 +1,56 @@
 <!doctype html>
-<html lang="es-CL" data-palette="marca">
+<html lang="es-CL" data-palette="clara">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Precios · Polo Padel · Club de pádel en Chicureo, Colina</title>
-<meta name="description" content="Cuota de socio de Polo Padel: clases por nivel, partidos, torneos y comunidad en una sola cuota mensual. Chicureo · Colina.">
-<meta name="theme-color" content="#154075">
+<title>Arena Pádel Club · Club de pádel en Ñuñoa</title>
+<meta name="description" content="Club de pádel con clases por nivel, partidos todas las semanas y comunidad. (Sitio de demostración)">
+<meta name="theme-color" content="#0F3D2E">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Polo Padel · Club de pádel en Chicureo, Colina">
-<meta property="og:description" content="Polo Padel es un club de pádel en Piedra Roja, Chicureo. Entrena con método, juega cada semana y forma parte de una comunidad. Av. El Valle 542, Colina.">
-<meta property="og:image" content="assets/video/hero-poster.jpg">
-<link rel="icon" href="assets/marca/favicon.png" type="image/png">
-<link rel="apple-touch-icon" href="assets/marca/apple-touch-icon.png">
+<meta property="og:title" content="Arena Pádel Club · Club de pádel en Ñuñoa">
+<meta property="og:description" content="Club de pádel con clases por nivel, partidos todas las semanas y comunidad. (Sitio de demostración)">
+<link rel="icon" href="../../clubes/demo/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../../clubes/demo/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
 /* =========================================================
    TOKENS — generados desde club.yml (paleta, tipografía, forma)
    ========================================================= */
 :root{
-  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --font: "DM Sans", "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font: "Barlow", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --display-weight: 800;
-  --display-stretch: 112%;
+  --display-stretch: 100%;
   --display-case: uppercase;
-  --display-tracking: -.01em;
+  --display-tracking: 0;
 
-  --brand: #154075;
-  --navy: #0C2340;
-  --navy-deep: #091A2F;
-  --ball: #D7F24B;
-  --wood: #C98B5A;
-  --earth: #A8673A;
-  --cream: #F5F1E8;
+  --brand: #0F3D2E;
+  --navy: #0B1F18;
+  --navy-deep: #06100C;
+  --ball: #FF7A3D;
+  --wood: #E9C46A;
+  --earth: #9A6B12;
+  --cream: #F6F1E7;
 
-  --bg: #FBFAF6;
-  --bg-alt: #F8F2EB;
+  --bg: #FAF8F3;
+  --bg-alt: #F9F4E9;
   --surface: #FFFFFF;
-  --surface-2: #F4E9DF;
-  --text: #0C2340;
-  --text-2: #3D4F66;
-  --text-3: #5C6C7F;
-  --line: rgba(12,35,64,0.13);
+  --surface-2: #F7F0DE;
+  --text: #0B1F18;
+  --text-2: #3C4C46;
+  --text-3: #5C6964;
+  --line: rgba(11,31,24,0.13);
   --hl: var(--brand);
   --tone: var(--earth);
   --btn-bg: var(--brand);
   --btn-text: #FFFFFF;
   --logo: var(--brand);
-  --header-bg: rgba(251,250,246,0.92);
-  --placeholder-a: #F5EDE3;
-  --placeholder-b: #F1E4D7;
+  --header-bg: rgba(250,248,243,0.92);
+  --placeholder-a: #F8F2E3;
+  --placeholder-b: #F7EED8;
   --partner-filter: brightness(0) opacity(.42);
   --focus: var(--brand);
   --accent: var(--ball);
@@ -60,16 +59,16 @@
   --fs-eyebrow: .75rem;
   --fs-body: 1rem;
   --fs-lead: clamp(1.0625rem, 1.6vw, 1.25rem);
-  --fs-h3: clamp(1.375rem, 2.40vw, 1.750rem);
-  --fs-h2: clamp(2.125rem, 5.40vw, 4.000rem);
-  --fs-h1: clamp(2.750rem, 9.00vw, 6.750rem);
+  --fs-h3: clamp(1.622rem, 2.83vw, 2.065rem);
+  --fs-h2: clamp(2.507rem, 6.37vw, 4.720rem);
+  --fs-h1: clamp(3.245rem, 10.62vw, 7.965rem);
 
   --gutter: clamp(16px, 4vw, 56px);
   --maxw: 1320px;
   --section: clamp(72px, 10vw, 140px);
-  --radius: 18px;
-  --radius-lg: 24px;
-  --radius-pill: 999px;
+  --radius: 2px;
+  --radius-lg: 2px;
+  --radius-pill: 2px;
 
   --ease: cubic-bezier(.22,.61,.36,1);
   --ease-out: cubic-bezier(.16,1,.3,1);
@@ -80,31 +79,31 @@
 }
 /* Propuesta de marca (domina el color principal) */
 :root[data-palette="marca"]{
-  --bg: #154075;
-  --bg-alt: #123764;
-  --surface: #194C8B;
-  --surface-2: #1D58A0;
-  --text: #F5F1E8;
-  --text-2: #CAD5E2;
-  --text-3: #A4B6CC;
-  --line: rgba(245,241,232,0.14);
+  --bg: #0F3D2E;
+  --bg-alt: #0B2D22;
+  --surface: #14513D;
+  --surface-2: #19664D;
+  --text: #F6F1E7;
+  --text-2: #CAE2DA;
+  --text-3: #A4CCBF;
+  --line: rgba(246,241,231,0.14);
   --hl: var(--ball);
   --tone: var(--wood);
   --btn-bg: var(--ball);
   --btn-text: var(--navy);
   --logo: #FFFFFF;
-  --header-bg: rgba(21,64,117,0.94);
-  --placeholder-a: #194C8B;
-  --placeholder-b: #1D58A0;
+  --header-bg: rgba(15,61,46,0.94);
+  --placeholder-a: #14513D;
+  --placeholder-b: #19664D;
   --partner-filter: brightness(0) invert(1) opacity(.55);
   --focus: var(--ball);
 }
 /* Variantes oscuras */
 :root[data-theme="dark"]{ --bg: #121417; --bg-alt: #181B1F; --surface: #1F2328; --surface-2: #272C33; --text: #F2EFE8; --text-2: #C3CBD8; --text-3: #A0AABB; --line: rgba(242,239,232,.12); --hl: var(--ball); --tone: var(--wood); --btn-bg: var(--ball); --btn-text: var(--navy); --header-bg: rgba(18,20,23,.92); --placeholder-a: #1F2328; --placeholder-b: #272C33; --partner-filter: brightness(0) invert(1) opacity(.5); --focus: var(--ball); --logo: #FFFFFF; }
-:root[data-palette="marca"][data-theme="dark"]{ --bg: #071527; --bg-alt: #091C34; --surface: #0C2645; --surface-2: #102F56; --header-bg: rgba(7,21,39,0.92); --placeholder-a: #0C2645; --placeholder-b: #102F56; }
+:root[data-palette="marca"][data-theme="dark"]{ --bg: #09251C; --bg-alt: #0C3125; --surface: #104131; --surface-2: #14523E; --header-bg: rgba(9,37,28,0.92); --placeholder-a: #104131; --placeholder-b: #14523E; }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){ --bg: #121417; --bg-alt: #181B1F; --surface: #1F2328; --surface-2: #272C33; --text: #F2EFE8; --text-2: #C3CBD8; --text-3: #A0AABB; --line: rgba(242,239,232,.12); --hl: var(--ball); --tone: var(--wood); --btn-bg: var(--ball); --btn-text: var(--navy); --header-bg: rgba(18,20,23,.92); --placeholder-a: #1F2328; --placeholder-b: #272C33; --partner-filter: brightness(0) invert(1) opacity(.5); --focus: var(--ball); --logo: #FFFFFF; }
-  :root[data-palette="marca"]:not([data-theme="light"]){ --bg: #071527; --bg-alt: #091C34; --surface: #0C2645; --surface-2: #102F56; --header-bg: rgba(7,21,39,0.92); --placeholder-a: #0C2645; --placeholder-b: #102F56; }
+  :root[data-palette="marca"]:not([data-theme="light"]){ --bg: #09251C; --bg-alt: #0C3125; --surface: #104131; --surface-2: #14523E; --header-bg: rgba(9,37,28,0.92); --placeholder-a: #104131; --placeholder-b: #14523E; }
 }
 
 /* =========================================================
@@ -197,8 +196,8 @@ p{margin:0}
 .header__in{height:100%;display:flex;align-items:center;gap:24px}
 .brand{display:flex;align-items:center;text-decoration:none;flex:none}
 .brand{color:var(--logo)}
-.brand__logo{display:block;height:44px;aspect-ratio:347/240;background:currentColor;
-  -webkit-mask:url("assets/marca/polo-padel-logo.png") center/contain no-repeat;mask:url("assets/marca/polo-padel-logo.png") center/contain no-repeat;
+.brand__logo{display:block;height:44px;aspect-ratio:428/159;background:currentColor;
+  -webkit-mask:url("../../clubes/demo/logo.png") center/contain no-repeat;mask:url("../../clubes/demo/logo.png") center/contain no-repeat;
   transition:background-color var(--dur) var(--ease)}
 .header.is-over .brand{color:#fff}
 .nav{display:none;margin-left:auto}
@@ -652,15 +651,16 @@ p{margin:0}
      ========================================================= -->
 <header class="header">
   <div class="wrap header__in">
-    <a class="brand" href="index.html" aria-label="Polo Padel, ir al inicio">
+    <a class="brand" href="#top" aria-label="Arena Pádel Club, ir al inicio">
       <span class="brand__logo"></span>
     </a>
     <nav class="nav" aria-label="Principal">
       <ul>
-        <li><a href="index.html#club">El club</a></li>
-        <li><a href="index.html#metodo">Polo System</a></li>
-        <li><a href="precios.html" aria-current="page">Precios</a></li>
-        <li><a href="index.html#visitanos">Horarios</a></li>
+        <li><a href="#club">El club</a></li>
+        <li><a href="#metodo">Método Arena</a></li>
+        <li><a href="#equipo">Equipo</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="#visitanos">Horarios</a></li>
       </ul>
     </nav>
     <div class="header__actions">
@@ -679,168 +679,309 @@ p{margin:0}
 
 <div class="drawer" id="drawer">
   <ul>
-    <li><a href="index.html#club">El club <span>01</span></a></li>
-    <li><a href="index.html#metodo">Polo System <span>02</span></a></li>
+    <li><a href="#club">El club <span>01</span></a></li>
+    <li><a href="#metodo">Método Arena <span>02</span></a></li>
+    <li><a href="#equipo">Equipo <span>03</span></a></li>
     <li><a href="precios.html">Precios <span>$</span></a></li>
-    <li><a href="index.html#visitanos">Horarios y ubicación <span>06</span></a></li>
+    <li><a href="#visitanos">Horarios y ubicación <span>06</span></a></li>
   </ul>
   <a class="btn btn--solid js-wa" data-wa="menu" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Hazte socio</a>
-  <a class="btn btn--ghost js-book" href="#">Reservar cancha en EasyCancha</a>
+  <a class="btn btn--ghost js-book" href="#">Reservar cancha en Playtomic</a>
 </div>
 
-<main id="main" class="page">
+<main id="main">
 
 <!-- =========================================================
-     CUOTA DE SOCIO
+     HÉROE
      ========================================================= -->
-<section class="section" style="padding-top:0" aria-labelledby="pricing-title">
-  <div class="wrap pricing">
-    <div>
-      <p class="eyebrow eyebrow--barra reveal"><b>/$</b> La cuota de socio</p>
-      <h1 class="reveal" id="pricing-title">Una sola cuota. <em>Todo el club dentro.</em></h1>
-      <p class="lead reveal" data-delay="1">Sin extras ni sorpresas. Mientras más sean en la clase, menos paga cada uno.</p>
-      <div class="perks reveal" data-delay="2">
-        <div>
-          <h2>Entrena</h2>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Clase semanal en grupo de tu nivel</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Diagnóstico y tu nivel Polo System</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Video comparativo cada 30 días</li>
-          </ul>
-        </div>
-        <div>
-          <h2>Conecta</h2>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Grupo privado de socios</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Te armamos partido cuando te falta el cuarto</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Eventos y tercer tiempo del club</li>
-          </ul>
-        </div>
-        <div>
-          <h2>Compite</h2>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>1 clase-partido al mes con feedback del profe</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Americano mensual de socios</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Liga interna por niveles</li>
-          </ul>
-        </div>
-        <div>
-          <h2>De socio</h2>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Descuento en arriendo de canchas</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Kit de bienvenida</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>1 invitado al mes</li>
-          </ul>
-        </div>
+<section class="hero hero--dividido" id="top" aria-label="Presentación">
+  <div class="wrap hero__grid">
+  <div class="hero__in">
+    <p class="eyebrow reveal" style="color:rgba(255,255,255,.75)"><b style="color:var(--ball)">Ñuñoa</b> Ñuñoa · Santiago</p>
+    <h1 class="reveal" data-delay="1">Tu club. <em>Tu nivel. Tu gente.</em></h1>
+    <p class="hero__sub reveal" data-delay="2">Entrena con un plan, juega a tu nivel y encuentra siempre con quién jugar.</p>
+    <div class="hero__ctas reveal" data-delay="3">
+      <a class="btn btn--ball js-wa" data-wa="hero" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Hazte socio</a>
+      <a class="btn btn--ghost-light js-book" href="#">Reservar cancha</a>
+    </div>
+    <div class="hero__stat reveal" data-delay="3">
+      <strong>12</strong>
+      <span>canchas techadas<br>abiertas todo el año</span>
+      <span class="sample sample--dark">Contenido de ejemplo</span>
+    </div>
+  </div>
+
+    <div class="hero__frame reveal" data-delay="1">
+  <div class="hero__media">
+    <picture>
+      <img src="../../../assets/fotos/hero.jpg" alt="" width="1920" height="1080" fetchpriority="high">
+    </picture>
+  </div>
+  <button class="icon-btn hero__pause" type="button" aria-pressed="false" aria-label="Pausar video de fondo">
+    <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+    <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+  </button>
+
+    </div>
+  </div>
+</section>
+<!-- =========================================================
+     EL CLUB · pilares (Entrena / Conecta / Compite)
+     ========================================================= -->
+<section class="section" id="club" aria-labelledby="club-title">
+  <div class="wrap club">
+    <div class="club__text">
+      <p class="eyebrow eyebrow--numero reveal"><b>01</b> El club</p>
+      <h2 class="h2 reveal" id="club-title">Se aprende en clase. <em>Se disfruta en la cancha.</em></h2>
+      <div class="reveal" data-delay="1" style="margin-top:32px">
+        <p class="lead">En Arena Pádel Club la técnica se aprende en clase y se pone a prueba en partidos con gente de tu nivel.</p>
+        <p class="lead">Lo que te hace volver es la gente: <strong>aquí perteneces a un club.</strong></p>
+      </div>
+      <div class="club__links reveal" data-delay="2">
+        <a class="link-arrow" href="#metodo">Ver Método Arena <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="link-arrow js-wa" data-wa="club" href="#">Quiero conocer el club <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
 
-    <aside class="price-card reveal" data-delay="1" aria-labelledby="price-label">
-      <p class="price-card__label" id="price-label">Cuota por persona</p>
-      <p class="price" aria-live="polite"><strong class="js-price">$59.990</strong><span>/mes</span></p>
-      <p class="price-note js-price-note">Plan mensual, sin permanencia.</p>
-      <fieldset class="group">
-        <legend>Son</legend>
-        <div class="seg">
-          <label><input type="radio" name="size" value="4" checked><span>4</span></label>
-          <label><input type="radio" name="size" value="3"><span>3</span></label>
-          <label><input type="radio" name="size" value="2"><span>2</span></label>
+    <div class="reveal" data-delay="1">
+      <div class="feats" id="feats">
+        <div class="feat is-active" data-title="Entrena" data-text="Clases por nivel con un plan claro: sabes qué estás trabajando y por qué.">
+          <div class="feat__media media" data-file="../../../assets/fotos/palas.jpg">
+            <img src="../../../assets/fotos/palas.jpg" alt="" loading="lazy">
+          </div>
+          <button class="feat__tab" type="button" aria-label="Ver Entrena"><span class="feat__num">01</span><span class="feat__label">Entrena</span></button>
+          <div class="feat__bar"><i></i></div>
         </div>
-        <span class="group__after">en la clase</span>
-      </fieldset>
-      <label class="toggle">
-        <input type="checkbox" class="js-annual" role="switch">
-        <span><b>Plan anual · 2 meses gratis</b><small>Pagas 10 meses y entrenas 12.</small></span>
-      </label>
-      <a class="btn btn--solid js-wa js-price-cta" data-wa="precios" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Solicita tu cupo</a>
-      <p class="price-card__limit">Cupos mensuales limitados.</p>
-      <p class="price-card__alt">¿Prefieres clases solo para ti? <strong>Plan individual</strong>, $189.990/mes.</p>
-      <span class="sample ">Precios de ejemplo · confirmar con el club</span>
-    </aside>
+        <div class="feat" data-title="Conecta" data-text="Siempre hay con quién jugar. Te armamos el partido cuando te falta el cuarto.">
+          <div class="feat__media media" data-file="../../../assets/fotos/partido.jpg">
+            <img src="../../../assets/fotos/partido.jpg" alt="" loading="lazy">
+          </div>
+          <button class="feat__tab" type="button" aria-label="Ver Conecta"><span class="feat__num">02</span><span class="feat__label">Conecta</span></button>
+          <div class="feat__bar"><i></i></div>
+        </div>
+        <div class="feat" data-title="Compite" data-text="Americanos, ligas internas y torneos: el lugar donde compruebas cuánto has mejorado.">
+          <div class="feat__media media" data-file="../../../assets/fotos/pala-naranja.jpg">
+            <img src="../../../assets/fotos/pala-naranja.jpg" alt="" loading="lazy">
+          </div>
+          <button class="feat__tab" type="button" aria-label="Ver Compite"><span class="feat__num">03</span><span class="feat__label">Compite</span></button>
+          <div class="feat__bar"><i></i></div>
+        </div>
+      </div>
+      <div class="feat-caption" aria-live="polite">
+        <h3><span class="js-feat-title">Entrena</span><i>.</i></h3>
+        <p class="js-feat-text">Clases por nivel con un plan claro: sabes qué estás trabajando y por qué.</p>
+      </div>
+      <div class="feat-controls">
+        <button class="icon-btn js-feat-pause" type="button" aria-pressed="false" aria-label="Pausar">
+          <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+          <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <div class="feat-dots">
+          <button type="button" aria-label="Entrena" aria-current="true"></button>
+          <button type="button" aria-label="Conecta"></button>
+          <button type="button" aria-label="Compite"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- =========================================================
+     EL MÉTODO
+     ========================================================= -->
+<section class="section section--alt" id="metodo" aria-labelledby="system-title">
+  <div class="wrap system">
+    <div class="system__intro">
+      <p class="eyebrow eyebrow--numero reveal"><b>02</b> El método</p>
+      <h2 class="h2 reveal" id="system-title">Método <em>Arena.</em></h2>
+      <p class="lead reveal" data-delay="1">Un plan de entrenamiento con principio, avance y prueba. Sabes dónde estás, qué te falta y cuándo lo lograste: <strong>no lo decimos nosotros, lo dice tu video.</strong></p>
+      <p class="reveal" data-delay="1" style="margin-top:16px"><span class="sample ">Contenido de ejemplo</span></p>
+      <a class="btn btn--solid js-wa reveal" data-wa="system" data-delay="2" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Agendar mi evaluación</a>
+      <figure class="system__photo media reveal" data-delay="2" data-file="../../../assets/fotos/cancha.jpg"><img src="../../../assets/fotos/cancha.jpg" alt="Canchas de pádel con paredes de vidrio" loading="lazy"></figure>
+    </div>
+    <div>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step__n" aria-hidden="true">01</span>
+          <h3>Diagnóstico<small>Semana 1</small></h3>
+          <p>Te grabamos jugando y un profe evalúa técnica, posición y lectura del juego. Sales con tu nivel y tres objetivos concretos.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__n" aria-hidden="true">02</span>
+          <h3>Plan<small>Semanas 1–2</small></h3>
+          <p>Te asignamos grupo de tu nivel (máximo 4 por cancha) y un bloque de trabajo de 4 semanas: golpes, defensa, red o transición.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__n" aria-hidden="true">03</span>
+          <h3>Clase + partido<small>Cada semana</small></h3>
+          <p>Lo que trabajas en clase lo aplicas en partidos guiados con socios de tu nivel. Así lo aprendido sale solo.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__n" aria-hidden="true">04</span>
+          <h3>Medición<small>Cada 30 días</small></h3>
+          <p>Volvemos a grabarte y comparamos. Ves tu avance lado a lado y definimos el siguiente bloque.</p>
+        </li>
+      </ol>
+      <ul class="levels reveal" aria-label="Niveles">
+        <li><b>N1</b> Inicio</li>
+        <li><b>N2</b> Base</li>
+        <li><b>N3</b> Intermedio</li>
+        <li><b>N4</b> Avanzado</li>
+        <li><b>N5</b> Competición</li>
+      </ul>
+    </div>
+  </div>
+</section><!-- =========================================================
+     EQUIPO
+     ========================================================= -->
+<section class="section" id="equipo" aria-labelledby="team-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow eyebrow--numero reveal"><b>03</b> Equipo</p>
+        <h2 class="h2 reveal" id="team-title">Las personas <em>que te van a entrenar.</em></h2>
+      </div>
+      <p class="lead reveal" data-delay="1">Las personas que te reciben, te entrenan y te arman el partido. <span class="sample ">Contenido de ejemplo</span></p>
+    </div>
+    <ul class="team">
+      <li class="member reveal">
+        <div class="member__photo media" data-file="fotos/equipo-1.jpg"><img src="fotos/equipo-1.jpg" alt="Andrea Molina, directora" loading="lazy" width="640" height="800"><span class="initials" aria-hidden="true">AM</span></div>
+        <h3>Andrea Molina</h3>
+        <p class="member__role">Directora</p>
+        <p>Juega pádel hace 15 años y fundó Arena para que el barrio tuviera dónde aprender en serio.</p>
+      </li>
+      <li class="member reveal" data-delay="1">
+        <div class="member__photo media" data-file="fotos/equipo-2.jpg"><img src="fotos/equipo-2.jpg" alt="Tomás Leiva, head coach" loading="lazy" width="640" height="800"><span class="initials" aria-hidden="true">TL</span></div>
+        <h3>Tomás Leiva</h3>
+        <p class="member__role">Head coach</p>
+        <p>Ex jugador de circuito. Arma el plan de cada grupo y evalúa a todos los que llegan.</p>
+      </li>
+      <li class="member reveal" data-delay="2">
+        <div class="member__photo media" data-file="fotos/equipo-3.jpg"><img src="fotos/equipo-3.jpg" alt="Ignacio Paz, entrenador" loading="lazy" width="640" height="800"><span class="initials" aria-hidden="true">IP</span></div>
+        <h3>Ignacio Paz</h3>
+        <p class="member__role">Entrenador</p>
+        <p>Especialista en iniciación y en volver a jugar después de una pausa.</p>
+      </li>
+    </ul>
+  </div>
+</section><!-- =========================================================
+     NUESTRA CONVICCIÓN · garantía
+     ========================================================= -->
+<section class="belief" aria-labelledby="belief-title">
+  <div class="wrap belief__in">
+    <div>
+      <p class="eyebrow eyebrow--numero reveal"><b>04</b> Nuestra convicción</p>
+      <h2 class="reveal" id="belief-title">Creemos en el método. Y lo garantizamos.</h2>
+      <p class="reveal" data-delay="1">Entrena con nosotros <strong>60 días</strong>. Si cumples el plan y tu video comparativo no muestra que subiste de nivel, el mes siguiente corre por nuestra cuenta.</p>
+      <p class="reveal" data-delay="1" style="margin-top:16px"><span class="sample ">Contenido de ejemplo</span></p>
+      <a class="btn btn--solid js-wa reveal" data-wa="garantia" data-delay="2" href="#" style="background:var(--navy);color:#fff">Quiero empezar mis 60 días</a>
+    </div>
+    <div class="seal reveal" data-delay="2" role="img" aria-label="Sello: garantía de 60 días">
+      <svg viewBox="0 0 200 200" aria-hidden="true">
+        <defs><path id="ring" d="M100,100 m-82,0 a82,82 0 1,1 164,0 a82,82 0 1,1 -164,0"/></defs>
+        <circle cx="100" cy="100" r="96" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="100" cy="100" r="62" fill="none" stroke="currentColor" stroke-width="1"/>
+        <g class="seal__ring">
+          <text font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="4.2" fill="currentColor"><textPath href="#ring">GARANTÍA MÉTODO ARENA · ARENA PÁDEL CLUB ·</textPath></text>
+        </g>
+      </svg>
+      <div class="seal__core"><strong>60</strong><span>DÍAS</span></div>
+    </div>
+  </div>
+</section><!-- =========================================================
+     PARTNERS
+     ========================================================= -->
+<section class="partners" aria-labelledby="partners-title">
+  <div class="wrap partners__head">
+    <p class="eyebrow eyebrow--numero" id="partners-title">Marcas que juegan con nosotros</p>
+    <span class="sample ">Contenido de ejemplo</span>
+  </div>
+  <div class="marquee">
+    <ul class="js-partners">
+      <li class="partner partner--wide"><img src="../../../assets/partners/babolat.png" alt="Babolat" width="480" height="105"><span class="partner__name">Babolat</span></li>
+      <li class="partner"><img src="../../../assets/partners/bullpadel.png" alt="Bullpadel" width="147" height="120"><span class="partner__name">Bullpadel</span></li>
+      <li class="partner"><img src="../../../assets/partners/adidas.png" alt="adidas" width="184" height="120"><span class="partner__name">adidas</span></li>
+      <li class="partner"><img src="../../../assets/partners/gatorade.png" alt="Gatorade" width="155" height="120"><span class="partner__name">Gatorade</span></li>
+    </ul>
   </div>
 </section>
-
 <!-- =========================================================
-     TU PRIMER DÍA
+     RESEÑAS
      ========================================================= -->
-<section class="section section--alt" aria-labelledby="first-title">
+<section class="section section--alt" id="resenas" aria-labelledby="reviews-title">
   <div class="wrap">
-    <p class="eyebrow eyebrow--barra reveal"><b>/01</b> Tu primer día</p>
-    <h2 class="h2 reveal" id="first-title">Sin milagros en 20 minutos. <em>Sales sabiendo dónde estás.</em></h2>
-    <ol class="cards cards--3">
-      <li class="card reveal"><span class="card__n" aria-hidden="true">01</span><h3>Diagnóstico</h3><p>Un profe evalúa tu técnica, tu posición y cómo lees el juego.</p></li>
-      <li class="card reveal" data-delay="1"><span class="card__n" aria-hidden="true">02</span><h3>Tu punto de partida en video</h3><p>Te grabamos jugando: es el "antes" de tu temporada.</p></li>
-      <li class="card reveal" data-delay="2"><span class="card__n" aria-hidden="true">03</span><h3>Tu nivel Polo System</h3><p>Sales con tu nivel asignado y tres objetivos concretos para medir tu avance.</p></li>
-    </ol>
+    <div class="section-head">
+      <div>
+        <p class="eyebrow eyebrow--numero reveal"><b>05</b> Lo que dicen los socios</p>
+        <h2 class="h2 reveal" id="reviews-title">Reseñas <em>en Google.</em></h2>
+      </div>
+      <div class="rating reveal" data-delay="1">
+        <strong>4,9</strong>
+        <div>
+          <span class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg></span>
+          <small>Calificación promedio · 210 reseñas</small>
+        </div>
+        <span class="sample ">Contenido de ejemplo</span>
+      </div>
+    </div>
+    <ul class="reviews">
+      <li class="review reveal">
+        <span class="stars" role="img" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg></span>
+        <blockquote>“Los profes te corrigen de verdad y siempre hay partido armado para el fin de semana.”</blockquote>
+        <footer><span class="avatar" aria-hidden="true">V</span><span><b>Valentina R.</b>Socia · hace 1 mes</span></footer>
+      </li>
+      <li class="review reveal" data-delay="1">
+        <span class="stars" role="img" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg></span>
+        <blockquote>“Las canchas techadas son un lujo en invierno. Se nota el orden del club.”</blockquote>
+        <footer><span class="avatar" aria-hidden="true">M</span><span><b>Martín S.</b>Socio · hace 2 semanas</span></footer>
+      </li>
+      <li class="review reveal" data-delay="2">
+        <span class="stars" role="img" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg></span>
+        <blockquote>“Partí sin saber nada y en dos meses ya juego americanos con mi grupo.”</blockquote>
+        <footer><span class="avatar" aria-hidden="true">J</span><span><b>Josefa L.</b>Jugadora · hace 3 meses</span></footer>
+      </li>
+    </ul>
+    <p class="reviews__more reveal"><a class="link-arrow" href="https://www.google.com/maps/search/?api=1&query=Arena%20P%C3%A1del%20Club%20Av.%20Irarr%C3%A1zaval%201234%2C%20%C3%91u%C3%B1oa%2C%20Chile" target="_blank" rel="noopener">Ver todas en Google <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
   </div>
-</section>
-
-<!-- =========================================================
-     LA SESIÓN
+</section><!-- =========================================================
+     HORARIOS + UBICACIÓN
      ========================================================= -->
-<section class="section" aria-labelledby="session-title">
-  <div class="wrap">
-    <p class="eyebrow eyebrow--barra reveal"><b>/02</b> La sesión</p>
-    <h2 class="h2 reveal" id="session-title">Cuatro fases. <em>La misma estructura con todos los profes.</em></h2>
-    <ol class="cards cards--4">
-      <li class="card reveal"><div class="card__top"><h3>Activa</h3><span class="card__pct">10%</span></div><p>Calentamiento, repaso del partido de la semana y el objetivo del día en voz alta.</p></li>
-      <li class="card reveal" data-delay="1"><div class="card__top"><h3>Entiende</h3><span class="card__pct">40%</span></div><p>Bloque técnico-táctico del foco. Se explica el porqué, no solo el cómo.</p></li>
-      <li class="card reveal" data-delay="2"><div class="card__top"><h3>Aplica</h3><span class="card__pct">40%</span></div><p>El mismo foco en juego dirigido: el puente hacia tus partidos.</p></li>
-      <li class="card reveal" data-delay="3"><div class="card__top"><h3>Cierra</h3><span class="card__pct">10%</span></div><p>Feedback para cada socio y una consigna para tu próximo partido.</p></li>
-    </ol>
+<section class="section" id="visitanos" aria-labelledby="visit-title">
+  <div class="wrap visit">
+    <div>
+      <p class="eyebrow eyebrow--numero reveal"><b>06</b> Visítanos</p>
+      <h2 class="h2 reveal" id="visit-title">Ven a <em>conocernos.</em></h2>
+      <ul class="hours reveal" data-delay="1" aria-label="Horario de atención">
+        <li data-day="1"><span>Lunes</span><span>07:00 – 23:00</span></li>
+        <li data-day="2"><span>Martes</span><span>07:00 – 23:00</span></li>
+        <li data-day="3"><span>Miércoles</span><span>07:00 – 23:00</span></li>
+        <li data-day="4"><span>Jueves</span><span>07:00 – 23:00</span></li>
+        <li data-day="5"><span>Viernes</span><span>07:00 – 23:00</span></li>
+        <li data-day="6"><span>Sábado</span><span>08:00 – 22:00</span></li>
+        <li data-day="0"><span>Domingo</span><span>09:00 – 21:00</span></li>
+      </ul>
+      <p class="hours-note">En feriados el horario puede variar. Confírmalo por WhatsApp.</p>
+      <address class="address reveal">Av. Irarrázaval 1234<small>Ñuñoa, Santiago · a pasos del metro</small></address>
+      <div class="visit__ctas reveal">
+        <a class="btn btn--solid js-wa" data-wa="ubicacion" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Escríbenos</a>
+        <a class="btn btn--ghost" href="https://www.google.com/maps/dir/?api=1&destination=Av.%20Irarr%C3%A1zaval%201234%2C%20%C3%91u%C3%B1oa%2C%20Chile" target="_blank" rel="noopener">Cómo llegar</a>
+      </div>
+    </div>
+    <div class="map reveal" data-delay="1">
+      <iframe title="Mapa: Arena Pádel Club, Av. Irarrázaval 1234, Ñuñoa" src="https://www.google.com/maps?q=Av.%20Irarr%C3%A1zaval%201234%2C%20%C3%91u%C3%B1oa%2C%20Chile&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
   </div>
-</section>
-
-<!-- =========================================================
-     NIVELES
+</section><!-- =========================================================
+     CTA FINAL
      ========================================================= -->
-<section class="section section--alt" aria-labelledby="levels-title">
+<section class="section cta" aria-labelledby="cta-title">
   <div class="wrap">
-    <p class="eyebrow eyebrow--barra reveal"><b>/03</b> Niveles Polo System</p>
-    <h2 class="h2 reveal" id="levels-title">Tu nivel, medido <em>y comparable.</em></h2>
-    <div class="levels-table reveal" data-delay="1">
-      <table>
-        <thead><tr><th scope="col">Nivel</th><th scope="col">Equivalente Playtomic</th><th scope="col">Qué cambia en este nivel</th></tr></thead>
-        <tbody>
-          <tr><td>N1 · Inicio</td><td>0 – 1</td><td>Todos los golpes a ritmo bajo, con foco en seguridad y ubicación.</td></tr>
-          <tr><td>N2 · Base</td><td>1 – 2</td><td>Más consistencia, menos errores no forzados y lectura básica del punto.</td></tr>
-          <tr><td>N3 · Intermedio</td><td>2 – 3</td><td>Definición, comunicación con tu pareja y ataque coordinado.</td></tr>
-          <tr><td>N4 · Avanzado</td><td>3 – 4</td><td>Efectos y variantes, patrones de juego, lectura del rival y presión.</td></tr>
-          <tr><td>N5 · Competición</td><td>4 +</td><td>Automatismos bajo presión, plan de partido y ajustes en caliente.</td></tr>
-        </tbody>
-      </table>
+    <h2 class="reveal" id="cta-title">Te guardamos <em>un lugar en la cancha.</em></h2>
+    <p class="reveal" data-delay="1">Escríbenos y te contamos cómo hacerte socio, o reserva una cancha y ven a conocernos.</p>
+    <div class="cta__btns reveal" data-delay="2">
+      <a class="btn btn--solid js-wa" data-wa="cta" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Hazte socio</a>
+      <a class="btn btn--ghost js-book" href="#">Reservar cancha</a>
     </div>
   </div>
 </section>
-
-<!-- =========================================================
-     GARANTÍAS
-     ========================================================= -->
-<section class="section" aria-labelledby="promise-title">
-  <div class="wrap">
-    <p class="eyebrow eyebrow--barra reveal"><b>/04</b> Nuestra convicción</p>
-    <h2 class="h2 reveal" id="promise-title">Creemos en el método. <em>Y lo garantizamos.</em></h2>
-    <ul class="cards cards--3">
-      <li class="card reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><h3>Sin riesgo de entrada</h3><p>Si después de tu primera sesión no es lo que esperabas, te devolvemos el 100% de lo que pagaste.</p></li>
-      <li class="card reveal" data-delay="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg><h3>Progreso en 90 días</h3><p>Si cumples el plan y tu video comparativo no muestra que subiste de nivel, el mes siguiente corre por nuestra cuenta.</p></li>
-      <li class="card reveal" data-delay="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-3.9 3.1-7 7-7 1.6 0 3 .5 4.2 1.4"/><path d="M15 18l2 2 4-4"/></svg><h3>Cambio de profe</h3><p>Si no conectas con tu profesor, te cambiamos de grupo sin costo.</p></li>
-    </ul>
-    <p class="reveal" style="margin-top:20px"><span class="sample ">Contenido de ejemplo · confirmar método y condiciones</span></p>
-  </div>
-</section>
-
-<!-- =========================================================
-     CIERRE
-     ========================================================= -->
-<section class="section section--alt closing" aria-labelledby="closing-title">
-  <div class="wrap">
-    <h2 class="h2 reveal" id="closing-title">Reserva tu primera sesión y <em>empieza a medir tu progreso.</em></h2>
-    <p class="reveal" data-delay="1">Todo el club incluido, con el método detrás de cada clase.</p>
-    <a class="btn btn--solid js-wa reveal" data-wa="primera-sesion" data-delay="2" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Solicita tu cupo</a>
-    <small class="reveal" data-delay="2">Los grupos nuevos parten el día 1 de cada mes, según cupos de los profes.</small>
-  </div>
-</section>
-
 </main>
 
 <!-- =========================================================
@@ -850,27 +991,27 @@ p{margin:0}
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <a class="brand" href="index.html" aria-label="Polo Padel, ir al inicio">
+        <a class="brand" href="#top" aria-label="Arena Pádel Club, ir al inicio">
           <span class="brand__logo"></span>
         </a>
-        <p class="footer__tag">El club de pádel de Piedra Roja. Entrena, conecta, compite.</p>
+        <p class="footer__tag">El club de pádel de Ñuñoa. Entrena, conecta, compite.</p>
       </div>
       <div>
         <h4>Club</h4>
         <ul>
-          <li><a href="index.html#club">El club</a></li>
-          <li><a href="index.html#metodo">Polo System</a></li>
+          <li><a href="#club">El club</a></li>
+          <li><a href="#metodo">Método Arena</a></li>
           <li><a href="precios.html">Precios</a></li>
-          <li><a href="index.html#equipo">Equipo</a></li>
-          <li><a href="index.html#visitanos">Horarios</a></li>
+          <li><a href="#equipo">Equipo</a></li>
+          <li><a href="#visitanos">Horarios</a></li>
         </ul>
       </div>
       <div>
         <h4>Contacto</h4>
         <ul>
           <li><a class="js-wa" data-wa="footer" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg><span data-wa-label></span></a></li>
-          <li><a class="js-book" href="#">Reservas online en EasyCancha</a></li>
-          <li><a href="https://www.google.com/maps/dir/?api=1&destination=Av.%20El%20Valle%20542%2C%209340000%20Colina%2C%20Chile" target="_blank" rel="noopener">Av. El Valle 542, Colina</a></li>
+          <li><a class="js-book" href="#">Reservas online en Playtomic</a></li>
+          <li><a href="https://www.google.com/maps/dir/?api=1&destination=Av.%20Irarr%C3%A1zaval%201234%2C%20%C3%91u%C3%B1oa%2C%20Chile" target="_blank" rel="noopener">Av. Irarrázaval 1234, Ñuñoa</a></li>
         </ul>
       </div>
       <div>
@@ -882,21 +1023,21 @@ p{margin:0}
       </div>
     </div>
     <div class="footer__base">
-      <span>© <span id="year"></span> Polo Padel · Chicureo · Colina</span>
-      <span>Av. El Valle 542, 9340000 Colina, Región Metropolitana</span>
+      <span>© <span id="year"></span> Arena Pádel Club · Ñuñoa · Santiago</span>
+      <span>Av. Irarrázaval 1234, Ñuñoa, Región Metropolitana</span>
     </div>
   </div>
 </footer>
 
-<a class="wa-float js-wa" data-wa="flotante" href="#" aria-label="Escribir a Polo Padel por WhatsApp">
+<a class="wa-float js-wa" data-wa="flotante" href="#" aria-label="Escribir a Arena Pádel Club por WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>
 </a>
 
 <!-- Selector de propuesta de color: solo para revisar con el cliente, quitar antes de publicar (estilo.selector_propuestas: false) -->
 <div class="palette-switch" role="group" aria-label="Propuesta de color">
   <span>Propuesta</span>
-  <button type="button" data-palette="marca" aria-pressed="true">A · Azul</button>
-  <button type="button" data-palette="clara" aria-pressed="false">B · Blanco</button>
+  <button type="button" data-palette="marca" aria-pressed="false">A · Verde</button>
+  <button type="button" data-palette="clara" aria-pressed="true">B · Arena</button>
 </div>
 
 <!-- Íconos -->
@@ -911,20 +1052,17 @@ p{margin:0}
    ========================================================= */
 const CONFIG = {
   whatsapp: {
-    number: "56991281970",
-    display: "+56 9 9128 1970",
-    messages: {"default": "Hola Polo Padel, quiero más información sobre el club.", "header": "Hola Polo Padel, quiero hacerme socio. ¿Me cuentan cómo funciona?", "menu": "Hola Polo Padel, quiero hacerme socio. ¿Me cuentan cómo funciona?", "hero": "Hola Polo Padel, vi su sitio web y quiero hacerme socio del club.", "club": "Hola Polo Padel, quiero conocer el club. ¿Puedo pasar a verlo o tomar una clase de prueba?", "system": "Hola Polo Padel, quiero agendar mi evaluación de Polo System. Mi nivel aproximado es:", "garantia": "Hola Polo Padel, quiero empezar el plan de 90 días con garantía. ¿Cómo parto?", "ubicacion": "Hola Polo Padel, tengo una consulta sobre horarios y cómo llegar al club.", "cta": "Hola Polo Padel, quiero hacerme socio. ¿Qué planes tienen?", "footer": "Hola Polo Padel, quiero hacer una consulta.", "flotante": "Hola Polo Padel, quiero más información sobre el club.", "precios": "Hola Polo Padel, quiero solicitar mi cupo de socio.", "primera-sesion": "Hola Polo Padel, quiero reservar mi primera sesión (diagnóstico y video)."}
+    number: "56900000000",
+    display: "+56 9 0000 0000",
+    messages: {"default": "Hola Arena Pádel Club, quiero más información sobre el club.", "header": "Hola Arena Pádel Club, quiero hacerme socio. ¿Me cuentan cómo funciona?", "menu": "Hola Arena Pádel Club, quiero hacerme socio. ¿Me cuentan cómo funciona?", "hero": "Hola Arena Pádel Club, vi su sitio web y quiero hacerme socio del club.", "club": "Hola Arena Pádel Club, quiero conocer el club. ¿Puedo pasar a verlo o tomar una clase de prueba?", "system": "Hola Arena Pádel Club, quiero agendar mi evaluación de Método Arena. Mi nivel aproximado es:", "garantia": "Hola Arena Pádel Club, quiero empezar el plan de 60 días con garantía. ¿Cómo parto?", "ubicacion": "Hola Arena Pádel Club, tengo una consulta sobre horarios y cómo llegar al club.", "cta": "Hola Arena Pádel Club, quiero hacerme socio. ¿Qué planes tienen?", "footer": "Hola Arena Pádel Club, quiero hacer una consulta.", "flotante": "Hola Arena Pádel Club, quiero más información sobre el club.", "precios": "Hola Arena Pádel Club, quiero solicitar mi cupo de socio.", "primera-sesion": "Hola Arena Pádel Club, quiero reservar mi primera sesión (diagnóstico y video)."}
   },
   links: {
-    booking:   "https://www.easycancha.com/en-US/chile/club/polo-padel",
-    instagram: "https://www.instagram.com/polopadelchicureo/",
-    facebook:  "https://www.facebook.com/people/Polo-Padel-Chicureo/61566704670748/"
+    booking:   "https://playtomic.io/",
+    instagram: "",
+    facebook:  ""
   }
 };
-/* Precios por persona (CLP) */
-const PRICES = {"monthly": {"4": 59990, "3": 69990, "2": 89990}, "annual": {"4": 49990, "3": 57990, "2": 74990}};
-const PRICE_TEXT = {"nota_mensual": "Plan mensual, sin permanencia.", "nota_anual": "Plan anual: 12 meses por el precio de 10.", "club": "Polo Padel"};
-const KEY = "polo-padel";
+const KEY = "demo";
 
 function waLink(key, customText){
   const w = CONFIG.whatsapp;

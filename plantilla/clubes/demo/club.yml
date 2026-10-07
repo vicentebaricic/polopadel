@@ -1,0 +1,120 @@
+# =====================================================================
+#  ARENA PÁDEL CLUB — club de DEMOSTRACIÓN (datos ficticios)
+#  Sirve para mostrar cuánto cambia la misma plantilla con otras perillas.
+#  Las rutas son relativas a plantilla/sitios/demo/ (reutiliza fotos del repo).
+# =====================================================================
+
+nombre: Arena Pádel Club
+slug: demo
+
+seo:
+  titulo: Arena Pádel Club · Club de pádel en Ñuñoa
+  descripcion: Club de pádel con clases por nivel, partidos todas las semanas y comunidad. (Sitio de demostración)
+
+marca:
+  logo: ../../clubes/demo/logo.png
+  logo_ancho: 428
+  logo_alto: 159
+  favicon: ../../clubes/demo/favicon.png
+  apple_icon: ../../clubes/demo/favicon.png
+
+contacto:
+  whatsapp: "56900000000"
+  whatsapp_visible: +56 9 0000 0000
+  reservas:
+    nombre: Playtomic
+    url: https://playtomic.io/
+  instagram: ""
+  facebook: ""
+
+ubicacion:
+  barrio: Ñuñoa
+  zona: Ñuñoa · Santiago
+  comuna: Ñuñoa
+  direccion: Av. Irarrázaval 1234
+  referencia: Ñuñoa, Santiago · a pasos del metro
+  direccion_corta: Av. Irarrázaval 1234, Ñuñoa
+  direccion_completa: Av. Irarrázaval 1234, Ñuñoa, Región Metropolitana
+  mapa: Av. Irarrázaval 1234, Ñuñoa, Chile
+
+horarios:
+  0: 09:00 – 21:00
+  1: 07:00 – 23:00
+  2: 07:00 – 23:00
+  3: 07:00 – 23:00
+  4: 07:00 – 23:00
+  5: 07:00 – 23:00
+  6: 08:00 – 22:00
+
+hero:
+  poster: ../../../assets/fotos/hero.jpg      # sin video: queda la foto
+
+dato_hero:
+  numero: "12"
+  texto: "canchas techadas<br>abiertas todo el año"
+  muestra: true
+
+pilares:
+  - imagen: ../../../assets/fotos/palas.jpg
+  - imagen: ../../../assets/fotos/partido.jpg
+  - imagen: ../../../assets/fotos/pala-naranja.jpg
+
+metodo:
+  nombre: Método Arena
+  titulo_html: "Método <em>Arena.</em>"
+  foto: ../../../assets/fotos/cancha.jpg
+  foto_alt: Canchas de pádel con paredes de vidrio
+  muestra: true
+
+garantia:
+  dias: 60
+  muestra: true
+
+partners_muestra: true
+partners:
+  - { nombre: Babolat, logo: ../../../assets/partners/babolat.png, ancho: 480, alto: 105 }
+  - { nombre: Bullpadel, logo: ../../../assets/partners/bullpadel.png, ancho: 147, alto: 120 }
+  - { nombre: adidas, logo: ../../../assets/partners/adidas.png, ancho: 184, alto: 120 }
+  - { nombre: Gatorade, logo: ../../../assets/partners/gatorade.png, ancho: 155, alto: 120 }
+
+equipo_muestra: true
+equipo:
+  - { nombre: Andrea Molina, cargo: Directora, foto: fotos/equipo-1.jpg, bio: "Juega pádel hace 15 años y fundó Arena para que el barrio tuviera dónde aprender en serio." }
+  - { nombre: Tomás Leiva, cargo: Head coach, foto: fotos/equipo-2.jpg, bio: "Ex jugador de circuito. Arma el plan de cada grupo y evalúa a todos los que llegan." }
+  - { nombre: Ignacio Paz, cargo: Entrenador, foto: fotos/equipo-3.jpg, bio: "Especialista en iniciación y en volver a jugar después de una pausa." }
+
+resenas:
+  nota: "4,9"
+  cantidad: 210
+  muestra: true
+  lista:
+    - { nombre: Valentina R., detalle: "Socia · hace 1 mes", texto: "Los profes te corrigen de verdad y siempre hay partido armado para el fin de semana." }
+    - { nombre: Martín S., detalle: "Socio · hace 2 semanas", texto: "Las canchas techadas son un lujo en invierno. Se nota el orden del club." }
+    - { nombre: Josefa L., detalle: "Jugadora · hace 3 meses", texto: "Partí sin saber nada y en dos meses ya juego americanos con mi grupo." }
+
+precios:
+  grupos: [4, 2]
+  mensual: { 4: 49990, 2: 79990 }
+  anual:   { 4: 41990, 2: 66990 }
+  muestra: true
+
+paleta:
+  marca: "#0F3D2E"        # verde bosque
+  oscuro: "#0B1F18"
+  acento: "#FF7A3D"       # naranjo
+  tono: "#E9C46A"         # arena
+  tono_oscuro: "#9A6B12"
+  crema: "#F6F1E7"
+  fondo_claro: "#FAF8F3"
+
+estilo:
+  tipografia: condensada
+  forma: recta
+  hero: dividido
+  etiquetas: numero
+  variante_textos: 2
+  secciones: [club, metodo, equipo, garantia, partners, resenas, visita, cta]
+  menu: [club, metodo, equipo, precios, visita]
+  propuesta_inicial: clara
+  selector_propuestas: true
+  nombres_propuestas: { marca: "A · Verde", clara: "B · Arena" }

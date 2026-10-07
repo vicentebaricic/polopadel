@@ -1,0 +1,57 @@
+{% import "macros.j2" as m with context %}
+<!-- =========================================================
+     EL CLUB · pilares (Entrena / Conecta / Compite)
+     ========================================================= -->
+<section class="section" id="club" aria-labelledby="club-title">
+  <div class="wrap club">
+    <div class="club__text">
+      {{ m.eyebrow("club", T.club.etiqueta, "reveal") }}
+      <h2 class="h2 reveal" id="club-title">{{ T.club.titulo }}</h2>
+      <div class="reveal" data-delay="1" style="margin-top:32px">
+{% for p in T.club.parrafos %}
+        <p class="lead">{{ p }}</p>
+{% endfor %}
+      </div>
+      <div class="club__links reveal" data-delay="2">
+{% if "metodo" in secciones %}
+        <a class="link-arrow" href="#metodo">{{ T.club.link_metodo }} {{ m.arrow() }}</a>
+{% endif %}
+        <a class="link-arrow js-wa" data-wa="club" href="#">{{ T.club.link_wa }} {{ m.arrow() }}</a>
+      </div>
+    </div>
+
+    <div class="reveal" data-delay="1">
+      <div class="feats" id="feats">
+{% for p in T.club.pilares %}
+{% set media = club.pilares[loop.index0] %}
+        <div class="feat{{ ' is-active' if loop.first }}" data-title="{{ p.titulo }}" data-text="{{ p.texto }}">
+          <div class="feat__media media" data-file="{{ media.video ~ '.mp4' if media.video else media.imagen }}">
+{% if media.video %}
+            <video muted playsinline preload="{{ 'metadata' if loop.first else 'none' }}" poster="{{ media.video }}-poster.jpg" aria-hidden="true"><source src="{{ media.video }}.mp4" type="video/mp4"><source src="{{ media.video }}.webm" type="video/webm"></video>
+{% else %}
+            <img src="{{ media.imagen }}" alt="" loading="lazy">
+{% endif %}
+          </div>
+          <button class="feat__tab" type="button" aria-label="Ver {{ p.titulo }}"><span class="feat__num">{{ "%02d" % loop.index }}</span><span class="feat__label">{{ p.titulo }}</span></button>
+          <div class="feat__bar"><i></i></div>
+        </div>
+{% endfor %}
+      </div>
+      <div class="feat-caption" aria-live="polite">
+        <h3><span class="js-feat-title">{{ T.club.pilares[0].titulo }}</span><i>.</i></h3>
+        <p class="js-feat-text">{{ T.club.pilares[0].texto }}</p>
+      </div>
+      <div class="feat-controls">
+        <button class="icon-btn js-feat-pause" type="button" aria-pressed="false" aria-label="Pausar">
+          <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+          <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <div class="feat-dots">
+{% for p in T.club.pilares %}
+          <button type="button" aria-label="{{ p.titulo }}"{% if loop.first %} aria-current="true"{% endif %}></button>
+{% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

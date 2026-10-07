@@ -1,0 +1,330 @@
+/* =========================================================
+   CONFIG — WhatsApp y enlaces centralizados (desde club.yml)
+   ========================================================= */
+const CONFIG = {
+  whatsapp: {
+    number: {{ json.dumps(club.contacto.whatsapp) }},
+    display: {{ json.dumps(club.contacto.whatsapp_visible) }},
+    messages: {{ json.dumps(T.whatsapp, ensure_ascii=False) }}
+  },
+  links: {
+    booking:   {{ json.dumps(club.contacto.reservas.url) }},
+    instagram: {{ json.dumps(club.contacto.instagram or "") }},
+    facebook:  {{ json.dumps(club.contacto.facebook or "") }}
+  }
+};
+{% if page == "precios" %}
+/* Precios por persona (CLP) */
+const PRICES = {{ json.dumps({"monthly": club.precios.mensual, "annual": club.precios.anual}) }};
+const PRICE_TEXT = {{ json.dumps({"nota_mensual": T.precios.nota_mensual, "nota_anual": T.precios.nota_anual, "club": club.nombre}, ensure_ascii=False) }};
+{% endif %}
+const KEY = {{ json.dumps(slug) }};
+
+function waLink(key, customText){
+  const w = CONFIG.whatsapp;
+  const text = customText || w.messages[key] || w.messages.default;
+  return "https://wa.me/" + w.number + "?text=" + encodeURIComponent(text);
+}
+
+document.body.classList.remove("no-js");
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const $ = s => document.querySelector(s);
+
+/* Botones de WhatsApp y enlaces externos */
+document.querySelectorAll(".js-wa").forEach(el => {
+  el.href = waLink(el.dataset.wa);
+  el.target = "_blank";
+  el.rel = "noopener";
+});
+document.querySelectorAll("[data-wa-label]").forEach(el => { el.textContent = CONFIG.whatsapp.display; });
+const setLinks = (sel, url) => document.querySelectorAll(sel).forEach(el => {
+  if (!url) { el.closest("li") ? el.closest("li").remove() : el.remove(); return; }
+  el.href = url; el.target = "_blank"; el.rel = "noopener";
+});
+setLinks(".js-book", CONFIG.links.booking);
+setLinks(".js-ig", CONFIG.links.instagram);
+setLinks(".js-fb", CONFIG.links.facebook);
+
+/* Año */
+$("#year").textContent = new Date().getFullYear();
+
+/* Propuesta de color (selector solo para revisar con el cliente; también con ?paleta=clara en la URL) */
+(function(){
+  const root = document.documentElement;
+  const btns = document.querySelectorAll(".palette-switch button");
+  const set = p => {
+    root.dataset.palette = p;
+    btns.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.palette === p)));
+    try { localStorage.setItem(KEY + "-palette", p); } catch(e) {}
+  };
+  if (!btns.length) return;
+  let initial = new URLSearchParams(location.search).get("paleta");
+  if (!initial) { try { initial = localStorage.getItem(KEY + "-palette"); } catch(e) {} }
+  if (initial === "marca" || initial === "clara") set(initial);
+  // Cada propuesta está pensada en claro: al elegirla se muestra en modo claro
+  btns.forEach(b => b.addEventListener("click", () => {
+    set(b.dataset.palette);
+    root.dataset.theme = "light";
+    try { localStorage.setItem(KEY + "-theme", "light"); } catch(e) {}
+  }));
+})();
+
+/* Tema claro / oscuro (preferencia guardada solo en este navegador) */
+(function(){
+  const root = document.documentElement;
+  let saved = null;
+  try { saved = localStorage.getItem(KEY + "-theme"); } catch(e) {}
+  if (saved === "light" || saved === "dark") root.dataset.theme = saved;
+  const isDark = () => root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  $(".theme-toggle").addEventListener("click", () => {
+    const next = isDark() ? "light" : "dark";
+    root.dataset.theme = next;
+    try { localStorage.setItem(KEY + "-theme", next); } catch(e) {}
+  });
+})();
+
+/* Header (transparente sobre el héroe a pantalla completa) + botón flotante */
+(function(){
+  const header = $(".header");
+  const float = $(".wa-float");
+  const hero = $(".hero");
+  const overlay = hero && hero.classList.contains("hero--completo");
+  const onScroll = () => {
+    const menuOpen = $("#drawer").classList.contains("is-open");
+    const overHero = overlay && window.scrollY < hero.offsetHeight - 80;
+    header.classList.toggle("is-scrolled", window.scrollY > 8);
+    header.classList.toggle("is-over", overHero && !menuOpen);
+    float.classList.toggle("is-visible", !hero || window.scrollY > hero.offsetHeight * 0.6);
+  };
+  window.updateHeader = onScroll;
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+})();
+
+/* Menú móvil */
+(function(){
+  const btn = $(".menu-toggle");
+  const drawer = $("#drawer");
+  const set = open => {
+    btn.setAttribute("aria-expanded", String(open));
+    btn.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+    drawer.classList.toggle("is-open", open);
+    document.body.classList.toggle("no-scroll", open);
+    window.updateHeader();
+  };
+  btn.addEventListener("click", () => set(btn.getAttribute("aria-expanded") !== "true"));
+  drawer.querySelectorAll("a").forEach(a => a.addEventListener("click", () => set(false)));
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && drawer.classList.contains("is-open")) { set(false); btn.focus(); } });
+  matchMedia("(min-width: 1024px)").addEventListener("change", e => { if (e.matches) set(false); });
+})();
+
+/* Fotos, videos y logos de partners: si el archivo aún no existe, se muestra el marcador */
+document.querySelectorAll(".media > img, .partner > img").forEach(img => {
+  const fail = () => img.parentElement.classList.add("is-missing");
+  if (img.complete && img.naturalWidth === 0) fail();
+  img.addEventListener("error", fail);
+});
+document.querySelectorAll(".media > video").forEach(video => {
+  const sources = video.querySelectorAll("source");
+  const fail = () => video.parentElement.classList.add("is-missing");
+  sources[sources.length - 1].addEventListener("error", fail);
+  video.addEventListener("error", fail);
+  if (video.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) fail();
+});
+
+/* Partners: se repite la fila hasta cubrir la pantalla y se duplica para el desplazamiento continuo */
+(function(){
+  const list = $(".js-partners");
+  if (!list || reduceMotion) return;
+  const base = [...list.children];
+  for (let i = 0; i < 3 && list.scrollWidth < window.innerWidth * 1.1; i++) {
+    base.forEach(li => { const c = li.cloneNode(true); c.setAttribute("aria-hidden", "true"); c.querySelector("img").alt = ""; list.append(c); });
+  }
+  const copy = list.cloneNode(true);
+  copy.setAttribute("aria-hidden", "true");
+  copy.querySelectorAll("img").forEach(img => {
+    img.alt = "";
+    img.addEventListener("error", () => img.parentElement.classList.add("is-missing"));
+    if (img.complete && img.naturalWidth === 0) img.parentElement.classList.add("is-missing");
+  });
+  list.after(copy);
+})();
+
+/* Héroe: video de fondo con pausa; versión horizontal o vertical según la pantalla */
+(function(){
+  const hero = $(".hero");
+  const video = $(".js-hero-video");
+  const btn = $(".hero__pause");
+  if (!video) { if (btn) btn.remove(); return; }
+  const tall = matchMedia("(max-aspect-ratio: 4/5)");
+  const noVideo = () => hero.classList.add("no-video");
+  let current = null, paused = reduceMotion;
+  const pick = () => {
+    const base = (tall.matches && video.dataset.srcTall) || video.dataset.srcWide;
+    if (base === current) return;
+    current = base;
+    video.replaceChildren(...["webm", "mp4"].map(ext => Object.assign(document.createElement("source"), { src: base + "." + ext, type: "video/" + ext })));
+    video.lastElementChild.addEventListener("error", noVideo);
+    video.preload = "auto";
+    video.load();
+    if (!paused) video.play().catch(() => {});
+  };
+  tall.addEventListener("change", pick);
+  pick();
+  const sync = () => {
+    btn.setAttribute("aria-pressed", String(paused));
+    btn.setAttribute("aria-label", paused ? "Reproducir video de fondo" : "Pausar video de fondo");
+    paused ? video.pause() : video.play().catch(() => {});
+  };
+  btn.addEventListener("click", () => { paused = !paused; sync(); });
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(([e]) => { if (!paused) e.isIntersecting ? video.play().catch(() => {}) : video.pause(); }).observe(video);
+  }
+  sync();
+})();
+
+/* Video de fondo de la garantía: carga y reproduce solo al estar visible */
+(function(){
+  const video = $(".js-bg-video");
+  if (!video || reduceMotion || !("IntersectionObserver" in window)) return;
+  new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) { if (video.preload === "none") { video.preload = "auto"; video.load(); } video.play().catch(() => {}); }
+    else video.pause();
+  }, { threshold: .2 }).observe(video);
+})();
+
+/* El club: los pilares se van mostrando uno tras otro. Cada video pasa al siguiente al
+   terminar; si el pilar es una foto o falta el video, avanza con un temporizador. */
+(function(){
+  const feats = [...document.querySelectorAll("#feats .feat")];
+  if (!feats.length) return;
+  const dots = [...document.querySelectorAll(".feat-dots button")];
+  const title = $(".js-feat-title");
+  const text = $(".js-feat-text");
+  const caption = $(".feat-caption");
+  const pauseBtn = $(".js-feat-pause");
+  const FALLBACK_MS = 7000;
+  let index = 0, paused = reduceMotion, visible = false, timer = null, t0 = 0, elapsed = 0, raf = null;
+
+  const bar = i => feats[i].querySelector(".feat__bar i");
+  const videoOf = i => feats[i].querySelector("video");
+  const missing = i => !videoOf(i) || feats[i].querySelector(".media").classList.contains("is-missing");
+
+  function stopTimer(){ clearTimeout(timer); cancelAnimationFrame(raf); timer = null; }
+  function runTimer(){
+    stopTimer();
+    t0 = performance.now() - elapsed;
+    const tick = now => { elapsed = now - t0; bar(index).style.setProperty("--p", Math.min(elapsed / FALLBACK_MS, 1)); if (elapsed < FALLBACK_MS) raf = requestAnimationFrame(tick); };
+    raf = requestAnimationFrame(tick);
+    timer = setTimeout(() => go(index + 1), FALLBACK_MS - elapsed);
+  }
+
+  function play(){
+    if (paused || !visible) return;
+    if (missing(index)) { runTimer(); return; }
+    const v = videoOf(index);
+    v.play().catch(err => {
+      // La carga recién iniciada puede abortar el primer intento: se reintenta cuando el video esté listo
+      if (err && err.name === "AbortError") {
+        const retry = () => { if (videoOf(index) === v && !paused && visible) v.play().catch(runTimer); };
+        v.readyState >= 3 ? retry() : v.addEventListener("canplay", retry, { once: true });
+      } else runTimer();
+    });
+  }
+  function hold(){
+    stopTimer();
+    const v = videoOf(index);
+    if (v) v.pause();
+  }
+
+  function go(i){
+    hold();
+    const prev = videoOf(index);
+    index = (i + feats.length) % feats.length;
+    elapsed = 0;
+    feats.forEach((f, n) => {
+      const on = n === index;
+      f.classList.toggle("is-active", on);
+      f.querySelector(".feat__tab").tabIndex = on ? -1 : 0;
+      f.querySelector(".feat__bar i").style.setProperty("--p", 0);
+    });
+    dots.forEach((d, n) => n === index ? d.setAttribute("aria-current", "true") : d.removeAttribute("aria-current"));
+    const v = videoOf(index);
+    if (prev && prev !== v) prev.currentTime = 0;
+    if (v) {
+      if (v.preload === "none") { v.preload = "auto"; v.load(); }
+      else v.currentTime = 0;
+    }
+    title.textContent = feats[index].dataset.title;
+    text.textContent = feats[index].dataset.text;
+    caption.classList.remove("is-swapping"); void caption.offsetWidth; caption.classList.add("is-swapping");
+    play();
+  }
+
+  feats.forEach((f, n) => {
+    f.querySelector(".feat__tab").addEventListener("click", () => { if (n !== index) go(n); });
+    const v = f.querySelector("video");
+    if (!v) return;
+    v.addEventListener("ended", () => { if (n === index) go(index + 1); });
+    // Video ausente: pasa al temporizador
+    const srcs = v.querySelectorAll("source");
+    srcs[srcs.length - 1].addEventListener("error", () => { if (n === index && !paused && visible) runTimer(); });
+    v.addEventListener("timeupdate", () => { if (n === index && v.duration) f.querySelector(".feat__bar i").style.setProperty("--p", v.currentTime / v.duration); });
+  });
+  dots.forEach((d, n) => d.addEventListener("click", () => go(n)));
+
+  pauseBtn.addEventListener("click", () => {
+    paused = !paused;
+    pauseBtn.setAttribute("aria-pressed", String(paused));
+    pauseBtn.setAttribute("aria-label", paused ? "Reproducir" : "Pausar");
+    paused ? hold() : play();
+  });
+  pauseBtn.setAttribute("aria-pressed", String(paused));
+  if (paused) pauseBtn.setAttribute("aria-label", "Reproducir");
+
+  // Solo corre mientras la sección está en pantalla
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(([e]) => { visible = e.isIntersecting; visible ? play() : hold(); }, { threshold: .35 }).observe($("#feats"));
+  } else { visible = true; play(); }
+  document.addEventListener("visibilitychange", () => { document.hidden ? hold() : play(); });
+})();
+
+/* Horario: marca el día de hoy (hora de Chile) */
+(function(){
+  const day = new Date(new Date().toLocaleString("en-US", { timeZone: "America/Santiago" })).getDay();
+  const li = document.querySelector('.hours li[data-day="' + day + '"]');
+  if (li) li.classList.add("is-today");
+})();
+
+/* Cuota: cambia según el tamaño del grupo y el plan anual; el WhatsApp lleva la elección */
+(function(){
+  const price = $(".js-price");
+  if (!price) return;
+  const note = $(".js-price-note");
+  const annual = $(".js-annual");
+  const cta = $(".js-price-cta");
+  const fmt = n => "$" + n.toLocaleString("es-CL");
+  const update = () => {
+    const size = document.querySelector('input[name="size"]:checked').value;
+    const plan = annual && annual.checked ? "annual" : "monthly";
+    const value = PRICES[plan][size];
+    price.textContent = fmt(value);
+    note.textContent = plan === "annual" ? PRICE_TEXT.nota_anual : PRICE_TEXT.nota_mensual;
+    cta.href = waLink(null, "Hola " + PRICE_TEXT.club + ", quiero solicitar mi cupo de socio: grupo de " + size + " en la clase, " + (plan === "annual" ? "plan anual" : "plan mensual") + " (" + fmt(value) + "/mes por persona).");
+  };
+  document.querySelectorAll('input[name="size"]').forEach(r => r.addEventListener("change", update));
+  if (annual) annual.addEventListener("change", update);
+  update();
+})();
+
+/* Animaciones de entrada */
+(function(){
+  const items = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window) || reduceMotion) {
+    items.forEach(el => el.classList.add("is-in")); return;
+  }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+  items.forEach(el => io.observe(el));
+})();

@@ -1,0 +1,234 @@
+# Textos genéricos de un club de pádel.
+# - {club}, {barrio}, {comuna}, {metodo} y {dias} se reemplazan con los datos de cada club.
+# - Cuando un texto tiene "variantes:", cada club elige una con estilo.variante_textos (1, 2 o 3).
+#   Así dos clubes con la misma plantilla no dicen exactamente lo mismo.
+# - Cualquier texto se puede reescribir para un club en su club.yml, bajo "textos:".
+# - <em>…</em> marca la parte destacada del título.
+
+menu:
+  club: El club
+  metodo: "{metodo}"
+  precios: Precios
+  equipo: Equipo
+  resenas: Reseñas
+  visita: Horarios
+  visita_largo: Horarios y ubicación
+
+botones:
+  socio: Hazte socio
+  reservar: Reservar cancha
+  reservar_largo: Reservar cancha online
+  escribenos: Escríbenos
+  como_llegar: Cómo llegar
+  modo: Cambiar modo claro u oscuro
+
+hero:
+  titulo:
+    variantes:
+      - "Aquí se juega <em>en serio.</em>"
+      - "Tu club. <em>Tu nivel. Tu gente.</em>"
+      - "Más que canchas: <em>un club.</em>"
+  bajada:
+    variantes:
+      - "Clases con método, partidos cada semana y una comunidad que te espera en la cancha."
+      - "Entrena con un plan, juega a tu nivel y encuentra siempre con quién jugar."
+      - "Aprende, juega y compite en un lugar donde todos se conocen por su nombre."
+  dato_texto: "socios jugando<br>cada semana"
+
+club:
+  etiqueta: El club
+  titulo:
+    variantes:
+      - "Entrenas para mejorar. <em>Vuelves por la gente.</em>"
+      - "Se aprende en clase. <em>Se disfruta en la cancha.</em>"
+      - "El método te hace mejor. <em>La comunidad te hace volver.</em>"
+  parrafos:
+    variantes:
+      - - "Somos el club de pádel de {barrio}. Aquí aprendes con un método, juegas partidos a tu nivel y conoces a quienes van a ser tu cuarto los jueves."
+        - "No vienes a una clase suelta: <strong>llegas a un club.</strong>"
+      - - "En {club} la técnica se aprende en clase y se pone a prueba en partidos con gente de tu nivel."
+        - "Lo que te hace volver es la gente: <strong>aquí perteneces a un club.</strong>"
+      - - "Clases por nivel, partidos todas las semanas y un calendario de torneos y eventos. Todo en {barrio}."
+        - "Tú pones las ganas. <strong>El club pone el resto.</strong>"
+  link_metodo: "Ver {metodo}"
+  link_wa: Quiero conocer el club
+  pilares:
+    - titulo: Entrena
+      texto: "Clases por nivel con un plan claro: sabes qué estás trabajando y por qué."
+    - titulo: Conecta
+      texto: "Siempre hay con quién jugar. Te armamos el partido cuando te falta el cuarto."
+    - titulo: Compite
+      texto: "Americanos, ligas internas y torneos: el lugar donde compruebas cuánto has mejorado."
+
+partners:
+  etiqueta: Marcas que juegan con nosotros
+
+metodo:
+  etiqueta: El método
+  bajada: "Un plan de entrenamiento con principio, avance y prueba. Sabes dónde estás, qué te falta y cuándo lo lograste: <strong>no lo decimos nosotros, lo dice tu video.</strong>"
+  boton: Agendar mi evaluación
+  pasos:
+    - titulo: Diagnóstico
+      cuando: Semana 1
+      texto: "Te grabamos jugando y un profe evalúa técnica, posición y lectura del juego. Sales con tu nivel y tres objetivos concretos."
+    - titulo: Plan
+      cuando: Semanas 1–2
+      texto: "Te asignamos grupo de tu nivel (máximo 4 por cancha) y un bloque de trabajo de 4 semanas: golpes, defensa, red o transición."
+    - titulo: Clase + partido
+      cuando: Cada semana
+      texto: "Lo que trabajas en clase lo aplicas en partidos guiados con socios de tu nivel. Así lo aprendido sale solo."
+    - titulo: Medición
+      cuando: Cada 30 días
+      texto: "Volvemos a grabarte y comparamos. Ves tu avance lado a lado y definimos el siguiente bloque."
+  niveles: [Inicio, Base, Intermedio, Avanzado, Competición]
+
+garantia:
+  etiqueta: Nuestra convicción
+  titulo:
+    variantes:
+      - "Confiamos en el método. Por eso lo firmamos."
+      - "Creemos en el método. Y lo garantizamos."
+      - "Si no mejoras, no pagas el mes siguiente."
+  texto: "Entrena con nosotros <strong>{dias} días</strong>. Si cumples el plan y tu video comparativo no muestra que subiste de nivel, el mes siguiente corre por nuestra cuenta."
+  boton: "Quiero empezar mis {dias} días"
+  sello: "GARANTÍA {metodo} · {club} ·"
+  dias_texto: DÍAS
+
+equipo:
+  etiqueta: Equipo
+  titulo:
+    variantes:
+      - "El equipo <em>detrás del club.</em>"
+      - "Las personas <em>que te van a entrenar.</em>"
+      - "Conoce <em>al equipo.</em>"
+  bajada: "Las personas que te reciben, te entrenan y te arman el partido."
+
+resenas:
+  etiqueta: Lo que dicen los socios
+  titulo: "Reseñas <em>en Google.</em>"
+  promedio: Calificación promedio
+  ver_todas: Ver todas en Google
+
+visita:
+  etiqueta: Visítanos
+  titulo:
+    variantes:
+      - "Te esperamos <em>en la cancha.</em>"
+      - "Ven a <em>conocernos.</em>"
+      - "Estamos <em>en {barrio}.</em>"
+  nota_horario: "En feriados el horario puede variar. Confírmalo por WhatsApp."
+  dias: [Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado]
+  hoy: Hoy
+
+cta:
+  titulo:
+    variantes:
+      - "Tu próximo partido <em>empieza aquí.</em>"
+      - "Te guardamos <em>un lugar en la cancha.</em>"
+      - "¿Jugamos <em>esta semana?</em>"
+  texto: "Escríbenos y te contamos cómo hacerte socio, o reserva una cancha y ven a conocernos."
+
+footer:
+  lema: "El club de pádel de {barrio}. Entrena, conecta, compite."
+  club: Club
+  contacto: Contacto
+  siguenos: Síguenos
+  reservas: Reservas online
+
+muestra: Contenido de ejemplo
+
+# Mensajes pre-armados de WhatsApp según el botón
+whatsapp:
+  default: "Hola {club}, quiero más información sobre el club."
+  header: "Hola {club}, quiero hacerme socio. ¿Me cuentan cómo funciona?"
+  menu: "Hola {club}, quiero hacerme socio. ¿Me cuentan cómo funciona?"
+  hero: "Hola {club}, vi su sitio web y quiero hacerme socio del club."
+  club: "Hola {club}, quiero conocer el club. ¿Puedo pasar a verlo o tomar una clase de prueba?"
+  system: "Hola {club}, quiero agendar mi evaluación de {metodo}. Mi nivel aproximado es:"
+  garantia: "Hola {club}, quiero empezar el plan de {dias} días con garantía. ¿Cómo parto?"
+  ubicacion: "Hola {club}, tengo una consulta sobre horarios y cómo llegar al club."
+  cta: "Hola {club}, quiero hacerme socio. ¿Qué planes tienen?"
+  footer: "Hola {club}, quiero hacer una consulta."
+  flotante: "Hola {club}, quiero más información sobre el club."
+  precios: "Hola {club}, quiero solicitar mi cupo de socio."
+  primera-sesion: "Hola {club}, quiero reservar mi primera sesión (diagnóstico y video)."
+
+# ---------------------------------------------------------------- página de precios
+precios:
+  etiqueta: La cuota de socio
+  titulo:
+    variantes:
+      - "Una sola cuota. <em>Todo el club dentro.</em>"
+      - "Todo el club, <em>en una cuota.</em>"
+      - "Un precio. <em>Sin letra chica.</em>"
+  bajada: "Sin extras ni sorpresas. Mientras más sean en la clase, menos paga cada uno."
+  incluye:
+    - titulo: Entrena
+      items: ["Clase semanal en grupo de tu nivel", "Diagnóstico y tu nivel {metodo}", "Video comparativo cada 30 días"]
+    - titulo: Conecta
+      items: ["Grupo privado de socios", "Te armamos partido cuando te falta el cuarto", "Eventos y tercer tiempo del club"]
+    - titulo: Compite
+      items: ["1 clase-partido al mes con feedback del profe", "Americano mensual de socios", "Liga interna por niveles"]
+    - titulo: De socio
+      items: ["Descuento en arriendo de canchas", "Kit de bienvenida", "1 invitado al mes"]
+  tarjeta: Cuota por persona
+  mes: /mes
+  son: Son
+  en_clase: en la clase
+  anual_titulo: Plan anual · 2 meses gratis
+  anual_texto: Pagas 10 meses y entrenas 12.
+  nota_mensual: Plan mensual, sin permanencia.
+  nota_anual: "Plan anual: 12 meses por el precio de 10."
+  boton: Solicita tu cupo
+  limite: Cupos mensuales limitados.
+  individual: "¿Prefieres clases solo para ti? <strong>Plan individual</strong>, {individual}/mes."
+  primer_dia:
+    etiqueta: Tu primer día
+    titulo: "Sin milagros en 20 minutos. <em>Sales sabiendo dónde estás.</em>"
+    items:
+      - titulo: Diagnóstico
+        texto: "Un profe evalúa tu técnica, tu posición y cómo lees el juego."
+      - titulo: Tu punto de partida en video
+        texto: "Te grabamos jugando: es el \"antes\" de tu temporada."
+      - titulo: "Tu nivel {metodo}"
+        texto: "Sales con tu nivel asignado y tres objetivos concretos para medir tu avance."
+  sesion:
+    etiqueta: La sesión
+    titulo: "Cuatro fases. <em>La misma estructura con todos los profes.</em>"
+    items:
+      - titulo: Activa
+        pct: 10%
+        texto: "Calentamiento, repaso del partido de la semana y el objetivo del día en voz alta."
+      - titulo: Entiende
+        pct: 40%
+        texto: "Bloque técnico-táctico del foco. Se explica el porqué, no solo el cómo."
+      - titulo: Aplica
+        pct: 40%
+        texto: "El mismo foco en juego dirigido: el puente hacia tus partidos."
+      - titulo: Cierra
+        pct: 10%
+        texto: "Feedback para cada socio y una consigna para tu próximo partido."
+  niveles:
+    etiqueta: "Niveles {metodo}"
+    titulo: "Tu nivel, medido <em>y comparable.</em>"
+    columnas: [Nivel, Equivalente Playtomic, Qué cambia en este nivel]
+    filas:
+      - ["N1 · Inicio", "0 – 1", "Todos los golpes a ritmo bajo, con foco en seguridad y ubicación."]
+      - ["N2 · Base", "1 – 2", "Más consistencia, menos errores no forzados y lectura básica del punto."]
+      - ["N3 · Intermedio", "2 – 3", "Definición, comunicación con tu pareja y ataque coordinado."]
+      - ["N4 · Avanzado", "3 – 4", "Efectos y variantes, patrones de juego, lectura del rival y presión."]
+      - ["N5 · Competición", "4 +", "Automatismos bajo presión, plan de partido y ajustes en caliente."]
+  garantias:
+    etiqueta: Nuestra convicción
+    titulo: "Creemos en el método. <em>Y lo garantizamos.</em>"
+    items:
+      - titulo: Sin riesgo de entrada
+        texto: "Si después de tu primera sesión no es lo que esperabas, te devolvemos el 100% de lo que pagaste."
+      - titulo: "Progreso en {dias} días"
+        texto: "Si cumples el plan y tu video comparativo no muestra que subiste de nivel, el mes siguiente corre por nuestra cuenta."
+      - titulo: Cambio de profe
+        texto: "Si no conectas con tu profesor, te cambiamos de grupo sin costo."
+  cierre:
+    titulo: "Reserva tu primera sesión y <em>empieza a medir tu progreso.</em>"
+    texto: "Todo el club incluido, con el método detrás de cada clase."
+    nota: "Los grupos nuevos parten el día 1 de cada mes, según cupos de los profes."

@@ -1,0 +1,25 @@
+{% import "macros.j2" as m with context %}
+<!-- =========================================================
+     EQUIPO
+     ========================================================= -->
+<section class="section" id="equipo" aria-labelledby="team-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        {{ m.eyebrow("equipo", T.equipo.etiqueta, "reveal") }}
+        <h2 class="h2 reveal" id="team-title">{{ T.equipo.titulo }}</h2>
+      </div>
+      <p class="lead reveal" data-delay="1">{{ T.equipo.bajada }} {{ m.sample(club.equipo_muestra) }}</p>
+    </div>
+    <ul class="team">
+{% for p in club.equipo %}
+      <li class="member reveal"{% if loop.index0 %} data-delay="{{ loop.index0 % 4 }}"{% endif %}>
+        <div class="member__photo media" data-file="{{ p.foto }}"><img src="{{ p.foto }}" alt="{{ p.nombre }}, {{ p.cargo | lower }}" loading="lazy" width="640" height="800"><span class="initials" aria-hidden="true">{{ p.nombre.split() | map("first") | join }}</span></div>
+        <h3>{{ p.nombre }}</h3>
+        <p class="member__role">{{ p.cargo }}</p>
+        <p>{{ p.bio }}</p>
+      </li>
+{% endfor %}
+    </ul>
+  </div>
+</section>

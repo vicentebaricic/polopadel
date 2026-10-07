@@ -1,0 +1,67 @@
+{% extends "base.html.j2" %}
+{% import "macros.j2" as m with context %}
+{% block main %}
+<main id="main">
+
+<!-- =========================================================
+     HÉROE
+     ========================================================= -->
+{% set H = club.hero %}
+{% macro hero_media() %}
+  <div class="hero__media">
+    <picture>
+{% if H.poster_vertical %}
+      <source media="(max-aspect-ratio: 4/5)" srcset="{{ H.poster_vertical }}">
+{% endif %}
+      <img src="{{ H.poster }}" alt="" width="1920" height="1080" fetchpriority="high">
+    </picture>
+{% if H.video %}
+    <!-- Las fuentes las elige el script: versión vertical en pantallas verticales -->
+    <video class="js-hero-video" muted loop playsinline preload="none" aria-hidden="true"
+      data-src-wide="{{ H.video }}"{% if H.video_vertical %} data-src-tall="{{ H.video_vertical }}"{% endif %}></video>
+{% endif %}
+  </div>
+  <button class="icon-btn hero__pause" type="button" aria-pressed="false" aria-label="Pausar video de fondo">
+    <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+    <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+  </button>
+{% endmacro %}
+{% macro hero_text() %}
+  <div class="{{ 'wrap ' if E.hero == 'completo' }}hero__in">
+    <p class="eyebrow reveal" style="color:rgba(255,255,255,.75)"><b style="color:var(--ball)">{{ club.ubicacion.barrio }}</b> {{ club.ubicacion.zona }}</p>
+    <h1 class="reveal" data-delay="1">{{ T.hero.titulo }}</h1>
+    <p class="hero__sub reveal" data-delay="2">{{ T.hero.bajada }}</p>
+    <div class="hero__ctas reveal" data-delay="3">
+      <a class="btn btn--ball js-wa" data-wa="hero" href="#">{{ m.wa_icon() }}{{ T.botones.socio }}</a>
+      <a class="btn btn--ghost-light js-book" href="#">{{ T.botones.reservar }}</a>
+    </div>
+{% if club.dato_hero %}
+    <div class="hero__stat reveal" data-delay="3">
+      <strong>{{ club.dato_hero.numero }}</strong>
+      <span>{{ club.dato_hero.texto or T.hero.dato_texto }}</span>
+      {{ m.sample(club.dato_hero.muestra, "sample--dark") }}
+    </div>
+{% endif %}
+  </div>
+{% endmacro %}
+{% if E.hero == "dividido" %}
+<section class="hero hero--dividido" id="top" aria-label="Presentación">
+  <div class="wrap hero__grid">
+{{ hero_text() }}
+    <div class="hero__frame reveal" data-delay="1">
+{{ hero_media() }}
+    </div>
+  </div>
+</section>
+{% else %}
+<section class="hero hero--completo" id="top" aria-label="Presentación">
+{{ hero_media() }}
+{{ hero_text() }}
+</section>
+{% endif %}
+{% for s in secciones %}
+{% include "secciones/" ~ s ~ ".j2" %}
+{% endfor %}
+
+</main>
+{% endblock %}

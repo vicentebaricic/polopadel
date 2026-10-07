@@ -1,0 +1,162 @@
+# =====================================================================
+#  POLO PADEL — datos del club
+#  Todo lo que no está aquí sale de la plantilla (textos.yml / estilos.yml).
+#  Las rutas de fotos y videos son relativas a la carpeta del sitio publicado.
+# =====================================================================
+
+nombre: Polo Padel
+slug: polo-padel
+salida: ../../..            # se publica en la raíz del repo polopadel
+
+seo:
+  titulo: Polo Padel · Club de pádel en Chicureo, Colina
+  descripcion: Polo Padel es un club de pádel en Piedra Roja, Chicureo. Entrena con método, juega cada semana y forma parte de una comunidad. Av. El Valle 542, Colina.
+  imagen: assets/video/hero-poster.jpg
+
+marca:
+  logo: assets/marca/polo-padel-logo.png   # PNG sin fondo; la página lo pinta del color que toque
+  logo_ancho: 347
+  logo_alto: 240
+  favicon: assets/marca/favicon.png
+  apple_icon: assets/marca/apple-touch-icon.png
+
+contacto:
+  whatsapp: "56991281970"
+  whatsapp_visible: +56 9 9128 1970
+  reservas:
+    nombre: EasyCancha
+    url: https://www.easycancha.com/en-US/chile/club/polo-padel
+  instagram: https://www.instagram.com/polopadelchicureo/
+  facebook: https://www.facebook.com/people/Polo-Padel-Chicureo/61566704670748/
+
+ubicacion:
+  barrio: Piedra Roja
+  zona: Chicureo · Colina
+  comuna: Colina
+  direccion: Av. El Valle 542, Piedra Roja
+  referencia: Chicureo, Colina · frente a Carabineros
+  direccion_corta: Av. El Valle 542, Colina
+  direccion_completa: Av. El Valle 542, 9340000 Colina, Región Metropolitana
+  mapa: Av. El Valle 542, 9340000 Colina, Chile
+
+# Domingo = 0 … Sábado = 6
+horarios:
+  0: 08:30 – 23:00
+  1: 08:00 – 23:00
+  2: 08:00 – 23:00
+  3: 08:00 – 23:00
+  4: 08:00 – 23:00
+  5: 08:00 – 23:00
+  6: 08:30 – 23:00
+
+hero:
+  video: assets/video/hero                  # sin extensión: usa hero.webm y hero.mp4
+  video_vertical: assets/video/hero-mobile  # opcional: versión 9:16 para celulares
+  poster: assets/video/hero-poster.jpg
+  poster_vertical: assets/video/hero-mobile-poster.jpg
+
+dato_hero:
+  numero: "+180"
+  muestra: true
+
+# Un medio por pilar (Entrena, Conecta, Compite): video o imagen
+pilares:
+  - video: assets/video/entrena
+  - video: assets/video/conecta
+  - video: assets/video/compite
+
+metodo:
+  nombre: Polo System
+  titulo_html: "Polo <em>System.</em>"
+  foto: assets/fotos/pala-pelota.jpg
+  foto_alt: Pala de pádel apoyada en la red junto a una pelota
+  muestra: Contenido de ejemplo · validar el método con el club
+
+garantia:
+  dias: 90
+  video: assets/video/garantia
+  muestra: Contenido de ejemplo · confirmar condiciones
+
+partners:
+  - { nombre: Gatorade, logo: assets/partners/gatorade.png, ancho: 155, alto: 120 }
+  - { nombre: ISDIN, logo: assets/partners/isdin.png, ancho: 478, alto: 120 }
+  - { nombre: smart, logo: assets/partners/smart.png, ancho: 90, alto: 120 }
+  - { nombre: Yard, logo: assets/partners/yard.png, ancho: 196, alto: 120 }
+  - { nombre: Tilki, logo: assets/partners/tilki.png, ancho: 117, alto: 120 }
+  - { nombre: adidas, logo: assets/partners/adidas.png, ancho: 184, alto: 120 }
+  - { nombre: Babolat, logo: assets/partners/babolat.png, ancho: 480, alto: 105 }
+  - { nombre: Bullpadel, logo: assets/partners/bullpadel.png, ancho: 147, alto: 120 }
+
+equipo_muestra: Nombres y bios de ejemplo
+equipo:
+  - nombre: Daniela
+    cargo: Fundadora del club
+    foto: assets/equipo/fundadora.jpg
+    bio: "Levantó Polo Padel para que Piedra Roja tuviera su club: canchas de primer nivel y un lugar donde todos se conocen por su nombre."
+  - nombre: Matías Rojas
+    cargo: Head coach · Polo System
+    foto: assets/equipo/head-coach.jpg
+    bio: Diseñó el método del club. Si llegas por primera vez, él hace tu diagnóstico y arma tu plan.
+  - nombre: Diego Araya
+    cargo: Entrenador · Competición
+    foto: assets/equipo/coach-competicion.jpg
+    bio: Prepara a los equipos del club para ligas y torneos. Táctica, físico y cabeza fría en el tie-break.
+  - nombre: Camila Fuentes
+    cargo: Comunidad y eventos
+    foto: assets/equipo/comunidad.jpg
+    bio: Arma los partidos, los americanos y el tercer tiempo. Si te falta el cuarto, escríbele a ella.
+
+resenas:
+  nota: "4,8"
+  cantidad: 96
+  muestra: true
+  lista:
+    - nombre: Francisca V.
+      detalle: Socia · hace 2 meses
+      texto: Canchas impecables y muy buena onda. Llegué sin conocer a nadie y a las dos semanas ya tenía partido fijo los martes.
+    - nombre: Rodrigo P.
+      detalle: Socio · hace 1 mes
+      texto: Lo mejor son los profes. Te explican qué estás haciendo mal y te lo corrigen de verdad. Subí de nivel en tres meses.
+    - nombre: Cristóbal M.
+      detalle: Jugador · hace 3 semanas
+      texto: Súper cerca de la casa, fácil de reservar y los americanos del viernes son lo mejor de la semana.
+
+banda:
+  imagen: assets/fotos/cancha-palas.jpg
+  alt: Palas y pelotas sobre una cancha de pádel azul
+
+# Precios por persona en CLP según cuántos son en la clase
+precios:
+  grupos: [4, 3, 2]
+  mensual: { 4: 59990, 3: 69990, 2: 89990 }
+  anual:   { 4: 49990, 3: 57990, 2: 74990 }
+  individual: 189990
+  muestra: Precios de ejemplo · confirmar con el club
+
+paleta:
+  marca: "#154075"        # color principal (del logo)
+  oscuro: "#0C2340"       # textos y fondos profundos
+  acento: "#D7F24B"       # verde pelota: botones y destacados
+  tono: "#C98B5A"         # madera: detalles sobre fondos oscuros
+  tono_oscuro: "#A8673A"  # tierra: detalles sobre fondos claros
+  crema: "#F5F1E8"
+  fondo_claro: "#FBFAF6"
+
+# ---------------------------------------------------------------- perillas de diseño
+estilo:
+  tipografia: deportiva     # deportiva | condensada | geometrica | limpia
+  forma: redonda            # redonda | suave | recta
+  hero: completo            # completo | dividido
+  etiquetas: barra          # barra | numero | simple
+  variante_textos: 1        # 1, 2 o 3 (elige entre las frases alternativas de textos.yml)
+  secciones: [club, partners, metodo, garantia, equipo, resenas, banda, visita, cta]
+  menu: [club, metodo, precios, visita]
+  propuesta_inicial: marca  # marca (domina el color del club) | clara (domina el blanco)
+  selector_propuestas: true # muestra el selector A/B para presentar al cliente
+  nombres_propuestas: { marca: "A · Azul", clara: "B · Blanco" }
+
+# Textos propios que reemplazan a los genéricos (opcional)
+textos:
+  garantia:
+    sello: "GARANTÍA {metodo} · {club} CHICUREO ·"
+    texto: "Entrena con nosotros <strong>{dias} días</strong>. Si cumples el plan y tu video comparativo no muestra que subiste de nivel, el 4º mes corre por nuestra cuenta."

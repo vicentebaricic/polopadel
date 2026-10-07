@@ -1,0 +1,34 @@
+{% import "macros.j2" as m with context %}
+{% set R = club.resenas %}
+{% macro stars(n=5) %}{% for i in range(n) %}<svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg>{% endfor %}{% endmacro %}
+<!-- =========================================================
+     RESEÑAS
+     ========================================================= -->
+<section class="section section--alt" id="resenas" aria-labelledby="reviews-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        {{ m.eyebrow("resenas", T.resenas.etiqueta, "reveal") }}
+        <h2 class="h2 reveal" id="reviews-title">{{ T.resenas.titulo }}</h2>
+      </div>
+      <div class="rating reveal" data-delay="1">
+        <strong>{{ R.nota }}</strong>
+        <div>
+          <span class="stars" aria-hidden="true">{{ stars() }}</span>
+          <small>{{ T.resenas.promedio }} · {{ R.cantidad }} reseñas</small>
+        </div>
+        {{ m.sample(R.muestra) }}
+      </div>
+    </div>
+    <ul class="reviews">
+{% for r in R.lista %}
+      <li class="review reveal"{% if loop.index0 %} data-delay="{{ loop.index0 }}"{% endif %}>
+        <span class="stars" role="img" aria-label="{{ r.estrellas or 5 }} de 5 estrellas">{{ stars(r.estrellas or 5) }}</span>
+        <blockquote>“{{ r.texto }}”</blockquote>
+        <footer><span class="avatar" aria-hidden="true">{{ r.nombre[0] }}</span><span><b>{{ r.nombre }}</b>{{ r.detalle }}</span></footer>
+      </li>
+{% endfor %}
+    </ul>
+    <p class="reviews__more reveal"><a class="link-arrow" href="https://www.google.com/maps/search/?api=1&query={{ (club.nombre ~ ' ' ~ club.ubicacion.mapa) | urlencode }}" target="_blank" rel="noopener">{{ T.resenas.ver_todas }} {{ m.arrow() }}</a></p>
+  </div>
+</section>

@@ -16,7 +16,7 @@ Los archivos tal como se subieron quedan en `originales/`. Los de las demás car
 | `fotos/cancha-palas.jpg` | Franja antes de Visítanos | Unsplash (Vincenzo Morelli) |
 | `fotos/cancha.jpg` | Sin usar, disponible | Unsplash (Bruno Vaccaro) |
 | `equipo/fundadora.jpg`, `head-coach.jpg`, `coach-competicion.jpg`, `comunidad.jpg` | Equipo | Capturas de Instagram (en `originales/equipo/`): sin íconos ni bordes, recorte 4:5 con la cara a la misma altura y la misma gradación. La página las muestra en gris con tono azul y a color al pasar el mouse |
-| `precios.html` | Página de precios y método | Se genera con `python3 tools/build-precios.py` a partir de `tools/precios.src.html` y de los estilos, encabezado y pie de `index.html`. Volver a correrlo si cambian |
+| `index.html`, `precios.html` | Sitio publicado | Se generan con la plantilla: editar `plantilla/clubes/polo-padel/club.yml` y correr `python3 plantilla/build.py plantilla/clubes/polo-padel/club.yml` (ver `plantilla/LEEME.md`) |
 | `fotos/pala-naranja.jpg`, `partido.jpg`, `palas.jpg` | Sin usar, disponibles | Unsplash |
 
 ## Pendientes

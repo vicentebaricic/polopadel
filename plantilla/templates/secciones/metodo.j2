@@ -1,0 +1,36 @@
+{% import "macros.j2" as m with context %}
+<!-- =========================================================
+     EL MÉTODO
+     ========================================================= -->
+<section class="section section--alt" id="metodo" aria-labelledby="system-title">
+  <div class="wrap system">
+    <div class="system__intro">
+      {{ m.eyebrow("metodo", T.metodo.etiqueta, "reveal") }}
+      <h2 class="h2 reveal" id="system-title">{{ club.metodo.titulo_html }}</h2>
+      <p class="lead reveal" data-delay="1">{{ T.metodo.bajada }}</p>
+{% if club.metodo.muestra %}
+      <p class="reveal" data-delay="1" style="margin-top:16px">{{ m.sample(club.metodo.muestra) }}</p>
+{% endif %}
+      <a class="btn btn--solid js-wa reveal" data-wa="system" data-delay="2" href="#">{{ m.wa_icon() }}{{ T.metodo.boton }}</a>
+{% if club.metodo.foto %}
+      <figure class="system__photo media reveal" data-delay="2" data-file="{{ club.metodo.foto }}"><img src="{{ club.metodo.foto }}" alt="{{ club.metodo.foto_alt }}" loading="lazy"></figure>
+{% endif %}
+    </div>
+    <div>
+      <ol class="steps">
+{% for p in T.metodo.pasos %}
+        <li class="step reveal">
+          <span class="step__n" aria-hidden="true">{{ "%02d" % loop.index }}</span>
+          <h3>{{ p.titulo }}<small>{{ p.cuando }}</small></h3>
+          <p>{{ p.texto }}</p>
+        </li>
+{% endfor %}
+      </ol>
+      <ul class="levels reveal" aria-label="Niveles">
+{% for n in T.metodo.niveles %}
+        <li><b>N{{ loop.index }}</b> {{ n }}</li>
+{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

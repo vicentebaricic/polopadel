@@ -1,0 +1,14 @@
+{% import "macros.j2" as m with context %}
+<!-- =========================================================
+     CTA FINAL
+     ========================================================= -->
+<section class="section cta" aria-labelledby="cta-title">
+  <div class="wrap">
+    <h2 class="reveal" id="cta-title">{{ T.cta.titulo }}</h2>
+    <p class="reveal" data-delay="1">{{ T.cta.texto }}</p>
+    <div class="cta__btns reveal" data-delay="2">
+      <a class="btn btn--solid js-wa" data-wa="cta" href="#">{{ m.wa_icon() }}{{ T.botones.socio }}</a>
+      <a class="btn btn--ghost js-book" href="#">{{ T.botones.reservar }}</a>
+    </div>
+  </div>
+</section>

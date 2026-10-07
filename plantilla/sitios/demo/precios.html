@@ -1,57 +1,56 @@
 <!doctype html>
-<html lang="es-CL" data-palette="marca">
+<html lang="es-CL" data-palette="clara">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Precios · Polo Padel · Club de pádel en Chicureo, Colina</title>
-<meta name="description" content="Cuota de socio de Polo Padel: clases por nivel, partidos, torneos y comunidad en una sola cuota mensual. Chicureo · Colina.">
-<meta name="theme-color" content="#154075">
+<title>Precios · Arena Pádel Club · Club de pádel en Ñuñoa</title>
+<meta name="description" content="Cuota de socio de Arena Pádel Club: clases por nivel, partidos, torneos y comunidad en una sola cuota mensual. Ñuñoa · Santiago.">
+<meta name="theme-color" content="#0F3D2E">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Polo Padel · Club de pádel en Chicureo, Colina">
-<meta property="og:description" content="Polo Padel es un club de pádel en Piedra Roja, Chicureo. Entrena con método, juega cada semana y forma parte de una comunidad. Av. El Valle 542, Colina.">
-<meta property="og:image" content="assets/video/hero-poster.jpg">
-<link rel="icon" href="assets/marca/favicon.png" type="image/png">
-<link rel="apple-touch-icon" href="assets/marca/apple-touch-icon.png">
+<meta property="og:title" content="Arena Pádel Club · Club de pádel en Ñuñoa">
+<meta property="og:description" content="Club de pádel con clases por nivel, partidos todas las semanas y comunidad. (Sitio de demostración)">
+<link rel="icon" href="../../clubes/demo/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../../clubes/demo/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
 /* =========================================================
    TOKENS — generados desde club.yml (paleta, tipografía, forma)
    ========================================================= */
 :root{
-  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --font: "DM Sans", "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font: "Barlow", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --display-weight: 800;
-  --display-stretch: 112%;
+  --display-stretch: 100%;
   --display-case: uppercase;
-  --display-tracking: -.01em;
+  --display-tracking: 0;
 
-  --brand: #154075;
-  --navy: #0C2340;
-  --navy-deep: #091A2F;
-  --ball: #D7F24B;
-  --wood: #C98B5A;
-  --earth: #A8673A;
-  --cream: #F5F1E8;
+  --brand: #0F3D2E;
+  --navy: #0B1F18;
+  --navy-deep: #06100C;
+  --ball: #FF7A3D;
+  --wood: #E9C46A;
+  --earth: #9A6B12;
+  --cream: #F6F1E7;
 
-  --bg: #FBFAF6;
-  --bg-alt: #F8F2EB;
+  --bg: #FAF8F3;
+  --bg-alt: #F9F4E9;
   --surface: #FFFFFF;
-  --surface-2: #F4E9DF;
-  --text: #0C2340;
-  --text-2: #3D4F66;
-  --text-3: #5C6C7F;
-  --line: rgba(12,35,64,0.13);
+  --surface-2: #F7F0DE;
+  --text: #0B1F18;
+  --text-2: #3C4C46;
+  --text-3: #5C6964;
+  --line: rgba(11,31,24,0.13);
   --hl: var(--brand);
   --tone: var(--earth);
   --btn-bg: var(--brand);
   --btn-text: #FFFFFF;
   --logo: var(--brand);
-  --header-bg: rgba(251,250,246,0.92);
-  --placeholder-a: #F5EDE3;
-  --placeholder-b: #F1E4D7;
+  --header-bg: rgba(250,248,243,0.92);
+  --placeholder-a: #F8F2E3;
+  --placeholder-b: #F7EED8;
   --partner-filter: brightness(0) opacity(.42);
   --focus: var(--brand);
   --accent: var(--ball);
@@ -60,16 +59,16 @@
   --fs-eyebrow: .75rem;
   --fs-body: 1rem;
   --fs-lead: clamp(1.0625rem, 1.6vw, 1.25rem);
-  --fs-h3: clamp(1.375rem, 2.40vw, 1.750rem);
-  --fs-h2: clamp(2.125rem, 5.40vw, 4.000rem);
-  --fs-h1: clamp(2.750rem, 9.00vw, 6.750rem);
+  --fs-h3: clamp(1.622rem, 2.83vw, 2.065rem);
+  --fs-h2: clamp(2.507rem, 6.37vw, 4.720rem);
+  --fs-h1: clamp(3.245rem, 10.62vw, 7.965rem);
 
   --gutter: clamp(16px, 4vw, 56px);
   --maxw: 1320px;
   --section: clamp(72px, 10vw, 140px);
-  --radius: 18px;
-  --radius-lg: 24px;
-  --radius-pill: 999px;
+  --radius: 2px;
+  --radius-lg: 2px;
+  --radius-pill: 2px;
 
   --ease: cubic-bezier(.22,.61,.36,1);
   --ease-out: cubic-bezier(.16,1,.3,1);
@@ -80,31 +79,31 @@
 }
 /* Propuesta de marca (domina el color principal) */
 :root[data-palette="marca"]{
-  --bg: #154075;
-  --bg-alt: #123764;
-  --surface: #194C8B;
-  --surface-2: #1D58A0;
-  --text: #F5F1E8;
-  --text-2: #CAD5E2;
-  --text-3: #A4B6CC;
-  --line: rgba(245,241,232,0.14);
+  --bg: #0F3D2E;
+  --bg-alt: #0B2D22;
+  --surface: #14513D;
+  --surface-2: #19664D;
+  --text: #F6F1E7;
+  --text-2: #CAE2DA;
+  --text-3: #A4CCBF;
+  --line: rgba(246,241,231,0.14);
   --hl: var(--ball);
   --tone: var(--wood);
   --btn-bg: var(--ball);
   --btn-text: var(--navy);
   --logo: #FFFFFF;
-  --header-bg: rgba(21,64,117,0.94);
-  --placeholder-a: #194C8B;
-  --placeholder-b: #1D58A0;
+  --header-bg: rgba(15,61,46,0.94);
+  --placeholder-a: #14513D;
+  --placeholder-b: #19664D;
   --partner-filter: brightness(0) invert(1) opacity(.55);
   --focus: var(--ball);
 }
 /* Variantes oscuras */
 :root[data-theme="dark"]{ --bg: #121417; --bg-alt: #181B1F; --surface: #1F2328; --surface-2: #272C33; --text: #F2EFE8; --text-2: #C3CBD8; --text-3: #A0AABB; --line: rgba(242,239,232,.12); --hl: var(--ball); --tone: var(--wood); --btn-bg: var(--ball); --btn-text: var(--navy); --header-bg: rgba(18,20,23,.92); --placeholder-a: #1F2328; --placeholder-b: #272C33; --partner-filter: brightness(0) invert(1) opacity(.5); --focus: var(--ball); --logo: #FFFFFF; }
-:root[data-palette="marca"][data-theme="dark"]{ --bg: #071527; --bg-alt: #091C34; --surface: #0C2645; --surface-2: #102F56; --header-bg: rgba(7,21,39,0.92); --placeholder-a: #0C2645; --placeholder-b: #102F56; }
+:root[data-palette="marca"][data-theme="dark"]{ --bg: #09251C; --bg-alt: #0C3125; --surface: #104131; --surface-2: #14523E; --header-bg: rgba(9,37,28,0.92); --placeholder-a: #104131; --placeholder-b: #14523E; }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){ --bg: #121417; --bg-alt: #181B1F; --surface: #1F2328; --surface-2: #272C33; --text: #F2EFE8; --text-2: #C3CBD8; --text-3: #A0AABB; --line: rgba(242,239,232,.12); --hl: var(--ball); --tone: var(--wood); --btn-bg: var(--ball); --btn-text: var(--navy); --header-bg: rgba(18,20,23,.92); --placeholder-a: #1F2328; --placeholder-b: #272C33; --partner-filter: brightness(0) invert(1) opacity(.5); --focus: var(--ball); --logo: #FFFFFF; }
-  :root[data-palette="marca"]:not([data-theme="light"]){ --bg: #071527; --bg-alt: #091C34; --surface: #0C2645; --surface-2: #102F56; --header-bg: rgba(7,21,39,0.92); --placeholder-a: #0C2645; --placeholder-b: #102F56; }
+  :root[data-palette="marca"]:not([data-theme="light"]){ --bg: #09251C; --bg-alt: #0C3125; --surface: #104131; --surface-2: #14523E; --header-bg: rgba(9,37,28,0.92); --placeholder-a: #104131; --placeholder-b: #14523E; }
 }
 
 /* =========================================================
@@ -197,8 +196,8 @@ p{margin:0}
 .header__in{height:100%;display:flex;align-items:center;gap:24px}
 .brand{display:flex;align-items:center;text-decoration:none;flex:none}
 .brand{color:var(--logo)}
-.brand__logo{display:block;height:44px;aspect-ratio:347/240;background:currentColor;
-  -webkit-mask:url("assets/marca/polo-padel-logo.png") center/contain no-repeat;mask:url("assets/marca/polo-padel-logo.png") center/contain no-repeat;
+.brand__logo{display:block;height:44px;aspect-ratio:428/159;background:currentColor;
+  -webkit-mask:url("../../clubes/demo/logo.png") center/contain no-repeat;mask:url("../../clubes/demo/logo.png") center/contain no-repeat;
   transition:background-color var(--dur) var(--ease)}
 .header.is-over .brand{color:#fff}
 .nav{display:none;margin-left:auto}
@@ -652,13 +651,14 @@ p{margin:0}
      ========================================================= -->
 <header class="header">
   <div class="wrap header__in">
-    <a class="brand" href="index.html" aria-label="Polo Padel, ir al inicio">
+    <a class="brand" href="index.html" aria-label="Arena Pádel Club, ir al inicio">
       <span class="brand__logo"></span>
     </a>
     <nav class="nav" aria-label="Principal">
       <ul>
         <li><a href="index.html#club">El club</a></li>
-        <li><a href="index.html#metodo">Polo System</a></li>
+        <li><a href="index.html#metodo">Método Arena</a></li>
+        <li><a href="index.html#equipo">Equipo</a></li>
         <li><a href="precios.html" aria-current="page">Precios</a></li>
         <li><a href="index.html#visitanos">Horarios</a></li>
       </ul>
@@ -680,12 +680,13 @@ p{margin:0}
 <div class="drawer" id="drawer">
   <ul>
     <li><a href="index.html#club">El club <span>01</span></a></li>
-    <li><a href="index.html#metodo">Polo System <span>02</span></a></li>
+    <li><a href="index.html#metodo">Método Arena <span>02</span></a></li>
+    <li><a href="index.html#equipo">Equipo <span>03</span></a></li>
     <li><a href="precios.html">Precios <span>$</span></a></li>
     <li><a href="index.html#visitanos">Horarios y ubicación <span>06</span></a></li>
   </ul>
   <a class="btn btn--solid js-wa" data-wa="menu" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Hazte socio</a>
-  <a class="btn btn--ghost js-book" href="#">Reservar cancha en EasyCancha</a>
+  <a class="btn btn--ghost js-book" href="#">Reservar cancha en Playtomic</a>
 </div>
 
 <main id="main" class="page">
@@ -696,15 +697,15 @@ p{margin:0}
 <section class="section" style="padding-top:0" aria-labelledby="pricing-title">
   <div class="wrap pricing">
     <div>
-      <p class="eyebrow eyebrow--barra reveal"><b>/$</b> La cuota de socio</p>
-      <h1 class="reveal" id="pricing-title">Una sola cuota. <em>Todo el club dentro.</em></h1>
+      <p class="eyebrow eyebrow--numero reveal"><b>$</b> La cuota de socio</p>
+      <h1 class="reveal" id="pricing-title">Todo el club, <em>en una cuota.</em></h1>
       <p class="lead reveal" data-delay="1">Sin extras ni sorpresas. Mientras más sean en la clase, menos paga cada uno.</p>
       <div class="perks reveal" data-delay="2">
         <div>
           <h2>Entrena</h2>
           <ul>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Clase semanal en grupo de tu nivel</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Diagnóstico y tu nivel Polo System</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Diagnóstico y tu nivel Método Arena</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Video comparativo cada 30 días</li>
           </ul>
         </div>
@@ -737,13 +738,12 @@ p{margin:0}
 
     <aside class="price-card reveal" data-delay="1" aria-labelledby="price-label">
       <p class="price-card__label" id="price-label">Cuota por persona</p>
-      <p class="price" aria-live="polite"><strong class="js-price">$59.990</strong><span>/mes</span></p>
+      <p class="price" aria-live="polite"><strong class="js-price">$49.990</strong><span>/mes</span></p>
       <p class="price-note js-price-note">Plan mensual, sin permanencia.</p>
       <fieldset class="group">
         <legend>Son</legend>
         <div class="seg">
           <label><input type="radio" name="size" value="4" checked><span>4</span></label>
-          <label><input type="radio" name="size" value="3"><span>3</span></label>
           <label><input type="radio" name="size" value="2"><span>2</span></label>
         </div>
         <span class="group__after">en la clase</span>
@@ -754,8 +754,7 @@ p{margin:0}
       </label>
       <a class="btn btn--solid js-wa js-price-cta" data-wa="precios" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Solicita tu cupo</a>
       <p class="price-card__limit">Cupos mensuales limitados.</p>
-      <p class="price-card__alt">¿Prefieres clases solo para ti? <strong>Plan individual</strong>, $189.990/mes.</p>
-      <span class="sample ">Precios de ejemplo · confirmar con el club</span>
+      <span class="sample ">Contenido de ejemplo</span>
     </aside>
   </div>
 </section>
@@ -765,12 +764,12 @@ p{margin:0}
      ========================================================= -->
 <section class="section section--alt" aria-labelledby="first-title">
   <div class="wrap">
-    <p class="eyebrow eyebrow--barra reveal"><b>/01</b> Tu primer día</p>
+    <p class="eyebrow eyebrow--numero reveal"><b>01</b> Tu primer día</p>
     <h2 class="h2 reveal" id="first-title">Sin milagros en 20 minutos. <em>Sales sabiendo dónde estás.</em></h2>
     <ol class="cards cards--3">
       <li class="card reveal"><span class="card__n" aria-hidden="true">01</span><h3>Diagnóstico</h3><p>Un profe evalúa tu técnica, tu posición y cómo lees el juego.</p></li>
       <li class="card reveal" data-delay="1"><span class="card__n" aria-hidden="true">02</span><h3>Tu punto de partida en video</h3><p>Te grabamos jugando: es el "antes" de tu temporada.</p></li>
-      <li class="card reveal" data-delay="2"><span class="card__n" aria-hidden="true">03</span><h3>Tu nivel Polo System</h3><p>Sales con tu nivel asignado y tres objetivos concretos para medir tu avance.</p></li>
+      <li class="card reveal" data-delay="2"><span class="card__n" aria-hidden="true">03</span><h3>Tu nivel Método Arena</h3><p>Sales con tu nivel asignado y tres objetivos concretos para medir tu avance.</p></li>
     </ol>
   </div>
 </section>
@@ -780,7 +779,7 @@ p{margin:0}
      ========================================================= -->
 <section class="section" aria-labelledby="session-title">
   <div class="wrap">
-    <p class="eyebrow eyebrow--barra reveal"><b>/02</b> La sesión</p>
+    <p class="eyebrow eyebrow--numero reveal"><b>02</b> La sesión</p>
     <h2 class="h2 reveal" id="session-title">Cuatro fases. <em>La misma estructura con todos los profes.</em></h2>
     <ol class="cards cards--4">
       <li class="card reveal"><div class="card__top"><h3>Activa</h3><span class="card__pct">10%</span></div><p>Calentamiento, repaso del partido de la semana y el objetivo del día en voz alta.</p></li>
@@ -796,7 +795,7 @@ p{margin:0}
      ========================================================= -->
 <section class="section section--alt" aria-labelledby="levels-title">
   <div class="wrap">
-    <p class="eyebrow eyebrow--barra reveal"><b>/03</b> Niveles Polo System</p>
+    <p class="eyebrow eyebrow--numero reveal"><b>03</b> Niveles Método Arena</p>
     <h2 class="h2 reveal" id="levels-title">Tu nivel, medido <em>y comparable.</em></h2>
     <div class="levels-table reveal" data-delay="1">
       <table>
@@ -818,11 +817,11 @@ p{margin:0}
      ========================================================= -->
 <section class="section" aria-labelledby="promise-title">
   <div class="wrap">
-    <p class="eyebrow eyebrow--barra reveal"><b>/04</b> Nuestra convicción</p>
+    <p class="eyebrow eyebrow--numero reveal"><b>04</b> Nuestra convicción</p>
     <h2 class="h2 reveal" id="promise-title">Creemos en el método. <em>Y lo garantizamos.</em></h2>
     <ul class="cards cards--3">
       <li class="card reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><h3>Sin riesgo de entrada</h3><p>Si después de tu primera sesión no es lo que esperabas, te devolvemos el 100% de lo que pagaste.</p></li>
-      <li class="card reveal" data-delay="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg><h3>Progreso en 90 días</h3><p>Si cumples el plan y tu video comparativo no muestra que subiste de nivel, el mes siguiente corre por nuestra cuenta.</p></li>
+      <li class="card reveal" data-delay="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg><h3>Progreso en 60 días</h3><p>Si cumples el plan y tu video comparativo no muestra que subiste de nivel, el mes siguiente corre por nuestra cuenta.</p></li>
       <li class="card reveal" data-delay="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-3.9 3.1-7 7-7 1.6 0 3 .5 4.2 1.4"/><path d="M15 18l2 2 4-4"/></svg><h3>Cambio de profe</h3><p>Si no conectas con tu profesor, te cambiamos de grupo sin costo.</p></li>
     </ul>
     <p class="reveal" style="margin-top:20px"><span class="sample ">Contenido de ejemplo · confirmar método y condiciones</span></p>
@@ -850,16 +849,16 @@ p{margin:0}
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <a class="brand" href="index.html" aria-label="Polo Padel, ir al inicio">
+        <a class="brand" href="index.html" aria-label="Arena Pádel Club, ir al inicio">
           <span class="brand__logo"></span>
         </a>
-        <p class="footer__tag">El club de pádel de Piedra Roja. Entrena, conecta, compite.</p>
+        <p class="footer__tag">El club de pádel de Ñuñoa. Entrena, conecta, compite.</p>
       </div>
       <div>
         <h4>Club</h4>
         <ul>
           <li><a href="index.html#club">El club</a></li>
-          <li><a href="index.html#metodo">Polo System</a></li>
+          <li><a href="index.html#metodo">Método Arena</a></li>
           <li><a href="precios.html">Precios</a></li>
           <li><a href="index.html#equipo">Equipo</a></li>
           <li><a href="index.html#visitanos">Horarios</a></li>
@@ -869,8 +868,8 @@ p{margin:0}
         <h4>Contacto</h4>
         <ul>
           <li><a class="js-wa" data-wa="footer" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg><span data-wa-label></span></a></li>
-          <li><a class="js-book" href="#">Reservas online en EasyCancha</a></li>
-          <li><a href="https://www.google.com/maps/dir/?api=1&destination=Av.%20El%20Valle%20542%2C%209340000%20Colina%2C%20Chile" target="_blank" rel="noopener">Av. El Valle 542, Colina</a></li>
+          <li><a class="js-book" href="#">Reservas online en Playtomic</a></li>
+          <li><a href="https://www.google.com/maps/dir/?api=1&destination=Av.%20Irarr%C3%A1zaval%201234%2C%20%C3%91u%C3%B1oa%2C%20Chile" target="_blank" rel="noopener">Av. Irarrázaval 1234, Ñuñoa</a></li>
         </ul>
       </div>
       <div>
@@ -882,21 +881,21 @@ p{margin:0}
       </div>
     </div>
     <div class="footer__base">
-      <span>© <span id="year"></span> Polo Padel · Chicureo · Colina</span>
-      <span>Av. El Valle 542, 9340000 Colina, Región Metropolitana</span>
+      <span>© <span id="year"></span> Arena Pádel Club · Ñuñoa · Santiago</span>
+      <span>Av. Irarrázaval 1234, Ñuñoa, Región Metropolitana</span>
     </div>
   </div>
 </footer>
 
-<a class="wa-float js-wa" data-wa="flotante" href="#" aria-label="Escribir a Polo Padel por WhatsApp">
+<a class="wa-float js-wa" data-wa="flotante" href="#" aria-label="Escribir a Arena Pádel Club por WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>
 </a>
 
 <!-- Selector de propuesta de color: solo para revisar con el cliente, quitar antes de publicar (estilo.selector_propuestas: false) -->
 <div class="palette-switch" role="group" aria-label="Propuesta de color">
   <span>Propuesta</span>
-  <button type="button" data-palette="marca" aria-pressed="true">A · Azul</button>
-  <button type="button" data-palette="clara" aria-pressed="false">B · Blanco</button>
+  <button type="button" data-palette="marca" aria-pressed="false">A · Verde</button>
+  <button type="button" data-palette="clara" aria-pressed="true">B · Arena</button>
 </div>
 
 <!-- Íconos -->
@@ -911,20 +910,20 @@ p{margin:0}
    ========================================================= */
 const CONFIG = {
   whatsapp: {
-    number: "56991281970",
-    display: "+56 9 9128 1970",
-    messages: {"default": "Hola Polo Padel, quiero más información sobre el club.", "header": "Hola Polo Padel, quiero hacerme socio. ¿Me cuentan cómo funciona?", "menu": "Hola Polo Padel, quiero hacerme socio. ¿Me cuentan cómo funciona?", "hero": "Hola Polo Padel, vi su sitio web y quiero hacerme socio del club.", "club": "Hola Polo Padel, quiero conocer el club. ¿Puedo pasar a verlo o tomar una clase de prueba?", "system": "Hola Polo Padel, quiero agendar mi evaluación de Polo System. Mi nivel aproximado es:", "garantia": "Hola Polo Padel, quiero empezar el plan de 90 días con garantía. ¿Cómo parto?", "ubicacion": "Hola Polo Padel, tengo una consulta sobre horarios y cómo llegar al club.", "cta": "Hola Polo Padel, quiero hacerme socio. ¿Qué planes tienen?", "footer": "Hola Polo Padel, quiero hacer una consulta.", "flotante": "Hola Polo Padel, quiero más información sobre el club.", "precios": "Hola Polo Padel, quiero solicitar mi cupo de socio.", "primera-sesion": "Hola Polo Padel, quiero reservar mi primera sesión (diagnóstico y video)."}
+    number: "56900000000",
+    display: "+56 9 0000 0000",
+    messages: {"default": "Hola Arena Pádel Club, quiero más información sobre el club.", "header": "Hola Arena Pádel Club, quiero hacerme socio. ¿Me cuentan cómo funciona?", "menu": "Hola Arena Pádel Club, quiero hacerme socio. ¿Me cuentan cómo funciona?", "hero": "Hola Arena Pádel Club, vi su sitio web y quiero hacerme socio del club.", "club": "Hola Arena Pádel Club, quiero conocer el club. ¿Puedo pasar a verlo o tomar una clase de prueba?", "system": "Hola Arena Pádel Club, quiero agendar mi evaluación de Método Arena. Mi nivel aproximado es:", "garantia": "Hola Arena Pádel Club, quiero empezar el plan de 60 días con garantía. ¿Cómo parto?", "ubicacion": "Hola Arena Pádel Club, tengo una consulta sobre horarios y cómo llegar al club.", "cta": "Hola Arena Pádel Club, quiero hacerme socio. ¿Qué planes tienen?", "footer": "Hola Arena Pádel Club, quiero hacer una consulta.", "flotante": "Hola Arena Pádel Club, quiero más información sobre el club.", "precios": "Hola Arena Pádel Club, quiero solicitar mi cupo de socio.", "primera-sesion": "Hola Arena Pádel Club, quiero reservar mi primera sesión (diagnóstico y video)."}
   },
   links: {
-    booking:   "https://www.easycancha.com/en-US/chile/club/polo-padel",
-    instagram: "https://www.instagram.com/polopadelchicureo/",
-    facebook:  "https://www.facebook.com/people/Polo-Padel-Chicureo/61566704670748/"
+    booking:   "https://playtomic.io/",
+    instagram: "",
+    facebook:  ""
   }
 };
 /* Precios por persona (CLP) */
-const PRICES = {"monthly": {"4": 59990, "3": 69990, "2": 89990}, "annual": {"4": 49990, "3": 57990, "2": 74990}};
-const PRICE_TEXT = {"nota_mensual": "Plan mensual, sin permanencia.", "nota_anual": "Plan anual: 12 meses por el precio de 10.", "club": "Polo Padel"};
-const KEY = "polo-padel";
+const PRICES = {"monthly": {"4": 49990, "2": 79990}, "annual": {"4": 41990, "2": 66990}};
+const PRICE_TEXT = {"nota_mensual": "Plan mensual, sin permanencia.", "nota_anual": "Plan anual: 12 meses por el precio de 10.", "club": "Arena Pádel Club"};
+const KEY = "demo";
 
 function waLink(key, customText){
   const w = CONFIG.whatsapp;

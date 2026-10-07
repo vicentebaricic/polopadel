@@ -1,0 +1,11 @@
+{# Piezas reutilizables de todas las páginas #}
+{% set IDS = {"club": "club", "metodo": "metodo", "equipo": "equipo", "resenas": "resenas", "visita": "visitanos", "precios": "precios"} %}
+{% macro href(s) -%}
+{%- if s == "precios" -%}precios.html{%- elif page == "index" -%}#{{ IDS[s] }}{%- else -%}index.html#{{ IDS[s] }}{%- endif -%}
+{%- endmacro %}
+{% macro eyebrow(sec, label, extra="", attrs="") -%}
+<p class="eyebrow eyebrow--{{ E.etiquetas }} {{ extra }}"{{ attrs }}>{% if E.etiquetas == "barra" %}<b>/{{ num.get(sec, "") }}</b> {% elif E.etiquetas == "numero" %}<b>{{ num.get(sec, "") }}</b> {% endif %}{{ label }}</p>
+{%- endmacro %}
+{% macro wa_icon() %}<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>{% endmacro %}
+{% macro arrow() %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>{% endmacro %}
+{% macro sample(text, cls="") %}{% if text %}<span class="sample {{ cls }}">{{ T.muestra if text is sameas true else text }}</span>{% endif %}{% endmacro %}

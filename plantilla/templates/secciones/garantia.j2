@@ -1,0 +1,35 @@
+{% import "macros.j2" as m with context %}
+<!-- =========================================================
+     NUESTRA CONVICCIÓN · garantía
+     ========================================================= -->
+<section class="belief" aria-labelledby="belief-title">
+{% if club.garantia.video %}
+  <div class="belief__media media" data-file="{{ club.garantia.video }}.mp4">
+    <video class="js-bg-video" muted loop playsinline preload="none" poster="{{ club.garantia.video }}-poster.jpg" aria-hidden="true"><source src="{{ club.garantia.video }}.mp4" type="video/mp4"><source src="{{ club.garantia.video }}.webm" type="video/webm"></video>
+  </div>
+{% elif club.garantia.imagen %}
+  <div class="belief__media media" data-file="{{ club.garantia.imagen }}"><img src="{{ club.garantia.imagen }}" alt="" loading="lazy"></div>
+{% endif %}
+  <div class="wrap belief__in">
+    <div>
+      {{ m.eyebrow("garantia", T.garantia.etiqueta, "reveal") }}
+      <h2 class="reveal" id="belief-title">{{ T.garantia.titulo }}</h2>
+      <p class="reveal" data-delay="1">{{ T.garantia.texto }}</p>
+{% if club.garantia.muestra %}
+      <p class="reveal" data-delay="1" style="margin-top:16px">{{ m.sample(club.garantia.muestra) }}</p>
+{% endif %}
+      <a class="btn btn--solid js-wa reveal" data-wa="garantia" data-delay="2" href="#" style="background:var(--navy);color:#fff">{{ T.garantia.boton }}</a>
+    </div>
+    <div class="seal reveal" data-delay="2" role="img" aria-label="Sello: garantía de {{ club.garantia.dias }} días">
+      <svg viewBox="0 0 200 200" aria-hidden="true">
+        <defs><path id="ring" d="M100,100 m-82,0 a82,82 0 1,1 164,0 a82,82 0 1,1 -164,0"/></defs>
+        <circle cx="100" cy="100" r="96" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="100" cy="100" r="62" fill="none" stroke="currentColor" stroke-width="1"/>
+        <g class="seal__ring">
+          <text font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="4.2" fill="currentColor"><textPath href="#ring">{{ T.garantia.sello | upper }}</textPath></text>
+        </g>
+      </svg>
+      <div class="seal__core"><strong>{{ club.garantia.dias }}</strong><span>{{ T.garantia.dias_texto }}</span></div>
+    </div>
+  </div>
+</section>

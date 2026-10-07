@@ -1,0 +1,71 @@
+# Perillas de diseño compartidas por todos los clubes.
+# En club.yml se elige una opción de cada una (estilo.tipografia, estilo.forma…).
+
+tipografias:
+  # Ancha y deportiva (Polo Padel)
+  deportiva:
+    url: "https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&display=swap"
+    titulos: '"Archivo", "Helvetica Neue", Arial, sans-serif'
+    texto: '"DM Sans", "Helvetica Neue", Arial, sans-serif'
+    mono: '"JetBrains Mono", ui-monospace, monospace'
+    peso: 800
+    ancho: 112%
+    mayusculas: uppercase
+    tracking: -.01em
+    escala: 1
+  # Condensada, de camiseta de club
+  condensada:
+    url: "https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap"
+    titulos: '"Barlow Condensed", "Arial Narrow", sans-serif'
+    texto: '"Barlow", "Helvetica Neue", Arial, sans-serif'
+    mono: '"IBM Plex Mono", ui-monospace, monospace'
+    peso: 800
+    ancho: 100%
+    mayusculas: uppercase
+    tracking: 0
+    escala: 1.18
+  # Geométrica y moderna
+  geometrica:
+    url: "https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+    titulos: '"Unbounded", "Helvetica Neue", Arial, sans-serif'
+    texto: '"Manrope", "Helvetica Neue", Arial, sans-serif'
+    mono: '"Space Mono", ui-monospace, monospace'
+    peso: 700
+    ancho: 100%
+    mayusculas: uppercase
+    tracking: -.02em
+    escala: .84
+  # Limpia, sin mayúsculas: más premium / boutique
+  limpia:
+    url: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap"
+    titulos: '"Space Grotesk", "Helvetica Neue", Arial, sans-serif'
+    texto: '"Inter", "Helvetica Neue", Arial, sans-serif'
+    mono: '"JetBrains Mono", ui-monospace, monospace'
+    peso: 700
+    ancho: 100%
+    mayusculas: none
+    tracking: -.03em
+    escala: 1.02
+
+formas:
+  redonda:            # tarjetas redondeadas, botones píldora
+    radio: 18px
+    radio_grande: 24px
+    boton: 999px
+  suave:              # esquinas discretas
+    radio: 10px
+    radio_grande: 14px
+    boton: 10px
+  recta:              # esquinas rectas, más gráfico y deportivo
+    radio: 2px
+    radio_grande: 2px
+    boton: 2px
+
+# Etiquetas sobre cada título: barra "/01 El club", numero "01 — El club", simple "— El club"
+etiquetas: [barra, numero, simple]
+
+# Héroe: completo (video a pantalla completa) o dividido (texto a un lado, video en un recuadro)
+heroes: [completo, dividido]
+
+# Orden por defecto de las secciones de la portada (se puede reordenar o quitar en club.yml)
+secciones_por_defecto: [club, partners, metodo, garantia, equipo, resenas, banda, visita, cta]
