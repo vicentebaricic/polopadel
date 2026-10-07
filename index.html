@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Polo Padel · Club de pádel en Chicureo, Colina</title>
 <meta name="description" content="Polo Padel es un club de pádel en Piedra Roja, Chicureo. Entrena con método, juega cada semana y forma parte de una comunidad. Av. El Valle 542, Colina.">
-<meta name="theme-color" content="#0C2340">
+<meta name="theme-color" content="#154075">
+<link rel="icon" href="assets/marca/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/marca/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -21,6 +23,7 @@
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   /* Colores de marca (fijos) */
+  --brand: #154075;         /* azul del logo */
   --navy: #0C2340;
   --navy-deep: #081A31;
   --ball: #D7F24B;          /* verde pelota */
@@ -37,17 +40,18 @@
   --text-2: #3B4A63;
   --text-3: #5A6780;
   --line: rgba(12,35,64,.13);
-  --hl: #1F56A8;            /* palabra destacada en texto */
+  --hl: var(--brand);       /* palabra destacada en texto */
   --accent: var(--ball);    /* rellenos, puntos, barras */
   --on-accent: var(--navy);
   --tone: var(--earth);     /* detalle madera/tierra */
-  --btn-bg: var(--navy);
+  --btn-bg: var(--brand);
   --btn-text: #FFFFFF;
+  --logo: var(--brand);
   --header-bg: rgba(251,250,246,.92);
   --placeholder-a: #E7E1D3;
   --placeholder-b: #DCD4C2;
   --partner-filter: brightness(0) opacity(.42);
-  --focus: #1F56A8;
+  --focus: var(--brand);
 
   --fs-eyebrow: .75rem;
   --fs-body: 1rem;
@@ -71,10 +75,10 @@
 }
 /* Propuesta A · Azul (claro) */
 :root[data-palette="azul"]{
-  --bg: #0C2340;
-  --bg-alt: #0F2A4D;
-  --surface: #13325B;
-  --surface-2: #1A3E6C;
+  --bg: #154075;
+  --bg-alt: #113866;
+  --surface: #1B4C88;
+  --surface-2: #22579A;
   --text: #F5F1E8;
   --text-2: #CBD4E2;
   --text-3: #A3B3CA;
@@ -83,9 +87,10 @@
   --tone: var(--wood);
   --btn-bg: var(--ball);
   --btn-text: var(--navy);
-  --header-bg: rgba(12,35,64,.92);
-  --placeholder-a: #143561;
-  --placeholder-b: #1B4174;
+  --header-bg: rgba(21,64,117,.94);
+  --placeholder-a: #1B4C88;
+  --placeholder-b: #22579A;
+  --logo: #FFFFFF;
   --partner-filter: brightness(0) invert(1) opacity(.55);
   --focus: var(--ball);
 }
@@ -95,7 +100,7 @@
   --text: #F2EFE8; --text-2: #C3CBD8; --text-3: #A0AABB; --line: rgba(242,239,232,.12);
   --hl: var(--ball); --tone: var(--wood); --btn-bg: var(--ball); --btn-text: var(--navy);
   --header-bg: rgba(11,19,34,.92); --placeholder-a: #152138; --placeholder-b: #1C2B46;
-  --partner-filter: brightness(0) invert(1) opacity(.5); --focus: var(--ball);
+  --partner-filter: brightness(0) invert(1) opacity(.5); --focus: var(--ball); --logo: #FFFFFF;
 }
 :root[data-palette="azul"][data-theme="dark"]{
   --bg: #061528; --bg-alt: #0A1D37; --surface: #0E2647; --surface-2: #143159;
@@ -107,7 +112,7 @@
     --text: #F2EFE8; --text-2: #C3CBD8; --text-3: #A0AABB; --line: rgba(242,239,232,.12);
     --hl: var(--ball); --tone: var(--wood); --btn-bg: var(--ball); --btn-text: var(--navy);
     --header-bg: rgba(11,19,34,.92); --placeholder-a: #152138; --placeholder-b: #1C2B46;
-    --partner-filter: brightness(0) invert(1) opacity(.5); --focus: var(--ball);
+    --partner-filter: brightness(0) invert(1) opacity(.5); --focus: var(--ball); --logo: #FFFFFF;
   }
   :root[data-palette="azul"]:not([data-theme="light"]){
     --bg: #061528; --bg-alt: #0A1D37; --surface: #0E2647; --surface-2: #143159;
@@ -204,12 +209,11 @@ p{margin:0}
 .header.is-scrolled{border-bottom-color:var(--line)}
 .header__in{height:100%;display:flex;align-items:center;gap:24px}
 .brand{display:flex;align-items:center;text-decoration:none;flex:none}
-.brand img{height:40px;width:auto}
-.brand.is-missing img{display:none}
-.brand__word{display:none;font-family:var(--font-display);font-stretch:125%;font-weight:900;font-size:1.25rem;line-height:.9;letter-spacing:.02em;text-transform:uppercase}
-.brand__word span{display:block;font-weight:500;font-size:.62rem;letter-spacing:.42em;margin-top:4px}
-.brand__word i{display:inline-block;width:.42em;height:.42em;border-radius:50%;background:var(--ball);margin-left:2px;vertical-align:.1em}
-.brand.is-missing .brand__word{display:block}
+.brand{color:var(--logo)}
+.brand__logo{display:block;height:44px;aspect-ratio:347/240;background:currentColor;
+  -webkit-mask:url("assets/marca/polo-padel-logo.png") center/contain no-repeat;mask:url("assets/marca/polo-padel-logo.png") center/contain no-repeat;
+  transition:background-color var(--dur) var(--ease)}
+.header.is-over .brand{color:#fff}
 .nav{display:none;margin-left:auto}
 .nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
 .nav a{font-family:var(--font-display);font-stretch:105%;font-weight:600;font-size:.8125rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:12px 0;position:relative}
@@ -253,9 +257,10 @@ p{margin:0}
    HERO
    ========================================================= */
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;background:var(--navy-deep);overflow:hidden}
-.hero__media{position:absolute;inset:0}
-.hero__media.media{background:radial-gradient(120% 80% at 70% 20%,#1A4378 0%,#0C2340 55%,#061528 100%)}
-.hero__media.is-missing::after{color:rgba(255,255,255,.5);inset:auto var(--gutter) 24px auto}
+.hero__media{position:absolute;inset:0;background:var(--navy-deep)}
+.hero__media img,.hero__media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero__media img{object-position:70% 40%}
+.hero.no-video .hero__media video,.hero.no-video .hero__pause{display:none}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,21,40,.55) 0%,rgba(6,21,40,.1) 35%,rgba(6,21,40,.82) 100%);pointer-events:none}
 .hero__in{position:relative;z-index:1;padding-top:calc(var(--header-h) + 48px);padding-bottom:clamp(40px,7vw,88px)}
 .hero h1{font-size:var(--fs-h1);font-stretch:118%;max-width:12ch}
@@ -345,7 +350,7 @@ p{margin:0}
 .marquee:hover{animation-play-state:paused}
 .marquee ul{display:flex;align-items:center;gap:clamp(40px,6vw,88px);list-style:none;margin:0;padding:0 clamp(20px,3vw,44px)}
 .partner{height:44px;display:flex;align-items:center}
-.partner img{max-height:40px;width:auto;max-width:150px;filter:var(--partner-filter)}
+.partner img{height:44px;width:auto;max-width:170px;object-fit:contain;filter:var(--partner-filter)}
 .partner.is-missing img{display:none}
 .partner__name{display:none;font-family:var(--font-display);font-stretch:125%;font-weight:800;font-size:1.25rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-3);opacity:.75;white-space:nowrap}
 .partner.is-missing .partner__name{display:block}
@@ -357,6 +362,7 @@ p{margin:0}
 .system{display:grid;gap:48px}
 .system__intro .lead{margin-top:22px}
 .system__intro .btn{margin-top:32px}
+.system__photo{margin:40px 0 0;aspect-ratio:4/3;border-radius:var(--radius)}
 .steps{list-style:none;margin:0;padding:0;counter-reset:step}
 .step{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;padding:28px 0;border-top:1px solid var(--line)}
 .step:last-child{border-bottom:1px solid var(--line)}
@@ -436,6 +442,8 @@ p{margin:0}
 .avatar{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--surface-2);font-weight:600;color:var(--text)}
 .reviews__more{margin-top:28px}
 @media (min-width: 768px){ .reviews{grid-template-columns:repeat(3,1fr)} }
+
+.band{height:clamp(240px,42vw,560px)}
 
 /* =========================================================
    HORARIOS + UBICACIÓN
@@ -519,7 +527,7 @@ p{margin:0}
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
-  .marquee{animation:none;flex-wrap:wrap;width:auto}
+  .marquee{animation:none;flex-wrap:wrap;width:auto;justify-content:center}
   .marquee ul[aria-hidden="true"]{display:none}
   .marquee ul{flex-wrap:wrap;justify-content:center;row-gap:24px}
   .reveal{opacity:1;transform:none}
@@ -534,9 +542,8 @@ p{margin:0}
      ========================================================= -->
 <header class="header is-over">
   <div class="wrap header__in">
-    <a class="brand js-logo" href="#top" aria-label="Polo Padel, ir al inicio">
-      <img src="assets/marca/polo-padel-logo.svg" alt="" width="120" height="40">
-      <span class="brand__word" aria-hidden="true">Polo<i></i><span>Padel club</span></span>
+    <a class="brand" href="#top" aria-label="Polo Padel, ir al inicio">
+      <span class="brand__logo"></span>
     </a>
     <nav class="nav" aria-label="Principal">
       <ul>
@@ -579,8 +586,9 @@ p{margin:0}
      HERO
      ========================================================= -->
 <section class="hero" id="top" aria-label="Presentación">
-  <div class="hero__media media" data-file="assets/video/hero.mp4">
-    <video class="js-hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video/hero-poster.jpg" aria-hidden="true">
+  <div class="hero__media">
+    <img src="assets/fotos/hero.jpg" alt="" width="2200" height="1467" fetchpriority="high">
+    <video class="js-hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
       <source src="assets/video/hero.webm" type="video/webm">
       <source src="assets/video/hero.mp4" type="video/mp4">
     </video>
@@ -627,21 +635,21 @@ p{margin:0}
       <div class="feats" id="feats">
         <div class="feat is-active" data-title="Entrena" data-text="Clases por nivel con un plan claro: sabes qué estás trabajando y por qué.">
           <div class="feat__media media" data-file="assets/video/entrena.mp4">
-            <video muted playsinline preload="metadata" poster="assets/video/entrena-poster.jpg" aria-hidden="true"><source src="assets/video/entrena.mp4" type="video/mp4"></video>
+            <video muted playsinline preload="metadata" poster="assets/video/entrena-poster.jpg" aria-hidden="true"><source src="assets/video/entrena.mp4" type="video/mp4"><source src="assets/video/entrena.webm" type="video/webm"></video>
           </div>
           <button class="feat__tab" type="button" aria-label="Ver Entrena"><span class="feat__num">01</span><span class="feat__label">Entrena</span></button>
           <div class="feat__bar"><i></i></div>
         </div>
         <div class="feat" data-title="Conecta" data-text="Siempre hay con quién jugar. Te armamos el partido cuando te falta el cuarto.">
           <div class="feat__media media" data-file="assets/video/conecta.mp4">
-            <video muted playsinline preload="none" poster="assets/video/conecta-poster.jpg" aria-hidden="true"><source src="assets/video/conecta.mp4" type="video/mp4"></video>
+            <video muted playsinline preload="none" poster="assets/video/conecta-poster.jpg" aria-hidden="true"><source src="assets/video/conecta.mp4" type="video/mp4"><source src="assets/video/conecta.webm" type="video/webm"></video>
           </div>
           <button class="feat__tab" type="button" aria-label="Ver Conecta"><span class="feat__num">02</span><span class="feat__label">Conecta</span></button>
           <div class="feat__bar"><i></i></div>
         </div>
         <div class="feat" data-title="Compite" data-text="Americanos, ligas internas y torneos: el lugar donde compruebas cuánto has mejorado.">
           <div class="feat__media media" data-file="assets/video/compite.mp4">
-            <video muted playsinline preload="none" poster="assets/video/compite-poster.jpg" aria-hidden="true"><source src="assets/video/compite.mp4" type="video/mp4"></video>
+            <video muted playsinline preload="none" poster="assets/video/compite-poster.jpg" aria-hidden="true"><source src="assets/video/compite.mp4" type="video/mp4"><source src="assets/video/compite.webm" type="video/webm"></video>
           </div>
           <button class="feat__tab" type="button" aria-label="Ver Compite"><span class="feat__num">03</span><span class="feat__label">Compite</span></button>
           <div class="feat__bar"><i></i></div>
@@ -672,16 +680,14 @@ p{margin:0}
 <section class="partners" aria-labelledby="partners-title">
   <div class="wrap partners__head">
     <p class="eyebrow" id="partners-title"><b>/</b> Marcas que juegan con nosotros</p>
-    <span class="sample">Contenido de ejemplo</span>
   </div>
   <div class="marquee">
     <ul class="js-partners">
-      <li class="partner"><img src="assets/partners/partner-1.png" alt="Partner 1" loading="lazy"><span class="partner__name">Partner 01</span></li>
-      <li class="partner"><img src="assets/partners/partner-2.png" alt="Partner 2" loading="lazy"><span class="partner__name">Partner 02</span></li>
-      <li class="partner"><img src="assets/partners/partner-3.png" alt="Partner 3" loading="lazy"><span class="partner__name">Partner 03</span></li>
-      <li class="partner"><img src="assets/partners/partner-4.png" alt="Partner 4" loading="lazy"><span class="partner__name">Partner 04</span></li>
-      <li class="partner"><img src="assets/partners/partner-5.png" alt="Partner 5" loading="lazy"><span class="partner__name">Partner 05</span></li>
-      <li class="partner"><img src="assets/partners/partner-6.png" alt="Partner 6" loading="lazy"><span class="partner__name">Partner 06</span></li>
+      <li class="partner"><img src="assets/partners/gatorade.png" alt="Gatorade" width="155" height="120"></li>
+      <li class="partner"><img src="assets/partners/isdin.png" alt="ISDIN" width="478" height="120"></li>
+      <li class="partner"><img src="assets/partners/smart.png" alt="smart" width="90" height="120"></li>
+      <li class="partner"><img src="assets/partners/yard.png" alt="Yard" width="196" height="120"></li>
+      <li class="partner"><img src="assets/partners/zorro.png" alt="Partner (logo de zorro)" width="117" height="120"></li>
     </ul>
   </div>
 </section>
@@ -697,6 +703,7 @@ p{margin:0}
       <p class="lead reveal" data-delay="1">Un plan de entrenamiento con principio, avance y prueba. Sabes dónde estás, qué te falta y cuándo lo lograste: <strong>no lo decimos nosotros, lo dice tu video.</strong></p>
       <p class="reveal" data-delay="1" style="margin-top:16px"><span class="sample">Contenido de ejemplo · validar el método con el club</span></p>
       <a class="btn btn--solid js-wa reveal" data-wa="system" data-delay="2" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Agendar mi evaluación</a>
+      <figure class="system__photo media reveal" data-delay="2" data-file="assets/fotos/pala-pelota.jpg"><img src="assets/fotos/pala-pelota.jpg" alt="Pala de pádel apoyada en la red junto a una pelota" loading="lazy" width="2200" height="1652"></figure>
     </div>
     <div>
       <ol class="steps">
@@ -737,7 +744,7 @@ p{margin:0}
      ========================================================= -->
 <section class="belief" aria-labelledby="belief-title">
   <div class="belief__media media" data-file="assets/video/garantia.mp4">
-    <video class="js-bg-video" muted loop playsinline preload="none" poster="assets/video/garantia-poster.jpg" aria-hidden="true"><source src="assets/video/garantia.mp4" type="video/mp4"></video>
+    <video class="js-bg-video" muted loop playsinline preload="none" poster="assets/video/garantia-poster.jpg" aria-hidden="true"><source src="assets/video/garantia.mp4" type="video/mp4"><source src="assets/video/garantia.webm" type="video/webm"></video>
   </div>
   <div class="wrap belief__in">
     <div>
@@ -842,6 +849,8 @@ p{margin:0}
   </div>
 </section>
 
+<div class="band media" data-file="assets/fotos/cancha.jpg"><img src="assets/fotos/cancha.jpg" alt="Canchas de pádel con paredes de vidrio" loading="lazy" width="2200" height="1238"></div>
+
 <!-- =========================================================
      06 · HORARIOS + UBICACIÓN
      ========================================================= -->
@@ -895,9 +904,8 @@ p{margin:0}
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <a class="brand js-logo" href="#top" aria-label="Polo Padel, ir al inicio">
-          <img src="assets/marca/polo-padel-logo-blanco.svg" alt="" width="120" height="40">
-          <span class="brand__word" aria-hidden="true">Polo<i></i><span>Padel club</span></span>
+        <a class="brand" href="#top" aria-label="Polo Padel, ir al inicio">
+          <span class="brand__logo"></span>
         </a>
         <p class="footer__tag">El club de pádel de Piedra Roja. Entrena, conecta, compite.</p>
       </div>
@@ -1003,12 +1011,6 @@ setLinks(".js-fb", CONFIG.links.facebook);
 /* Año */
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* Logo: si aún no existe el archivo, se muestra el logotipo en texto */
-document.querySelectorAll(".js-logo img").forEach(img => {
-  const fail = () => img.parentElement.classList.add("is-missing");
-  if (img.complete && img.naturalWidth === 0) fail();
-  img.addEventListener("error", fail);
-});
 
 /* Propuesta de color A/B (también con ?paleta=blanco en la URL) */
 (function(){
@@ -1089,9 +1091,14 @@ document.querySelectorAll(".media > video").forEach(video => {
   if (video.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) fail();
 });
 
-/* Partners: se duplica la fila para el desplazamiento continuo */
+/* Partners: se repite la fila hasta cubrir la pantalla y se duplica para el desplazamiento continuo */
 (function(){
+  if (reduceMotion) return;
   const list = document.querySelector(".js-partners");
+  const base = [...list.children];
+  for (let i = 0; i < 3 && list.scrollWidth < window.innerWidth * 1.1; i++) {
+    base.forEach(li => { const c = li.cloneNode(true); c.setAttribute("aria-hidden", "true"); c.querySelector("img").alt = ""; list.append(c); });
+  }
   const copy = list.cloneNode(true);
   copy.setAttribute("aria-hidden", "true");
   copy.querySelectorAll("img").forEach(img => {
@@ -1104,8 +1111,14 @@ document.querySelectorAll(".media > video").forEach(video => {
 
 /* Hero: video de fondo con pausa; se detiene fuera de pantalla */
 (function(){
+  const hero = document.querySelector(".hero");
   const video = document.querySelector(".js-hero-video");
   const btn = document.querySelector(".hero__pause");
+  // Sin video de hero: queda la foto de fondo
+  const sources = video.querySelectorAll("source");
+  const noVideo = () => hero.classList.add("no-video");
+  sources[sources.length - 1].addEventListener("error", noVideo);
+  if (video.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) noVideo();
   let paused = reduceMotion;
   const sync = () => {
     btn.setAttribute("aria-pressed", String(paused));
@@ -1143,7 +1156,7 @@ document.querySelectorAll(".media > video").forEach(video => {
 
   const bar = i => feats[i].querySelector(".feat__bar i");
   const videoOf = i => feats[i].querySelector("video");
-  const missing = i => feats[i].querySelector(".media").classList.contains("is-missing") || videoOf(i).networkState === HTMLMediaElement.NETWORK_NO_SOURCE;
+  const missing = i => feats[i].querySelector(".media").classList.contains("is-missing");
 
   function stopTimer(){ clearTimeout(timer); cancelAnimationFrame(raf); timer = null; }
   function runTimer(){
@@ -1158,7 +1171,13 @@ document.querySelectorAll(".media > video").forEach(video => {
     if (paused || !visible) return;
     const v = videoOf(index);
     if (missing(index)) { runTimer(); return; }
-    v.play().catch(() => runTimer());
+    v.play().catch(err => {
+      // La carga recién iniciada puede abortar el primer intento: se reintenta cuando el video esté listo
+      if (err && err.name === "AbortError") {
+        const retry = () => { if (videoOf(index) === v && !paused && visible) v.play().catch(runTimer); };
+        v.readyState >= 3 ? retry() : v.addEventListener("canplay", retry, { once: true });
+      } else runTimer();
+    });
   }
   function hold(){
     stopTimer();
@@ -1180,7 +1199,7 @@ document.querySelectorAll(".media > video").forEach(video => {
     if (prev !== videoOf(index)) prev.currentTime = 0;
     const v = videoOf(index);
     if (v.preload === "none") { v.preload = "auto"; v.load(); }
-    v.currentTime = 0;
+    else v.currentTime = 0;
     title.textContent = feats[index].dataset.title;
     text.textContent = feats[index].dataset.text;
     caption.classList.remove("is-swapping"); void caption.offsetWidth; caption.classList.add("is-swapping");

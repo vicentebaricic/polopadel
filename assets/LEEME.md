@@ -1,18 +1,24 @@
-# Archivos que faltan · Polo Padel
+# Archivos de la página · Polo Padel
 
-Mientras falte un archivo, la página muestra un recuadro con su ruta en el lugar correspondiente.
+Los archivos tal como se subieron quedan en `originales/`. Los de las demás carpetas ya están procesados para la web.
 
-| Carpeta / archivo | Dónde aparece | Notas |
+| Archivo | Dónde aparece | Origen |
 |---|---|---|
-| `video/hero.mp4` | Fondo del hero | Horizontal, 10–20 s, sin audio, idealmente < 8 MB. `hero.webm` es opcional. |
-| `video/entrena.mp4` | El club · tarjeta 01 | Al terminar pasa a la siguiente tarjeta. Duración ideal 6–12 s. |
-| `video/conecta.mp4` | El club · tarjeta 02 | Igual que el anterior. |
-| `video/compite.mp4` | El club · tarjeta 03 | Igual que el anterior. |
-| `video/garantia.mp4` | Banner "Nuestra convicción" | Se muestra en blanco y negro sobre el color madera. |
-| `video/*-poster.jpg` | Imagen mientras carga cada video | Opcional (`hero-poster.jpg`, `entrena-poster.jpg`, etc.). |
-| `marca/originales/` | — | Sube aquí el logo tal como lo tengas (PNG, JPG, PDF o SVG). |
-| `marca/polo-padel-logo.svg` | Encabezado | Versión procesada (sin fondo). Hasta que exista se usa el logotipo en texto. |
-| `marca/polo-padel-logo-blanco.svg` | Pie de página | Versión blanca del logo. |
-| `partners/originales/` | — | Sube aquí los logos de las marcas como vengan. |
-| `partners/partner-1.png` … `partner-6.png` | Franja de partners | PNG con fondo transparente. La página los pasa a un solo tono gris. |
-| `equipo/equipo-1.jpg` … `equipo-4.jpg` | Equipo | Vertical 4:5, mínimo 800×1000 px. Orden: Matías, Camila, Diego, Javiera (nombres de ejemplo). |
+| `marca/polo-padel-logo.png` | Encabezado y pie | logo-polo-padel.jpg, sin el fondo azul. La página lo pinta blanco o azul según el fondo |
+| `marca/favicon.png`, `apple-touch-icon.png` | Pestaña del navegador / ícono en celular | Generados del logo |
+| `partners/*.png` | Franja de partners | logopartner*.jpg/webp, sin fondo. La página los pasa a un solo tono gris |
+| `video/entrena.*`, `conecta.*`, `compite.*` | El club (tarjetas que avanzan solas) | reel-entrena-4, reel-conecta-3, reel-compite-2. Sin audio, en MP4 y WebM, con portada `*-poster.jpg` |
+| `video/garantia.*` | Banner "Nuestra convicción" | garantia.mp4, sin audio, en MP4 y WebM |
+| `fotos/hero.jpg` | Fondo del hero | Unsplash (Cal Gao) |
+| `fotos/pala-pelota.jpg` | Polo System | Unsplash (Oskar Hagberg) |
+| `fotos/cancha.jpg` | Franja antes de Visítanos | Unsplash (Bruno Vaccaro) |
+| `fotos/pala-naranja.jpg`, `partido.jpg`, `palas.jpg` | Sin usar, disponibles | Unsplash |
+
+## Pendientes
+
+| Archivo | Dónde aparece | Notas |
+|---|---|---|
+| `video/hero.mp4` | Fondo del hero | Opcional. Si se sube, reemplaza la foto. Horizontal, 10–20 s, < 8 MB |
+| `equipo/equipo-1.jpg` … `equipo-4.jpg` | Equipo | Vertical 4:5, mínimo 800×1000 px |
+
+Las fotos de Unsplash son de otras canchas (una muestra un letrero "SALIDA" y edificios de otra ciudad). Conviene reemplazarlas por fotos del club con el mismo nombre de archivo.
