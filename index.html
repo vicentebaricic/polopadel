@@ -1,0 +1,1237 @@
+<!doctype html>
+<html lang="es-CL" data-palette="azul">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polo Padel · Club de pádel en Chicureo, Colina</title>
+<meta name="description" content="Polo Padel es un club de pádel en Piedra Roja, Chicureo. Entrena con método, juega cada semana y forma parte de una comunidad. Av. El Valle 542, Colina.">
+<meta name="theme-color" content="#0C2340">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   TOKENS
+   Dos propuestas de paleta (data-palette="azul" | "blanco"),
+   cada una con su variante clara y oscura.
+   ========================================================= */
+:root{
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Colores de marca (fijos) */
+  --navy: #0C2340;
+  --navy-deep: #081A31;
+  --ball: #D7F24B;          /* verde pelota */
+  --wood: #C98B5A;          /* madera clara */
+  --earth: #A8673A;         /* tierra */
+  --cream: #F5F1E8;
+
+  /* Propuesta B · Blanco (claro) */
+  --bg: #FBFAF6;
+  --bg-alt: #F2EEE5;
+  --surface: #FFFFFF;
+  --surface-2: #E9E3D6;
+  --text: #0C2340;
+  --text-2: #3B4A63;
+  --text-3: #5A6780;
+  --line: rgba(12,35,64,.13);
+  --hl: #1F56A8;            /* palabra destacada en texto */
+  --accent: var(--ball);    /* rellenos, puntos, barras */
+  --on-accent: var(--navy);
+  --tone: var(--earth);     /* detalle madera/tierra */
+  --btn-bg: var(--navy);
+  --btn-text: #FFFFFF;
+  --header-bg: rgba(251,250,246,.92);
+  --placeholder-a: #E7E1D3;
+  --placeholder-b: #DCD4C2;
+  --partner-filter: brightness(0) opacity(.42);
+  --focus: #1F56A8;
+
+  --fs-eyebrow: .75rem;
+  --fs-body: 1rem;
+  --fs-lead: clamp(1.0625rem, 1.6vw, 1.25rem);
+  --fs-h3: clamp(1.375rem, 2.4vw, 1.75rem);
+  --fs-h2: clamp(2.125rem, 5.4vw, 4rem);
+  --fs-h1: clamp(2.75rem, 9vw, 6.75rem);
+
+  --gutter: clamp(16px, 4vw, 56px);
+  --maxw: 1320px;
+  --section: clamp(72px, 10vw, 140px);
+  --radius: 18px;
+  --radius-pill: 999px;
+
+  --ease: cubic-bezier(.22,.61,.36,1);
+  --ease-out: cubic-bezier(.16,1,.3,1);
+  --dur: .25s;
+  --dur-reveal: .9s;
+
+  --header-h: 72px;
+}
+/* Propuesta A · Azul (claro) */
+:root[data-palette="azul"]{
+  --bg: #0C2340;
+  --bg-alt: #0F2A4D;
+  --surface: #13325B;
+  --surface-2: #1A3E6C;
+  --text: #F5F1E8;
+  --text-2: #CBD4E2;
+  --text-3: #A3B3CA;
+  --line: rgba(245,241,232,.14);
+  --hl: var(--ball);
+  --tone: var(--wood);
+  --btn-bg: var(--ball);
+  --btn-text: var(--navy);
+  --header-bg: rgba(12,35,64,.92);
+  --placeholder-a: #143561;
+  --placeholder-b: #1B4174;
+  --partner-filter: brightness(0) invert(1) opacity(.55);
+  --focus: var(--ball);
+}
+/* Variantes oscuras */
+:root[data-theme="dark"]{
+  --bg: #0B1322; --bg-alt: #101A2D; --surface: #152138; --surface-2: #1C2B46;
+  --text: #F2EFE8; --text-2: #C3CBD8; --text-3: #A0AABB; --line: rgba(242,239,232,.12);
+  --hl: var(--ball); --tone: var(--wood); --btn-bg: var(--ball); --btn-text: var(--navy);
+  --header-bg: rgba(11,19,34,.92); --placeholder-a: #152138; --placeholder-b: #1C2B46;
+  --partner-filter: brightness(0) invert(1) opacity(.5); --focus: var(--ball);
+}
+:root[data-palette="azul"][data-theme="dark"]{
+  --bg: #061528; --bg-alt: #0A1D37; --surface: #0E2647; --surface-2: #143159;
+  --header-bg: rgba(6,21,40,.92); --placeholder-a: #0E2647; --placeholder-b: #143159;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg: #0B1322; --bg-alt: #101A2D; --surface: #152138; --surface-2: #1C2B46;
+    --text: #F2EFE8; --text-2: #C3CBD8; --text-3: #A0AABB; --line: rgba(242,239,232,.12);
+    --hl: var(--ball); --tone: var(--wood); --btn-bg: var(--ball); --btn-text: var(--navy);
+    --header-bg: rgba(11,19,34,.92); --placeholder-a: #152138; --placeholder-b: #1C2B46;
+    --partner-filter: brightness(0) invert(1) opacity(.5); --focus: var(--ball);
+  }
+  :root[data-palette="azul"]:not([data-theme="light"]){
+    --bg: #061528; --bg-alt: #0A1D37; --surface: #0E2647; --surface-2: #143159;
+    --header-bg: rgba(6,21,40,.92); --placeholder-a: #0E2647; --placeholder-b: #143159;
+  }
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 8px);-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:var(--font);font-size:var(--fs-body);line-height:1.65;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  transition:background-color var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+body.no-scroll{overflow:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+h1,h2,h3{margin:0;font-family:var(--font-display);font-stretch:112%;font-weight:800;line-height:.98;letter-spacing:-.01em;text-transform:uppercase;text-wrap:balance}
+p{margin:0}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:12px;top:-60px;z-index:1000;background:var(--btn-bg);color:var(--btn-text);padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600}
+.skip:focus{top:12px}
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.section{padding-block:var(--section)}
+.section--alt{background:var(--bg-alt)}
+.club > *,.system > *,.visit > *,.belief__in > *{min-width:0}
+
+/* Etiqueta tipo "/01 EL CLUB" */
+.eyebrow{display:flex;align-items:center;gap:14px;font-family:var(--font-mono);font-size:var(--fs-eyebrow);letter-spacing:.2em;text-transform:uppercase;color:var(--text-3);margin-bottom:22px}
+.eyebrow b{font-weight:500;color:var(--tone)}
+.h2{font-size:var(--fs-h2)}
+.h2 em{font-style:italic;color:var(--hl)}
+.lead{font-size:var(--fs-lead);color:var(--text-2);max-width:60ch}
+.lead strong{color:var(--text);font-weight:600}
+
+/* Contenido de ejemplo: reemplazar antes de publicar */
+.sample{
+  display:inline-flex;align-items:center;gap:6px;vertical-align:middle;
+  font-family:var(--font-mono);font-size:.625rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;line-height:1;
+  padding:5px 8px;border-radius:6px;border:1px dashed currentColor;color:var(--tone);background:transparent;line-height:1.3;
+}
+.sample::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.sample--dark{color:#F1C9A8}
+
+/* Botones */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;
+  border-radius:var(--radius-pill);border:1.5px solid transparent;cursor:pointer;
+  font-family:var(--font-display);font-stretch:110%;font-weight:700;font-size:.875rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;
+  transition:transform var(--dur) var(--ease), background-color var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  touch-action:manipulation;white-space:nowrap;
+}
+.btn svg{width:18px;height:18px;flex:none}
+.btn:active{transform:scale(.97)}
+.btn--solid{background:var(--btn-bg);color:var(--btn-text)}
+.btn--solid:hover{filter:brightness(1.06)}
+.btn--ball{background:var(--ball);color:var(--navy)}
+.btn--ball:hover{background:#E3F86F}
+.btn--ghost{border-color:currentColor;background:transparent}
+.btn--ghost:hover{background:var(--text);color:var(--bg)}
+.btn--ghost-light{border-color:rgba(255,255,255,.7);color:#fff}
+.btn--ghost-light:hover{background:#fff;color:var(--navy)}
+.link-arrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-display);font-stretch:110%;font-weight:700;font-size:.875rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--hl);padding-block:12px}
+.link-arrow svg{width:18px;height:18px;transition:transform var(--dur) var(--ease)}
+.link-arrow:hover svg{transform:translateX(4px)}
+
+/* Marcador cuando falta una foto o video */
+.media{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--placeholder-a),var(--placeholder-b))}
+.media > img,.media > video{width:100%;height:100%;object-fit:cover}
+.media.is-missing > img,.media.is-missing > video{visibility:hidden}
+.media.is-missing::after{
+  content:attr(data-file);position:absolute;inset:auto 12px 12px 12px;
+  font-family:var(--font-mono);font-size:.6875rem;letter-spacing:.04em;color:var(--text-3);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+.header{
+  position:fixed;inset:0 0 auto 0;z-index:100;height:var(--header-h);
+  transition:background-color var(--dur) var(--ease), border-color var(--dur) var(--ease), color var(--dur) var(--ease);
+  border-bottom:1px solid transparent;color:var(--text);background:var(--header-bg);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+}
+.header.is-over{background:transparent;color:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+.header.is-over .btn--solid{background:var(--ball);color:var(--navy)}
+.header.is-scrolled{border-bottom-color:var(--line)}
+.header__in{height:100%;display:flex;align-items:center;gap:24px}
+.brand{display:flex;align-items:center;text-decoration:none;flex:none}
+.brand img{height:40px;width:auto}
+.brand.is-missing img{display:none}
+.brand__word{display:none;font-family:var(--font-display);font-stretch:125%;font-weight:900;font-size:1.25rem;line-height:.9;letter-spacing:.02em;text-transform:uppercase}
+.brand__word span{display:block;font-weight:500;font-size:.62rem;letter-spacing:.42em;margin-top:4px}
+.brand__word i{display:inline-block;width:.42em;height:.42em;border-radius:50%;background:var(--ball);margin-left:2px;vertical-align:.1em}
+.brand.is-missing .brand__word{display:block}
+.nav{display:none;margin-left:auto}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav a{font-family:var(--font-display);font-stretch:105%;font-weight:600;font-size:.8125rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:12px 0;position:relative}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:2px;background:var(--ball);transform:scaleX(0);transform-origin:left;transition:transform var(--dur) var(--ease)}
+.nav a:hover::after{transform:scaleX(1)}
+.header__actions{display:flex;align-items:center;gap:8px;margin-left:auto}
+.nav + .header__actions{margin-left:24px}
+.header__actions .btn{min-height:44px;padding:0 18px;font-size:.75rem}
+.header__book{display:none}
+.icon-btn{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;border:0;background:transparent;cursor:pointer}
+.icon-btn svg{width:20px;height:20px}
+.icon-btn:hover{background:rgba(127,127,127,.15)}
+.theme-toggle .i-sun{display:none}
+:root[data-theme="dark"] .theme-toggle .i-sun{display:block}
+:root[data-theme="dark"] .theme-toggle .i-moon{display:none}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .theme-toggle .i-sun{display:block}
+  :root:not([data-theme="light"]) .theme-toggle .i-moon{display:none}
+}
+@media (min-width: 1024px){
+  .nav{display:block}
+  .menu-toggle{display:none}
+  .header__book{display:inline-flex}
+}
+
+/* Menú móvil */
+.drawer{
+  position:fixed;inset:var(--header-h) 0 0 0;z-index:99;background:var(--bg);
+  padding:24px var(--gutter) 40px;display:flex;flex-direction:column;gap:28px;overflow:auto;
+  opacity:0;visibility:hidden;transform:translateY(-8px);
+  transition:opacity var(--dur) var(--ease), transform var(--dur) var(--ease), visibility 0s linear var(--dur);
+}
+.drawer.is-open{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.drawer ul{list-style:none;margin:0;padding:0}
+.drawer li + li{border-top:1px solid var(--line)}
+.drawer ul a{display:flex;justify-content:space-between;align-items:center;padding:18px 0;text-decoration:none;font-family:var(--font-display);font-stretch:112%;font-weight:800;font-size:1.5rem;text-transform:uppercase}
+.drawer ul a span{font-family:var(--font-mono);font-size:.75rem;font-weight:500;color:var(--tone)}
+.drawer .btn{width:100%}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;background:var(--navy-deep);overflow:hidden}
+.hero__media{position:absolute;inset:0}
+.hero__media.media{background:radial-gradient(120% 80% at 70% 20%,#1A4378 0%,#0C2340 55%,#061528 100%)}
+.hero__media.is-missing::after{color:rgba(255,255,255,.5);inset:auto var(--gutter) 24px auto}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,21,40,.55) 0%,rgba(6,21,40,.1) 35%,rgba(6,21,40,.82) 100%);pointer-events:none}
+.hero__in{position:relative;z-index:1;padding-top:calc(var(--header-h) + 48px);padding-bottom:clamp(40px,7vw,88px)}
+.hero h1{font-size:var(--fs-h1);font-stretch:118%;max-width:12ch}
+.hero h1 em{font-style:italic;color:var(--ball)}
+.hero__sub{margin-top:20px;font-size:var(--fs-lead);max-width:44ch;color:rgba(255,255,255,.86)}
+.hero__ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero__ctas .btn{flex:1 1 220px}
+.hero__stat{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:36px;padding-top:24px;border-top:1px solid rgba(255,255,255,.2)}
+.hero__stat strong{font-family:var(--font-display);font-stretch:118%;font-weight:900;font-size:clamp(2rem,5vw,2.75rem);line-height:1;color:var(--ball)}
+.hero__stat span{font-size:.9375rem;line-height:1.4;color:rgba(255,255,255,.86)}
+.hero__pause{position:absolute;z-index:2;right:var(--gutter);top:calc(var(--header-h) + 16px);color:#fff;border:1px solid rgba(255,255,255,.35)}
+.hero__pause .i-play{display:none}
+.hero__pause[aria-pressed="true"] .i-play{display:block}
+.hero__pause[aria-pressed="true"] .i-pause{display:none}
+@media (min-width: 768px){
+  .hero__ctas .btn{flex:0 0 auto}
+}
+
+/* =========================================================
+   EL CLUB · Entrena / Conecta / Compite
+   ========================================================= */
+.club{display:grid;gap:48px}
+.club__text .lead + .lead{margin-top:18px}
+.club__text .lead--strong{color:var(--text);font-weight:500}
+.club__links{display:flex;flex-wrap:wrap;gap:8px 32px;margin-top:28px}
+
+.feats{display:flex;flex-direction:column;gap:8px}
+.feat{
+  position:relative;border-radius:var(--radius);overflow:hidden;background:var(--navy);
+  flex:0 0 64px;transition:flex-basis .7s var(--ease-out);
+}
+.feat.is-active{flex-basis:min(118vw,520px)}
+.feat__media{position:absolute;inset:0}
+.feat__media.media{background:linear-gradient(160deg,#1A4378,#0C2340 70%)}
+.feat__media::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(6,21,40,0) 55%,rgba(6,21,40,.55));pointer-events:none}
+.feat:not(.is-active) .feat__media{opacity:.35}
+.feat__media.is-missing::after{z-index:2;color:rgba(255,255,255,.65)}
+.feat__tab{
+  position:absolute;inset:0;z-index:3;width:100%;border:0;background:transparent;cursor:pointer;
+  display:flex;align-items:center;gap:14px;padding:0 20px;text-align:left;color:#fff;
+}
+.feat.is-active .feat__tab{cursor:default}
+.feat__num{font-family:var(--font-mono);font-size:.75rem;color:var(--ball)}
+.feat__label{font-family:var(--font-display);font-stretch:118%;font-weight:800;font-size:1.0625rem;letter-spacing:.14em;text-transform:uppercase;transition:opacity var(--dur) var(--ease)}
+.feat.is-active .feat__label,.feat.is-active .feat__num{opacity:0}
+.feat__bar{position:absolute;z-index:4;left:16px;right:16px;bottom:14px;height:3px;border-radius:3px;background:rgba(255,255,255,.25);overflow:hidden;opacity:0;transition:opacity var(--dur) var(--ease)}
+.feat.is-active .feat__bar{opacity:1}
+.feat__bar i{display:block;height:100%;width:100%;background:var(--ball);transform-origin:left;transform:scaleX(var(--p,0))}
+
+.feat-caption{margin-top:22px;min-height:96px}
+.feat-caption h3{font-size:var(--fs-h3);font-stretch:118%}
+.feat-caption h3 i{font-style:normal;color:var(--ball)}
+.feat-caption p{margin-top:8px;color:var(--text-2)}
+.feat-caption.is-swapping{animation:fadeUp .5s var(--ease-out)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.feat-controls{display:flex;align-items:center;gap:12px;margin-top:16px}
+.feat-controls .icon-btn{border:1px solid var(--line)}
+.feat-controls .i-play{display:none}
+.feat-controls [aria-pressed="true"] .i-play{display:block}
+.feat-controls [aria-pressed="true"] .i-pause{display:none}
+.feat-dots{display:flex;gap:8px}
+.feat-dots button{width:44px;height:44px;border:0;background:transparent;cursor:pointer;display:grid;place-items:center;padding:0}
+.feat-dots button::before{content:"";width:26px;height:4px;border-radius:4px;background:var(--line);transition:background-color var(--dur) var(--ease)}
+.feat-dots button[aria-current="true"]::before{background:var(--hl)}
+
+@media (min-width: 640px){
+  .feats{flex-direction:row;height:clamp(380px,46vw,500px)}
+  .feat{flex:0 0 72px}
+  .feat.is-active{flex:1 1 auto}
+  .feat__tab{flex-direction:column;justify-content:space-between;padding:26px 0 24px}
+  .feat__label{writing-mode:vertical-rl;transform:rotate(180deg);font-size:1.125rem;letter-spacing:.18em}
+  .feat__tab::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--ball)}
+  .feat.is-active .feat__tab::after{opacity:0}
+}
+@media (min-width: 1024px){
+  .club{grid-template-columns:1.05fr 1fr;gap:clamp(48px,6vw,96px);align-items:start}
+  .club .h2{font-size:clamp(2.25rem,3.8vw,3.5rem)}
+}
+
+/* =========================================================
+   PARTNERS
+   ========================================================= */
+.partners{padding-block:44px;border-block:1px solid var(--line);overflow:hidden}
+.partners__head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.partners__head .eyebrow{margin:0}
+.marquee{display:flex;width:max-content;animation:marquee 40s linear infinite}
+.marquee:hover{animation-play-state:paused}
+.marquee ul{display:flex;align-items:center;gap:clamp(40px,6vw,88px);list-style:none;margin:0;padding:0 clamp(20px,3vw,44px)}
+.partner{height:44px;display:flex;align-items:center}
+.partner img{max-height:40px;width:auto;max-width:150px;filter:var(--partner-filter)}
+.partner.is-missing img{display:none}
+.partner__name{display:none;font-family:var(--font-display);font-stretch:125%;font-weight:800;font-size:1.25rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-3);opacity:.75;white-space:nowrap}
+.partner.is-missing .partner__name{display:block}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* =========================================================
+   POLO SYSTEM
+   ========================================================= */
+.system{display:grid;gap:48px}
+.system__intro .lead{margin-top:22px}
+.system__intro .btn{margin-top:32px}
+.steps{list-style:none;margin:0;padding:0;counter-reset:step}
+.step{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;padding:28px 0;border-top:1px solid var(--line)}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step__n{grid-row:span 2;font-family:var(--font-display);font-stretch:125%;font-weight:900;font-size:clamp(2.75rem,6vw,4rem);line-height:.85;color:transparent;-webkit-text-stroke:1.5px var(--tone)}
+.step h3{font-size:var(--fs-h3);font-stretch:118%}
+.step h3 small{display:block;margin-top:8px;font-family:var(--font-mono);font-size:.6875rem;font-weight:500;letter-spacing:.16em;color:var(--hl)}
+.step p{color:var(--text-2);max-width:52ch}
+.levels{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.levels li{list-style:none;padding:8px 14px;border-radius:var(--radius-pill);border:1px solid var(--line);font-family:var(--font-mono);font-size:.75rem;letter-spacing:.06em}
+.levels li b{color:var(--hl);font-weight:500}
+.levels{padding:0}
+@media (min-width: 1024px){
+  .system{grid-template-columns:.9fr 1.1fr;gap:clamp(48px,7vw,120px)}
+  .system__intro{position:sticky;top:calc(var(--header-h) + 40px);align-self:start}
+}
+
+/* =========================================================
+   CONVICCIÓN · Garantía
+   ========================================================= */
+.belief{position:relative;overflow:hidden;color:var(--navy);background:var(--wood)}
+.belief__media{position:absolute;inset:0}
+.belief__media.media{background:linear-gradient(135deg,#C98B5A,#B4703F)}
+.belief__media video{mix-blend-mode:multiply;opacity:.55;filter:grayscale(1) contrast(1.1)}
+.belief__media.is-missing::after{color:rgba(12,35,64,.55);inset:auto var(--gutter) 20px auto}
+.belief::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(201,139,90,.85) 0%,rgba(201,139,90,.35) 70%,rgba(201,139,90,.1));pointer-events:none;z-index:1}
+.belief__in{position:relative;z-index:2;padding-block:clamp(80px,11vw,150px);display:grid;gap:48px;align-items:center}
+.belief .eyebrow{color:rgba(12,35,64,.75);padding-bottom:20px;border-bottom:1px solid rgba(12,35,64,.25);margin-bottom:40px}
+.belief .eyebrow b{color:var(--navy)}
+.belief h2{font-size:clamp(2.125rem,5.6vw,4.25rem);max-width:15ch}
+.belief p{margin-top:28px;font-size:var(--fs-lead);font-weight:500;max-width:46ch}
+.belief p strong{color:#fff;font-weight:600}
+.belief .btn{margin-top:32px}
+.belief .sample{color:var(--navy)}
+.seal{width:min(64vw,280px);aspect-ratio:1;justify-self:center;position:relative;color:var(--navy)}
+.seal svg{width:100%;height:100%}
+.seal__ring{transform-origin:50% 50%;animation:spin 30s linear infinite}
+.seal__core{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.seal__core strong{font-family:var(--font-display);font-stretch:118%;font-weight:900;font-size:clamp(3.5rem,10vw,5rem);line-height:.9}
+.seal__core span{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.28em;margin-top:8px}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (min-width: 1024px){
+  .belief__in{grid-template-columns:1.5fr 1fr}
+  .seal{justify-self:end}
+}
+
+/* =========================================================
+   EQUIPO
+   ========================================================= */
+.section-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 40px;margin-bottom:clamp(40px,5vw,64px)}
+.section-head .lead{max-width:44ch}
+.team{display:grid;gap:28px 20px;grid-template-columns:1fr;list-style:none;margin:0;padding:0}
+.member__photo{aspect-ratio:4/5;border-radius:var(--radius)}
+.member__photo .initials{position:absolute;inset:0;display:none;place-items:center;font-family:var(--font-display);font-stretch:125%;font-weight:900;font-size:3.5rem;color:var(--text-3);opacity:.6}
+.member__photo.is-missing .initials{display:grid}
+.member__photo.is-missing::after{content:none}
+.member h3{margin-top:18px;font-size:1.375rem;font-stretch:115%}
+.member__role{margin-top:6px;font-family:var(--font-mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--hl)}
+.member p{margin-top:10px;color:var(--text-2);font-size:.9375rem}
+@media (min-width: 560px){ .team{grid-template-columns:repeat(2,1fr)} }
+@media (min-width: 1024px){ .team{grid-template-columns:repeat(4,1fr)} }
+
+/* =========================================================
+   RESEÑAS
+   ========================================================= */
+.rating{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.rating strong{font-family:var(--font-display);font-stretch:118%;font-weight:900;font-size:3rem;line-height:1}
+.stars{display:inline-flex;gap:2px;color:var(--ball)}
+:root:not([data-palette="azul"]):not([data-theme="dark"]) .stars{color:#E0A100}
+@media (prefers-color-scheme: dark){ :root:not([data-palette="azul"]):not([data-theme="light"]) .stars{color:var(--ball)} }
+.stars svg{width:18px;height:18px}
+.rating small{display:block;color:var(--text-3);font-size:.875rem}
+.reviews{display:grid;gap:16px;grid-template-columns:1fr;list-style:none;margin:0;padding:0}
+.review{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:18px}
+.review blockquote{margin:0;font-size:1.0625rem;line-height:1.6}
+.review footer{margin-top:auto;display:flex;align-items:center;gap:12px;font-size:.875rem;color:var(--text-3)}
+.review footer b{display:block;color:var(--text);font-weight:600}
+.avatar{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--surface-2);font-weight:600;color:var(--text)}
+.reviews__more{margin-top:28px}
+@media (min-width: 768px){ .reviews{grid-template-columns:repeat(3,1fr)} }
+
+/* =========================================================
+   HORARIOS + UBICACIÓN
+   ========================================================= */
+.visit{display:grid;gap:48px}
+.hours{list-style:none;margin:28px 0 0;padding:0}
+.hours li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+.hours li span:first-child{font-weight:500}
+.hours li span:last-child{color:var(--text-2)}
+.hours li.is-today{position:relative}
+.hours li.is-today span{color:var(--text);font-weight:600}
+.hours li.is-today span:first-child::after{content:"Hoy";margin-left:10px;padding:3px 8px;border-radius:6px;background:var(--ball);color:var(--navy);font-family:var(--font-mono);font-size:.625rem;letter-spacing:.1em;text-transform:uppercase;vertical-align:2px}
+.hours-note{margin-top:14px;font-size:.875rem;color:var(--text-3)}
+.address{margin-top:28px;font-size:1.125rem;font-style:normal;line-height:1.5}
+.address small{display:block;color:var(--text-3);font-size:.9375rem}
+.visit__ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.map{border-radius:var(--radius);overflow:hidden;min-height:360px;background:var(--surface);border:1px solid var(--line)}
+.map iframe{width:100%;height:100%;min-height:360px;border:0;display:block}
+:root[data-theme="dark"] .map iframe,
+:root[data-palette="azul"] .map iframe{filter:grayscale(.4) invert(.9) hue-rotate(180deg) contrast(.9)}
+:root[data-palette="azul"][data-theme="light"] .map iframe{filter:none}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .map iframe{filter:grayscale(.4) invert(.9) hue-rotate(180deg) contrast(.9)} }
+@media (min-width: 1024px){
+  .visit{grid-template-columns:1fr 1.2fr;gap:clamp(48px,6vw,96px);align-items:stretch}
+}
+
+/* =========================================================
+   CTA FINAL + FOOTER
+   ========================================================= */
+.cta{background:var(--ball);color:var(--navy);text-align:center}
+.cta h2{font-size:clamp(2.25rem,7vw,5.5rem);font-stretch:120%;max-width:14ch;margin-inline:auto}
+.cta h2 em{font-style:italic}
+.cta p{margin:20px auto 0;max-width:46ch;font-size:var(--fs-lead)}
+.cta__btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:32px}
+.cta .btn--solid{background:var(--navy);color:#fff}
+.cta .btn--ghost{color:var(--navy)}
+.cta .btn--ghost:hover{background:var(--navy);color:#fff}
+
+.footer{padding-block:64px 40px;background:var(--navy-deep);color:#E7EAF0}
+.footer__grid{display:grid;gap:40px}
+.footer .brand{color:#fff}
+.footer__tag{margin-top:16px;color:#A9B5C7;max-width:34ch}
+.footer h4{margin:0 0 14px;font-family:var(--font-mono);font-size:.6875rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#8A99B0}
+.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.footer ul a{display:inline-flex;align-items:center;gap:10px;padding:6px 0;text-decoration:none}
+.footer ul a:hover{color:var(--ball)}
+.footer ul svg{width:18px;height:18px}
+.footer__base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:.8125rem;color:#8A99B0}
+@media (min-width: 768px){ .footer__grid{grid-template-columns:1.4fr 1fr 1fr 1fr} }
+
+/* WhatsApp flotante */
+.wa-float{
+  position:fixed;right:16px;bottom:16px;z-index:90;width:56px;height:56px;border-radius:50%;
+  display:grid;place-items:center;background:#25D366;color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.25);
+  opacity:0;transform:translateY(16px) scale(.9);pointer-events:none;
+  transition:opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.wa-float svg{width:28px;height:28px}
+.wa-float.is-visible{opacity:1;transform:none;pointer-events:auto}
+
+/* Selector de propuesta (solo para revisar — quitar antes de publicar) */
+.palette-switch{
+  position:fixed;left:16px;bottom:16px;z-index:90;display:flex;gap:4px;padding:4px;border-radius:var(--radius-pill);
+  background:rgba(8,26,49,.9);color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.25);font-size:.75rem;
+}
+.palette-switch span{align-self:center;padding:0 8px 0 10px;font-family:var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:#A9B5C7}
+.palette-switch button{min-height:36px;padding:0 14px;border-radius:var(--radius-pill);border:0;background:transparent;cursor:pointer;font-weight:600}
+.palette-switch button[aria-pressed="true"]{background:var(--ball);color:var(--navy)}
+@media (max-width: 420px){ .palette-switch span{display:none} }
+
+/* =========================================================
+   ANIMACIONES DE ENTRADA
+   ========================================================= */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity var(--dur-reveal) var(--ease-out), transform var(--dur-reveal) var(--ease-out)}
+.reveal[data-delay="1"]{transition-delay:.08s}
+.reveal[data-delay="2"]{transition-delay:.16s}
+.reveal[data-delay="3"]{transition-delay:.24s}
+.reveal.is-in{opacity:1;transform:none}
+.no-js .reveal{opacity:1;transform:none}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .marquee{animation:none;flex-wrap:wrap;width:auto}
+  .marquee ul[aria-hidden="true"]{display:none}
+  .marquee ul{flex-wrap:wrap;justify-content:center;row-gap:24px}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body class="no-js">
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+<header class="header is-over">
+  <div class="wrap header__in">
+    <a class="brand js-logo" href="#top" aria-label="Polo Padel, ir al inicio">
+      <img src="assets/marca/polo-padel-logo.svg" alt="" width="120" height="40">
+      <span class="brand__word" aria-hidden="true">Polo<i></i><span>Padel club</span></span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <ul>
+        <li><a href="#club">El club</a></li>
+        <li><a href="#polo-system">Polo System</a></li>
+        <li><a href="#equipo">Equipo</a></li>
+        <li><a href="#resenas">Reseñas</a></li>
+        <li><a href="#visitanos">Horarios</a></li>
+      </ul>
+    </nav>
+    <div class="header__actions">
+      <button class="icon-btn theme-toggle" type="button" aria-label="Cambiar modo claro u oscuro">
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <a class="btn btn--ghost header__book js-book" href="#">Reservar cancha</a>
+      <a class="btn btn--solid js-wa" data-wa="header" href="#">Hazte socio</a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <ul>
+    <li><a href="#club">El club <span>01</span></a></li>
+    <li><a href="#polo-system">Polo System <span>02</span></a></li>
+    <li><a href="#equipo">Equipo <span>04</span></a></li>
+    <li><a href="#resenas">Reseñas <span>05</span></a></li>
+    <li><a href="#visitanos">Horarios y ubicación <span>06</span></a></li>
+  </ul>
+  <a class="btn btn--solid js-wa" data-wa="menu" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Hazte socio</a>
+  <a class="btn btn--ghost js-book" href="#">Reservar cancha en EasyCancha</a>
+</div>
+
+<main id="main">
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+<section class="hero" id="top" aria-label="Presentación">
+  <div class="hero__media media" data-file="assets/video/hero.mp4">
+    <video class="js-hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video/hero-poster.jpg" aria-hidden="true">
+      <source src="assets/video/hero.webm" type="video/webm">
+      <source src="assets/video/hero.mp4" type="video/mp4">
+    </video>
+  </div>
+  <button class="icon-btn hero__pause" type="button" aria-pressed="false" aria-label="Pausar video de fondo">
+    <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+    <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+  </button>
+  <div class="wrap hero__in">
+    <p class="eyebrow reveal" style="color:rgba(255,255,255,.75)"><b style="color:var(--ball)">Piedra Roja</b> Chicureo · Colina</p>
+    <h1 class="reveal" data-delay="1">Aquí se juega <em>en serio.</em></h1>
+    <p class="hero__sub reveal" data-delay="2">Clases con método, partidos cada semana y una comunidad que te espera en la cancha.</p>
+    <div class="hero__ctas reveal" data-delay="3">
+      <a class="btn btn--ball js-wa" data-wa="hero" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Hazte socio</a>
+      <a class="btn btn--ghost-light js-book" href="#">Reservar cancha</a>
+    </div>
+    <div class="hero__stat reveal" data-delay="3">
+      <strong>+180</strong>
+      <span>socios jugando<br>cada semana</span>
+      <span class="sample sample--dark">Contenido de ejemplo</span>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     01 · EL CLUB
+     ========================================================= -->
+<section class="section" id="club" aria-labelledby="club-title">
+  <div class="wrap club">
+    <div class="club__text">
+      <p class="eyebrow reveal"><b>/01</b> El club</p>
+      <h2 class="h2 reveal" id="club-title">Entrenas para mejorar. <em>Vuelves por la gente.</em></h2>
+      <div class="reveal" data-delay="1" style="margin-top:32px">
+        <p class="lead">Somos el club de pádel de Piedra Roja. Aquí aprendes con un método, juegas partidos a tu nivel y conoces a quienes van a ser tu cuarto los jueves.</p>
+        <p class="lead">No vienes a una clase suelta: <strong>llegas a un club.</strong></p>
+      </div>
+      <div class="club__links reveal" data-delay="2">
+        <a class="link-arrow" href="#polo-system">Ver Polo System <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="link-arrow js-wa" data-wa="club" href="#">Quiero conocer el club <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+
+    <div class="reveal" data-delay="1">
+      <div class="feats" id="feats">
+        <div class="feat is-active" data-title="Entrena" data-text="Clases por nivel con un plan claro: sabes qué estás trabajando y por qué.">
+          <div class="feat__media media" data-file="assets/video/entrena.mp4">
+            <video muted playsinline preload="metadata" poster="assets/video/entrena-poster.jpg" aria-hidden="true"><source src="assets/video/entrena.mp4" type="video/mp4"></video>
+          </div>
+          <button class="feat__tab" type="button" aria-label="Ver Entrena"><span class="feat__num">01</span><span class="feat__label">Entrena</span></button>
+          <div class="feat__bar"><i></i></div>
+        </div>
+        <div class="feat" data-title="Conecta" data-text="Siempre hay con quién jugar. Te armamos el partido cuando te falta el cuarto.">
+          <div class="feat__media media" data-file="assets/video/conecta.mp4">
+            <video muted playsinline preload="none" poster="assets/video/conecta-poster.jpg" aria-hidden="true"><source src="assets/video/conecta.mp4" type="video/mp4"></video>
+          </div>
+          <button class="feat__tab" type="button" aria-label="Ver Conecta"><span class="feat__num">02</span><span class="feat__label">Conecta</span></button>
+          <div class="feat__bar"><i></i></div>
+        </div>
+        <div class="feat" data-title="Compite" data-text="Americanos, ligas internas y torneos: el lugar donde compruebas cuánto has mejorado.">
+          <div class="feat__media media" data-file="assets/video/compite.mp4">
+            <video muted playsinline preload="none" poster="assets/video/compite-poster.jpg" aria-hidden="true"><source src="assets/video/compite.mp4" type="video/mp4"></video>
+          </div>
+          <button class="feat__tab" type="button" aria-label="Ver Compite"><span class="feat__num">03</span><span class="feat__label">Compite</span></button>
+          <div class="feat__bar"><i></i></div>
+        </div>
+      </div>
+      <div class="feat-caption" aria-live="polite">
+        <h3><span class="js-feat-title">Entrena</span><i>.</i></h3>
+        <p class="js-feat-text">Clases por nivel con un plan claro: sabes qué estás trabajando y por qué.</p>
+      </div>
+      <div class="feat-controls">
+        <button class="icon-btn js-feat-pause" type="button" aria-pressed="false" aria-label="Pausar videos">
+          <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+          <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <div class="feat-dots">
+          <button type="button" aria-label="Entrena" aria-current="true"></button>
+          <button type="button" aria-label="Conecta"></button>
+          <button type="button" aria-label="Compite"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     PARTNERS
+     ========================================================= -->
+<section class="partners" aria-labelledby="partners-title">
+  <div class="wrap partners__head">
+    <p class="eyebrow" id="partners-title"><b>/</b> Marcas que juegan con nosotros</p>
+    <span class="sample">Contenido de ejemplo</span>
+  </div>
+  <div class="marquee">
+    <ul class="js-partners">
+      <li class="partner"><img src="assets/partners/partner-1.png" alt="Partner 1" loading="lazy"><span class="partner__name">Partner 01</span></li>
+      <li class="partner"><img src="assets/partners/partner-2.png" alt="Partner 2" loading="lazy"><span class="partner__name">Partner 02</span></li>
+      <li class="partner"><img src="assets/partners/partner-3.png" alt="Partner 3" loading="lazy"><span class="partner__name">Partner 03</span></li>
+      <li class="partner"><img src="assets/partners/partner-4.png" alt="Partner 4" loading="lazy"><span class="partner__name">Partner 04</span></li>
+      <li class="partner"><img src="assets/partners/partner-5.png" alt="Partner 5" loading="lazy"><span class="partner__name">Partner 05</span></li>
+      <li class="partner"><img src="assets/partners/partner-6.png" alt="Partner 6" loading="lazy"><span class="partner__name">Partner 06</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- =========================================================
+     02 · POLO SYSTEM
+     ========================================================= -->
+<section class="section section--alt" id="polo-system" aria-labelledby="system-title">
+  <div class="wrap system">
+    <div class="system__intro">
+      <p class="eyebrow reveal"><b>/02</b> El método</p>
+      <h2 class="h2 reveal" id="system-title">Polo <em>System.</em></h2>
+      <p class="lead reveal" data-delay="1">Un plan de entrenamiento con principio, avance y prueba. Sabes dónde estás, qué te falta y cuándo lo lograste: <strong>no lo decimos nosotros, lo dice tu video.</strong></p>
+      <p class="reveal" data-delay="1" style="margin-top:16px"><span class="sample">Contenido de ejemplo · validar el método con el club</span></p>
+      <a class="btn btn--solid js-wa reveal" data-wa="system" data-delay="2" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Agendar mi evaluación</a>
+    </div>
+    <div>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step__n" aria-hidden="true">01</span>
+          <h3>Diagnóstico<small>Semana 1</small></h3>
+          <p>Te grabamos jugando y un profe evalúa técnica, posición y lectura del juego. Sales con tu nivel y tres objetivos concretos.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__n" aria-hidden="true">02</span>
+          <h3>Plan<small>Semanas 1–2</small></h3>
+          <p>Te asignamos grupo de tu nivel (máximo 4 por cancha) y un bloque de trabajo de 4 semanas: golpes, defensa, red o transición.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__n" aria-hidden="true">03</span>
+          <h3>Clase + partido<small>Cada semana</small></h3>
+          <p>Lo que trabajas en clase lo aplicas en partidos guiados con socios de tu nivel. Así lo aprendido sale solo.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__n" aria-hidden="true">04</span>
+          <h3>Medición<small>Cada 30 días</small></h3>
+          <p>Volvemos a grabarte y comparamos. Ves tu avance lado a lado y definimos el siguiente bloque.</p>
+        </li>
+      </ol>
+      <ul class="levels reveal" aria-label="Niveles">
+        <li><b>N1</b> Inicio</li>
+        <li><b>N2</b> Base</li>
+        <li><b>N3</b> Intermedio</li>
+        <li><b>N4</b> Avanzado</li>
+        <li><b>N5</b> Competición</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     03 · CONVICCIÓN
+     ========================================================= -->
+<section class="belief" aria-labelledby="belief-title">
+  <div class="belief__media media" data-file="assets/video/garantia.mp4">
+    <video class="js-bg-video" muted loop playsinline preload="none" poster="assets/video/garantia-poster.jpg" aria-hidden="true"><source src="assets/video/garantia.mp4" type="video/mp4"></video>
+  </div>
+  <div class="wrap belief__in">
+    <div>
+      <p class="eyebrow reveal"><b>/03</b> Nuestra convicción</p>
+      <h2 class="reveal" id="belief-title">Confiamos en el método. Por eso lo firmamos.</h2>
+      <p class="reveal" data-delay="1">Entrena con nosotros <strong>90 días</strong>. Si cumples el plan y tu video comparativo no muestra que subiste de nivel, el 4º mes corre por nuestra cuenta.</p>
+      <p class="reveal" data-delay="1" style="margin-top:16px"><span class="sample">Contenido de ejemplo · confirmar condiciones</span></p>
+      <a class="btn btn--solid js-wa reveal" data-wa="garantia" data-delay="2" href="#" style="background:var(--navy);color:#fff">Quiero empezar mis 90 días</a>
+    </div>
+    <div class="seal reveal" data-delay="2" role="img" aria-label="Sello: garantía Polo System, 90 días">
+      <svg viewBox="0 0 200 200" aria-hidden="true">
+        <defs><path id="ring" d="M100,100 m-82,0 a82,82 0 1,1 164,0 a82,82 0 1,1 -164,0"/></defs>
+        <circle cx="100" cy="100" r="96" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="100" cy="100" r="62" fill="none" stroke="currentColor" stroke-width="1"/>
+        <g class="seal__ring">
+          <text font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="4.2" fill="currentColor"><textPath href="#ring">GARANTÍA POLO SYSTEM · POLO PADEL CHICUREO ·</textPath></text>
+        </g>
+      </svg>
+      <div class="seal__core"><strong>90</strong><span>DÍAS</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     04 · EQUIPO
+     ========================================================= -->
+<section class="section" id="equipo" aria-labelledby="team-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow reveal"><b>/04</b> Equipo</p>
+        <h2 class="h2 reveal" id="team-title">Los profes <em>detrás del método.</em></h2>
+      </div>
+      <p class="lead reveal" data-delay="1">Entrenadores certificados que te conocen por tu nombre y por tu revés. <span class="sample">Contenido de ejemplo</span></p>
+    </div>
+    <ul class="team">
+      <li class="member reveal">
+        <div class="member__photo media" data-file="assets/equipo/equipo-1.jpg"><img src="assets/equipo/equipo-1.jpg" alt="Matías Rojas" loading="lazy" width="600" height="750"><span class="initials" aria-hidden="true">MR</span></div>
+        <h3>Matías Rojas</h3>
+        <p class="member__role">Director deportivo</p>
+        <p>12 años enseñando pádel y exjugador del circuito nacional. Diseñó Polo System para que cada clase tenga un porqué.</p>
+      </li>
+      <li class="member reveal" data-delay="1">
+        <div class="member__photo media" data-file="assets/equipo/equipo-2.jpg"><img src="assets/equipo/equipo-2.jpg" alt="Camila Fuentes" loading="lazy" width="600" height="750"><span class="initials" aria-hidden="true">CF</span></div>
+        <h3>Camila Fuentes</h3>
+        <p class="member__role">Entrenadora · Niveles 1–3</p>
+        <p>Especialista en iniciación. Si nunca has tomado una pala, empiezas con ella.</p>
+      </li>
+      <li class="member reveal" data-delay="2">
+        <div class="member__photo media" data-file="assets/equipo/equipo-3.jpg"><img src="assets/equipo/equipo-3.jpg" alt="Diego Araya" loading="lazy" width="600" height="750"><span class="initials" aria-hidden="true">DA</span></div>
+        <h3>Diego Araya</h3>
+        <p class="member__role">Entrenador · Competición</p>
+        <p>Prepara a los equipos del club para ligas y torneos. Táctica, físico y cabeza fría en el tie-break.</p>
+      </li>
+      <li class="member reveal" data-delay="3">
+        <div class="member__photo media" data-file="assets/equipo/equipo-4.jpg"><img src="assets/equipo/equipo-4.jpg" alt="Javiera Muñoz" loading="lazy" width="600" height="750"><span class="initials" aria-hidden="true">JM</span></div>
+        <h3>Javiera Muñoz</h3>
+        <p class="member__role">Comunidad y eventos</p>
+        <p>Arma los partidos, los americanos y el tercer tiempo. Si te falta el cuarto, escríbele a ella.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- =========================================================
+     05 · RESEÑAS
+     ========================================================= -->
+<section class="section section--alt" id="resenas" aria-labelledby="reviews-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow reveal"><b>/05</b> Lo que dicen los socios</p>
+        <h2 class="h2 reveal" id="reviews-title">Reseñas <em>en Google.</em></h2>
+      </div>
+      <div class="rating reveal" data-delay="1">
+        <strong>4,8</strong>
+        <div>
+          <span class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg></span>
+          <small>Calificación promedio · 96 reseñas</small>
+        </div>
+        <span class="sample">Contenido de ejemplo</span>
+      </div>
+    </div>
+    <ul class="reviews">
+      <li class="review reveal">
+        <span class="stars" role="img" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg></span>
+        <blockquote>“Canchas impecables y muy buena onda. Llegué sin conocer a nadie y a las dos semanas ya tenía partido fijo los martes.”</blockquote>
+        <footer><span class="avatar" aria-hidden="true">F</span><span><b>Francisca V.</b>Socia · hace 2 meses</span></footer>
+      </li>
+      <li class="review reveal" data-delay="1">
+        <span class="stars" role="img" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg></span>
+        <blockquote>“Lo mejor son los profes. Te explican qué estás haciendo mal y te lo corrigen de verdad. Subí de nivel en tres meses.”</blockquote>
+        <footer><span class="avatar" aria-hidden="true">R</span><span><b>Rodrigo P.</b>Socio · hace 1 mes</span></footer>
+      </li>
+      <li class="review reveal" data-delay="2">
+        <span class="stars" role="img" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg></span>
+        <blockquote>“Súper cerca de la casa, fácil de reservar y los americanos del viernes son lo mejor de la semana.”</blockquote>
+        <footer><span class="avatar" aria-hidden="true">C</span><span><b>Cristóbal M.</b>Jugador · hace 3 semanas</span></footer>
+      </li>
+    </ul>
+    <p class="reviews__more reveal"><a class="link-arrow" href="https://www.google.com/maps/search/?api=1&query=Polo+Padel+Av.+El+Valle+542+Colina" target="_blank" rel="noopener">Ver todas en Google <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+  </div>
+</section>
+
+<!-- =========================================================
+     06 · HORARIOS + UBICACIÓN
+     ========================================================= -->
+<section class="section" id="visitanos" aria-labelledby="visit-title">
+  <div class="wrap visit">
+    <div>
+      <p class="eyebrow reveal"><b>/06</b> Visítanos</p>
+      <h2 class="h2 reveal" id="visit-title">Te esperamos <em>en la cancha.</em></h2>
+      <ul class="hours reveal" data-delay="1" aria-label="Horario de atención">
+        <li data-day="1"><span>Lunes</span><span>08:00 – 23:00</span></li>
+        <li data-day="2"><span>Martes</span><span>08:00 – 23:00</span></li>
+        <li data-day="3"><span>Miércoles</span><span>08:00 – 23:00</span></li>
+        <li data-day="4"><span>Jueves</span><span>08:00 – 23:00</span></li>
+        <li data-day="5"><span>Viernes</span><span>08:00 – 23:00</span></li>
+        <li data-day="6"><span>Sábado</span><span>08:30 – 23:00</span></li>
+        <li data-day="0"><span>Domingo</span><span>08:30 – 23:00</span></li>
+      </ul>
+      <p class="hours-note">En feriados el horario puede variar. Confírmalo por WhatsApp.</p>
+      <address class="address reveal">Av. El Valle 542, Piedra Roja<small>Chicureo, Colina · frente a Carabineros</small></address>
+      <div class="visit__ctas reveal">
+        <a class="btn btn--solid js-wa" data-wa="ubicacion" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Escríbenos</a>
+        <a class="btn btn--ghost" href="https://www.google.com/maps/dir/?api=1&destination=Av.+El+Valle+542,+Colina,+Chile" target="_blank" rel="noopener">Cómo llegar</a>
+      </div>
+    </div>
+    <div class="map reveal" data-delay="1">
+      <iframe title="Mapa: Polo Padel, Av. El Valle 542, Colina" src="https://www.google.com/maps?q=Av.+El+Valle+542,+9340000+Colina,+Chile&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CTA FINAL
+     ========================================================= -->
+<section class="section cta" aria-labelledby="cta-title">
+  <div class="wrap">
+    <h2 class="reveal" id="cta-title">Tu próximo partido <em>empieza aquí.</em></h2>
+    <p class="reveal" data-delay="1">Escríbenos y te contamos cómo hacerte socio, o reserva una cancha y ven a conocernos.</p>
+    <div class="cta__btns reveal" data-delay="2">
+      <a class="btn btn--solid js-wa" data-wa="cta" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Hazte socio</a>
+      <a class="btn btn--ghost js-book" href="#">Reservar cancha</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="brand js-logo" href="#top" aria-label="Polo Padel, ir al inicio">
+          <img src="assets/marca/polo-padel-logo-blanco.svg" alt="" width="120" height="40">
+          <span class="brand__word" aria-hidden="true">Polo<i></i><span>Padel club</span></span>
+        </a>
+        <p class="footer__tag">El club de pádel de Piedra Roja. Entrena, conecta, compite.</p>
+      </div>
+      <div>
+        <h4>Club</h4>
+        <ul>
+          <li><a href="#club">El club</a></li>
+          <li><a href="#polo-system">Polo System</a></li>
+          <li><a href="#equipo">Equipo</a></li>
+          <li><a href="#visitanos">Horarios</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a class="js-wa" data-wa="footer" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg><span data-wa-label></span></a></li>
+          <li><a class="js-book" href="#">Reservas en EasyCancha</a></li>
+          <li><a href="https://www.google.com/maps/dir/?api=1&destination=Av.+El+Valle+542,+Colina,+Chile" target="_blank" rel="noopener">Av. El Valle 542, Colina</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Síguenos</h4>
+        <ul>
+          <li><a class="js-ig" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Instagram</a></li>
+          <li><a class="js-fb" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21h3Z"/></svg>Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>© <span id="year"></span> Polo Padel · Chicureo, Colina</span>
+      <span>Av. El Valle 542, 9340000 Colina, Región Metropolitana</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float js-wa" data-wa="flotante" href="#" aria-label="Escribir a Polo Padel por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>
+</a>
+
+<!-- Selector de propuesta de color: solo para revisar, quitar antes de publicar -->
+<div class="palette-switch" role="group" aria-label="Propuesta de color">
+  <span>Propuesta</span>
+  <button type="button" data-palette="azul" aria-pressed="true">A · Azul</button>
+  <button type="button" data-palette="blanco" aria-pressed="false">B · Blanco</button>
+</div>
+
+<!-- Íconos -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 4.54 0 8.23 3.7 8.23 8.24 0 4.54-3.69 8.24-8.23 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.9.9-4.25 4.1 1 5.85L12 16.9l-5.25 2.75 1-5.85L3.5 9.7l5.9-.9z"/></symbol>
+</svg>
+
+<script>
+/* =========================================================
+   CONFIG — WhatsApp y enlaces centralizados
+   ========================================================= */
+const CONFIG = {
+  whatsapp: {
+    number: "56991281970",          // +56 9 9128 1970
+    display: "+56 9 9128 1970",
+    messages: {
+      default:   "Hola Polo Padel, quiero más información sobre el club.",
+      header:    "Hola Polo Padel, quiero hacerme socio. ¿Me cuentan cómo funciona?",
+      menu:      "Hola Polo Padel, quiero hacerme socio. ¿Me cuentan cómo funciona?",
+      hero:      "Hola Polo Padel, vi su sitio web y quiero hacerme socio del club.",
+      club:      "Hola Polo Padel, quiero conocer el club. ¿Puedo pasar a verlo o tomar una clase de prueba?",
+      system:    "Hola Polo Padel, quiero agendar mi evaluación de Polo System. Mi nivel aproximado es:",
+      garantia:  "Hola Polo Padel, quiero empezar el plan de 90 días con garantía. ¿Cómo parto?",
+      ubicacion: "Hola Polo Padel, tengo una consulta sobre horarios y cómo llegar al club.",
+      cta:       "Hola Polo Padel, quiero hacerme socio. ¿Qué planes tienen?",
+      footer:    "Hola Polo Padel, quiero hacer una consulta.",
+      flotante:  "Hola Polo Padel, quiero más información sobre el club."
+    }
+  },
+  links: {
+    booking:   "https://www.easycancha.com/en-US/chile/club/polo-padel",
+    instagram: "https://www.instagram.com/polopadelchicureo/",
+    facebook:  "https://www.facebook.com/people/Polo-Padel-Chicureo/61566704670748/"
+  }
+};
+
+function waLink(key, customText){
+  const w = CONFIG.whatsapp;
+  const text = customText || w.messages[key] || w.messages.default;
+  return "https://wa.me/" + w.number + "?text=" + encodeURIComponent(text);
+}
+
+document.body.classList.remove("no-js");
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* Botones de WhatsApp y enlaces externos */
+document.querySelectorAll(".js-wa").forEach(el => {
+  el.href = waLink(el.dataset.wa);
+  el.target = "_blank";
+  el.rel = "noopener";
+});
+document.querySelectorAll("[data-wa-label]").forEach(el => { el.textContent = CONFIG.whatsapp.display; });
+const setLinks = (sel, url) => document.querySelectorAll(sel).forEach(el => { el.href = url; el.target = "_blank"; el.rel = "noopener"; });
+setLinks(".js-book", CONFIG.links.booking);
+setLinks(".js-ig", CONFIG.links.instagram);
+setLinks(".js-fb", CONFIG.links.facebook);
+
+/* Año */
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* Logo: si aún no existe el archivo, se muestra el logotipo en texto */
+document.querySelectorAll(".js-logo img").forEach(img => {
+  const fail = () => img.parentElement.classList.add("is-missing");
+  if (img.complete && img.naturalWidth === 0) fail();
+  img.addEventListener("error", fail);
+});
+
+/* Propuesta de color A/B (también con ?paleta=blanco en la URL) */
+(function(){
+  const root = document.documentElement;
+  const KEY = "polopadel-palette";
+  const btns = document.querySelectorAll(".palette-switch button");
+  const set = p => {
+    root.dataset.palette = p;
+    btns.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.palette === p)));
+    try { localStorage.setItem(KEY, p); } catch(e) {}
+  };
+  let initial = new URLSearchParams(location.search).get("paleta");
+  if (!initial) { try { initial = localStorage.getItem(KEY); } catch(e) {} }
+  if (initial === "azul" || initial === "blanco") set(initial);
+  btns.forEach(b => b.addEventListener("click", () => set(b.dataset.palette)));
+})();
+
+/* Tema claro / oscuro (preferencia guardada solo en este navegador) */
+(function(){
+  const root = document.documentElement;
+  const KEY = "polopadel-theme";
+  let saved = null;
+  try { saved = localStorage.getItem(KEY); } catch(e) {}
+  if (saved === "light" || saved === "dark") root.dataset.theme = saved;
+  const isDark = () => root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  document.querySelector(".theme-toggle").addEventListener("click", () => {
+    const next = isDark() ? "light" : "dark";
+    root.dataset.theme = next;
+    try { localStorage.setItem(KEY, next); } catch(e) {}
+  });
+})();
+
+/* Header transparente sobre el hero + botón flotante */
+(function(){
+  const header = document.querySelector(".header");
+  const float = document.querySelector(".wa-float");
+  const hero = document.querySelector(".hero");
+  const onScroll = () => {
+    const menuOpen = document.getElementById("drawer").classList.contains("is-open");
+    const overHero = window.scrollY < hero.offsetHeight - 80;
+    header.classList.toggle("is-scrolled", window.scrollY > 8);
+    header.classList.toggle("is-over", overHero && !menuOpen);
+    float.classList.toggle("is-visible", window.scrollY > hero.offsetHeight * 0.6);
+  };
+  window.updateHeader = onScroll;
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+})();
+
+/* Menú móvil */
+(function(){
+  const btn = document.querySelector(".menu-toggle");
+  const drawer = document.getElementById("drawer");
+  const set = open => {
+    btn.setAttribute("aria-expanded", String(open));
+    btn.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+    drawer.classList.toggle("is-open", open);
+    document.body.classList.toggle("no-scroll", open);
+    window.updateHeader();
+  };
+  btn.addEventListener("click", () => set(btn.getAttribute("aria-expanded") !== "true"));
+  drawer.querySelectorAll("a").forEach(a => a.addEventListener("click", () => set(false)));
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && drawer.classList.contains("is-open")) { set(false); btn.focus(); } });
+  matchMedia("(min-width: 1024px)").addEventListener("change", e => { if (e.matches) set(false); });
+})();
+
+/* Fotos, videos y logos de partners: si el archivo aún no existe, se muestra el marcador */
+document.querySelectorAll(".media > img, .partner > img").forEach(img => {
+  const fail = () => img.parentElement.classList.add("is-missing");
+  if (img.complete && img.naturalWidth === 0) fail();
+  img.addEventListener("error", fail);
+});
+document.querySelectorAll(".media > video").forEach(video => {
+  const sources = video.querySelectorAll("source");
+  const fail = () => video.parentElement.classList.add("is-missing");
+  sources[sources.length - 1].addEventListener("error", fail);
+  video.addEventListener("error", fail);
+  if (video.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) fail();
+});
+
+/* Partners: se duplica la fila para el desplazamiento continuo */
+(function(){
+  const list = document.querySelector(".js-partners");
+  const copy = list.cloneNode(true);
+  copy.setAttribute("aria-hidden", "true");
+  copy.querySelectorAll("img").forEach(img => {
+    img.alt = "";
+    img.addEventListener("error", () => img.parentElement.classList.add("is-missing"));
+    if (img.complete && img.naturalWidth === 0) img.parentElement.classList.add("is-missing");
+  });
+  list.after(copy);
+})();
+
+/* Hero: video de fondo con pausa; se detiene fuera de pantalla */
+(function(){
+  const video = document.querySelector(".js-hero-video");
+  const btn = document.querySelector(".hero__pause");
+  let paused = reduceMotion;
+  const sync = () => {
+    btn.setAttribute("aria-pressed", String(paused));
+    btn.setAttribute("aria-label", paused ? "Reproducir video de fondo" : "Pausar video de fondo");
+    paused ? video.pause() : video.play().catch(() => {});
+  };
+  btn.addEventListener("click", () => { paused = !paused; sync(); });
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(([e]) => { if (!paused) e.isIntersecting ? video.play().catch(() => {}) : video.pause(); }).observe(video);
+  }
+  sync();
+})();
+
+/* Video de fondo de la garantía: carga y reproduce solo al estar visible */
+(function(){
+  const video = document.querySelector(".js-bg-video");
+  if (reduceMotion || !("IntersectionObserver" in window)) return;
+  new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) { if (video.preload === "none") { video.preload = "auto"; video.load(); } video.play().catch(() => {}); }
+    else video.pause();
+  }, { threshold: .2 }).observe(video);
+})();
+
+/* El club: Entrena → Conecta → Compite. Cada video pasa al siguiente al terminar;
+   si falta un video, avanza con un temporizador. */
+(function(){
+  const feats = [...document.querySelectorAll("#feats .feat")];
+  const dots = [...document.querySelectorAll(".feat-dots button")];
+  const title = document.querySelector(".js-feat-title");
+  const text = document.querySelector(".js-feat-text");
+  const caption = document.querySelector(".feat-caption");
+  const pauseBtn = document.querySelector(".js-feat-pause");
+  const FALLBACK_MS = 7000;
+  let index = 0, paused = reduceMotion, visible = false, timer = null, t0 = 0, elapsed = 0, raf = null;
+
+  const bar = i => feats[i].querySelector(".feat__bar i");
+  const videoOf = i => feats[i].querySelector("video");
+  const missing = i => feats[i].querySelector(".media").classList.contains("is-missing") || videoOf(i).networkState === HTMLMediaElement.NETWORK_NO_SOURCE;
+
+  function stopTimer(){ clearTimeout(timer); cancelAnimationFrame(raf); timer = null; }
+  function runTimer(){
+    stopTimer();
+    t0 = performance.now() - elapsed;
+    const tick = now => { elapsed = now - t0; bar(index).style.setProperty("--p", Math.min(elapsed / FALLBACK_MS, 1)); if (elapsed < FALLBACK_MS) raf = requestAnimationFrame(tick); };
+    raf = requestAnimationFrame(tick);
+    timer = setTimeout(() => go(index + 1), FALLBACK_MS - elapsed);
+  }
+
+  function play(){
+    if (paused || !visible) return;
+    const v = videoOf(index);
+    if (missing(index)) { runTimer(); return; }
+    v.play().catch(() => runTimer());
+  }
+  function hold(){
+    stopTimer();
+    videoOf(index).pause();
+  }
+
+  function go(i){
+    hold();
+    const prev = videoOf(index);
+    index = (i + feats.length) % feats.length;
+    elapsed = 0;
+    feats.forEach((f, n) => {
+      const on = n === index;
+      f.classList.toggle("is-active", on);
+      f.querySelector(".feat__tab").tabIndex = on ? -1 : 0;
+      f.querySelector(".feat__bar i").style.setProperty("--p", 0);
+    });
+    dots.forEach((d, n) => n === index ? d.setAttribute("aria-current", "true") : d.removeAttribute("aria-current"));
+    if (prev !== videoOf(index)) prev.currentTime = 0;
+    const v = videoOf(index);
+    if (v.preload === "none") { v.preload = "auto"; v.load(); }
+    v.currentTime = 0;
+    title.textContent = feats[index].dataset.title;
+    text.textContent = feats[index].dataset.text;
+    caption.classList.remove("is-swapping"); void caption.offsetWidth; caption.classList.add("is-swapping");
+    play();
+  }
+
+  feats.forEach((f, n) => {
+    const v = f.querySelector("video");
+    v.addEventListener("ended", () => { if (n === index) go(index + 1); });
+    // Video ausente: pasa al temporizador
+    const srcs = v.querySelectorAll("source");
+    srcs[srcs.length - 1].addEventListener("error", () => { if (n === index && !paused && visible) runTimer(); });
+    v.addEventListener("timeupdate", () => { if (n === index && v.duration) f.querySelector(".feat__bar i").style.setProperty("--p", v.currentTime / v.duration); });
+    f.querySelector(".feat__tab").addEventListener("click", () => { if (n !== index) go(n); });
+  });
+  dots.forEach((d, n) => d.addEventListener("click", () => go(n)));
+
+  pauseBtn.addEventListener("click", () => {
+    paused = !paused;
+    pauseBtn.setAttribute("aria-pressed", String(paused));
+    pauseBtn.setAttribute("aria-label", paused ? "Reproducir videos" : "Pausar videos");
+    paused ? hold() : play();
+  });
+  pauseBtn.setAttribute("aria-pressed", String(paused));
+  if (paused) pauseBtn.setAttribute("aria-label", "Reproducir videos");
+
+  // Solo corre mientras la sección está en pantalla
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(([e]) => { visible = e.isIntersecting; visible ? play() : hold(); }, { threshold: .35 }).observe(document.getElementById("feats"));
+  } else { visible = true; play(); }
+  document.addEventListener("visibilitychange", () => { document.hidden ? hold() : play(); });
+})();
+
+/* Horario: marca el día de hoy (hora de Chile) */
+(function(){
+  const day = new Date(new Date().toLocaleString("en-US", { timeZone: "America/Santiago" })).getDay();
+  const li = document.querySelector('.hours li[data-day="' + day + '"]');
+  if (li) li.classList.add("is-today");
+})();
+
+/* Animaciones de entrada */
+(function(){
+  const items = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window) || reduceMotion) {
+    items.forEach(el => el.classList.add("is-in")); return;
+  }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+  items.forEach(el => io.observe(el));
+})();
+</script>
+</body>
+</html>
