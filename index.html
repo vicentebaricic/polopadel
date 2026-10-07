@@ -595,11 +595,13 @@ p{margin:0}
      ========================================================= -->
 <section class="hero" id="top" aria-label="Presentación">
   <div class="hero__media">
-    <img src="assets/video/hero-poster.jpg" alt="" width="1920" height="1080" fetchpriority="high">
-    <video class="js-hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-      <source src="assets/video/hero.webm" type="video/webm">
-      <source src="assets/video/hero.mp4" type="video/mp4">
-    </video>
+    <picture>
+      <source media="(max-aspect-ratio: 4/5)" srcset="assets/video/hero-mobile-poster.jpg">
+      <img src="assets/video/hero-poster.jpg" alt="" width="1920" height="1080" fetchpriority="high">
+    </picture>
+    <!-- Las fuentes las elige el script: versión vertical (reencuadrada toma por toma) en pantallas verticales -->
+    <video class="js-hero-video" muted loop playsinline preload="none" aria-hidden="true"
+      data-src-wide="assets/video/hero" data-src-tall="assets/video/hero-mobile"></video>
   </div>
   <button class="icon-btn hero__pause" type="button" aria-pressed="false" aria-label="Pausar video de fondo">
     <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
@@ -1131,12 +1133,23 @@ document.querySelectorAll(".media > video").forEach(video => {
   const hero = document.querySelector(".hero");
   const video = document.querySelector(".js-hero-video");
   const btn = document.querySelector(".hero__pause");
-  // Sin video de hero: queda la foto de fondo
-  const sources = video.querySelectorAll("source");
+  // Versión horizontal o vertical según la pantalla; si falta el archivo queda la imagen de fondo
+  const tall = matchMedia("(max-aspect-ratio: 4/5)");
   const noVideo = () => hero.classList.add("no-video");
-  sources[sources.length - 1].addEventListener("error", noVideo);
-  if (video.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) noVideo();
+  let current = null;
+  const pick = () => {
+    const base = tall.matches ? video.dataset.srcTall : video.dataset.srcWide;
+    if (base === current) return;
+    current = base;
+    video.replaceChildren(...["webm", "mp4"].map(ext => Object.assign(document.createElement("source"), { src: base + "." + ext, type: "video/" + ext })));
+    video.lastElementChild.addEventListener("error", noVideo);
+    video.preload = "auto";
+    video.load();
+    if (!paused) video.play().catch(() => {});
+  };
+  tall.addEventListener("change", pick);
   let paused = reduceMotion;
+  pick();
   const sync = () => {
     btn.setAttribute("aria-pressed", String(paused));
     btn.setAttribute("aria-label", paused ? "Reproducir video de fondo" : "Pausar video de fondo");

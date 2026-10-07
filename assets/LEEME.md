@@ -9,6 +9,7 @@ Los archivos tal como se subieron quedan en `originales/`. Los de las demás car
 | `partners/*.png` | Franja de partners | logopartner*.jpg/webp, sin fondo. La página los pasa a un solo tono gris |
 | `video/entrena.*`, `conecta.*`, `compite.*` | El club (tarjetas que avanzan solas) | reel-entrena-4, reel-conecta-3, reel-compite-2. Sin audio, en MP4 y WebM, con portada `*-poster.jpg` |
 | `video/garantia.*` | Banner "Nuestra convicción" | garantia.mp4, sin audio, en MP4 y WebM |
+| `video/hero-mobile.*` | Fondo del hero en pantallas verticales | Versión 9:16 (720×1280) del mismo video, reencuadrada toma por toma desde el original 4K para seguir a las personas |
 | `video/hero.*` | Fondo del hero | VIDEO-ROJAN-OK-1.mp4 (Drive), 1080p sin audio, MP4 y WebM, portada `hero-poster.jpg` |
 | `fotos/hero.jpg` | Sin usar, disponible | Unsplash (Cal Gao) |
 | `fotos/pala-pelota.jpg` | Polo System | Unsplash (Oskar Hagberg) |
