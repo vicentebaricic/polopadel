@@ -96,10 +96,10 @@
 }
 /* Variantes oscuras */
 :root[data-theme="dark"]{
-  --bg: #0B1322; --bg-alt: #101A2D; --surface: #152138; --surface-2: #1C2B46;
+  --bg: #121417; --bg-alt: #181B1F; --surface: #1F2328; --surface-2: #272C33;
   --text: #F2EFE8; --text-2: #C3CBD8; --text-3: #A0AABB; --line: rgba(242,239,232,.12);
   --hl: var(--ball); --tone: var(--wood); --btn-bg: var(--ball); --btn-text: var(--navy);
-  --header-bg: rgba(11,19,34,.92); --placeholder-a: #152138; --placeholder-b: #1C2B46;
+  --header-bg: rgba(18,20,23,.92); --placeholder-a: #1F2328; --placeholder-b: #272C33;
   --partner-filter: brightness(0) invert(1) opacity(.5); --focus: var(--ball); --logo: #FFFFFF;
 }
 :root[data-palette="azul"][data-theme="dark"]{
@@ -108,10 +108,10 @@
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg: #0B1322; --bg-alt: #101A2D; --surface: #152138; --surface-2: #1C2B46;
+    --bg: #121417; --bg-alt: #181B1F; --surface: #1F2328; --surface-2: #272C33;
     --text: #F2EFE8; --text-2: #C3CBD8; --text-3: #A0AABB; --line: rgba(242,239,232,.12);
     --hl: var(--ball); --tone: var(--wood); --btn-bg: var(--ball); --btn-text: var(--navy);
-    --header-bg: rgba(11,19,34,.92); --placeholder-a: #152138; --placeholder-b: #1C2B46;
+    --header-bg: rgba(18,20,23,.92); --placeholder-a: #1F2328; --placeholder-b: #272C33;
     --partner-filter: brightness(0) invert(1) opacity(.5); --focus: var(--ball); --logo: #FFFFFF;
   }
   :root[data-palette="azul"]:not([data-theme="light"]){
@@ -352,6 +352,7 @@ p{margin:0}
 .partner{height:44px;display:flex;align-items:center}
 .partner img{height:44px;width:auto;max-width:170px;object-fit:contain;filter:var(--partner-filter)}
 .partner.is-missing img{display:none}
+.partner--wide img{height:30px}
 .partner__name{display:none;font-family:var(--font-display);font-stretch:125%;font-weight:800;font-size:1.25rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-3);opacity:.75;white-space:nowrap}
 .partner.is-missing .partner__name{display:block}
 @keyframes marquee{to{transform:translateX(-50%)}}
@@ -692,10 +693,13 @@ p{margin:0}
   <div class="marquee">
     <ul class="js-partners">
       <li class="partner"><img src="assets/partners/gatorade.png" alt="Gatorade" width="155" height="120"></li>
-      <li class="partner"><img src="assets/partners/isdin.png" alt="ISDIN" width="478" height="120"></li>
+      <li class="partner partner--wide"><img src="assets/partners/isdin.png" alt="ISDIN" width="478" height="120"></li>
       <li class="partner"><img src="assets/partners/smart.png" alt="smart" width="90" height="120"></li>
       <li class="partner"><img src="assets/partners/yard.png" alt="Yard" width="196" height="120"></li>
       <li class="partner"><img src="assets/partners/tilki.png" alt="Tilki" width="117" height="120"></li>
+      <li class="partner"><img src="assets/partners/adidas.png" alt="adidas" width="184" height="120"></li>
+      <li class="partner partner--wide"><img src="assets/partners/babolat.png" alt="Babolat" width="480" height="105"></li>
+      <li class="partner"><img src="assets/partners/bullpadel.png" alt="Bullpadel" width="147" height="120"></li>
     </ul>
   </div>
 </section>
@@ -1033,7 +1037,12 @@ document.getElementById("year").textContent = new Date().getFullYear();
   let initial = new URLSearchParams(location.search).get("paleta");
   if (!initial) { try { initial = localStorage.getItem(KEY); } catch(e) {} }
   if (initial === "azul" || initial === "blanco") set(initial);
-  btns.forEach(b => b.addEventListener("click", () => set(b.dataset.palette)));
+  // Cada propuesta está pensada en claro: al elegirla se muestra en modo claro
+  btns.forEach(b => b.addEventListener("click", () => {
+    set(b.dataset.palette);
+    root.dataset.theme = "light";
+    try { localStorage.setItem("polopadel-theme", "light"); } catch(e) {}
+  }));
 })();
 
 /* Tema claro / oscuro (preferencia guardada solo en este navegador) */
