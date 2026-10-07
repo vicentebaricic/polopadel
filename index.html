@@ -415,6 +415,14 @@ p{margin:0}
 .section-head .lead{max-width:44ch}
 .team{display:grid;gap:28px 20px;grid-template-columns:1fr;list-style:none;margin:0;padding:0}
 .member__photo{aspect-ratio:4/5;border-radius:var(--radius)}
+/* Fotos del equipo: mismo tratamiento para todas (gris con tono azul), a color al pasar el mouse */
+.member__photo img{filter:grayscale(1) contrast(1.06);transition:filter .6s var(--ease), transform .8s var(--ease-out)}
+.member__photo::before{content:"";position:absolute;inset:0;z-index:1;background:var(--brand);mix-blend-mode:soft-light;opacity:.55;pointer-events:none;transition:opacity .6s var(--ease)}
+.member__photo.is-missing::before{content:none}
+@media (hover:hover){
+  .member:hover .member__photo img{filter:none;transform:scale(1.03)}
+  .member:hover .member__photo::before{opacity:0}
+}
 .member__photo .initials{position:absolute;inset:0;display:none;place-items:center;font-family:var(--font-display);font-stretch:125%;font-weight:900;font-size:3.5rem;color:var(--text-3);opacity:.6}
 .member__photo.is-missing .initials{display:grid}
 .member__photo.is-missing::after{content:none}
@@ -776,32 +784,32 @@ p{margin:0}
     <div class="section-head">
       <div>
         <p class="eyebrow reveal"><b>/04</b> Equipo</p>
-        <h2 class="h2 reveal" id="team-title">Los profes <em>detrás del método.</em></h2>
+        <h2 class="h2 reveal" id="team-title">El equipo <em>detrás del club.</em></h2>
       </div>
-      <p class="lead reveal" data-delay="1">Entrenadores certificados que te conocen por tu nombre y por tu revés. <span class="sample">Contenido de ejemplo</span></p>
+      <p class="lead reveal" data-delay="1">Las personas que te reciben, te entrenan y te arman el partido. <span class="sample">Nombres y bios de ejemplo</span></p>
     </div>
     <ul class="team">
       <li class="member reveal">
-        <div class="member__photo media" data-file="assets/equipo/equipo-1.jpg"><img src="assets/equipo/equipo-1.jpg" alt="Matías Rojas" loading="lazy" width="600" height="750"><span class="initials" aria-hidden="true">MR</span></div>
-        <h3>Matías Rojas</h3>
-        <p class="member__role">Director deportivo</p>
-        <p>12 años enseñando pádel y exjugador del circuito nacional. Diseñó Polo System para que cada clase tenga un porqué.</p>
+        <div class="member__photo media" data-file="assets/equipo/fundadora.jpg"><img src="assets/equipo/fundadora.jpg" alt="Patricia Soto, fundadora del club" loading="lazy" width="640" height="800"><span class="initials" aria-hidden="true">PS</span></div>
+        <h3>Patricia Soto</h3>
+        <p class="member__role">Fundadora del club</p>
+        <p>Levantó Polo Padel para que Piedra Roja tuviera su club: canchas de primer nivel y un lugar donde todos se conocen por su nombre.</p>
       </li>
       <li class="member reveal" data-delay="1">
-        <div class="member__photo media" data-file="assets/equipo/equipo-2.jpg"><img src="assets/equipo/equipo-2.jpg" alt="Camila Fuentes" loading="lazy" width="600" height="750"><span class="initials" aria-hidden="true">CF</span></div>
-        <h3>Camila Fuentes</h3>
-        <p class="member__role">Entrenadora · Niveles 1–3</p>
-        <p>Especialista en iniciación. Si nunca has tomado una pala, empiezas con ella.</p>
+        <div class="member__photo media" data-file="assets/equipo/head-coach.jpg"><img src="assets/equipo/head-coach.jpg" alt="Matías Rojas, head coach · polo system" loading="lazy" width="640" height="800"><span class="initials" aria-hidden="true">MR</span></div>
+        <h3>Matías Rojas</h3>
+        <p class="member__role">Head coach · Polo System</p>
+        <p>Diseñó el método del club. Si llegas por primera vez, él hace tu diagnóstico y arma tu plan.</p>
       </li>
       <li class="member reveal" data-delay="2">
-        <div class="member__photo media" data-file="assets/equipo/equipo-3.jpg"><img src="assets/equipo/equipo-3.jpg" alt="Diego Araya" loading="lazy" width="600" height="750"><span class="initials" aria-hidden="true">DA</span></div>
+        <div class="member__photo media" data-file="assets/equipo/coach-competicion.jpg"><img src="assets/equipo/coach-competicion.jpg" alt="Diego Araya, entrenador · competición" loading="lazy" width="640" height="800"><span class="initials" aria-hidden="true">DA</span></div>
         <h3>Diego Araya</h3>
         <p class="member__role">Entrenador · Competición</p>
         <p>Prepara a los equipos del club para ligas y torneos. Táctica, físico y cabeza fría en el tie-break.</p>
       </li>
       <li class="member reveal" data-delay="3">
-        <div class="member__photo media" data-file="assets/equipo/equipo-4.jpg"><img src="assets/equipo/equipo-4.jpg" alt="Javiera Muñoz" loading="lazy" width="600" height="750"><span class="initials" aria-hidden="true">JM</span></div>
-        <h3>Javiera Muñoz</h3>
+        <div class="member__photo media" data-file="assets/equipo/comunidad.jpg"><img src="assets/equipo/comunidad.jpg" alt="Camila Fuentes, comunidad y eventos" loading="lazy" width="640" height="800"><span class="initials" aria-hidden="true">CF</span></div>
+        <h3>Camila Fuentes</h3>
         <p class="member__role">Comunidad y eventos</p>
         <p>Arma los partidos, los americanos y el tercer tiempo. Si te falta el cuarto, escríbele a ella.</p>
       </li>

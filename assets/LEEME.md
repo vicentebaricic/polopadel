@@ -14,12 +14,12 @@ Los archivos tal como se subieron quedan en `originales/`. Los de las demás car
 | `fotos/pala-pelota.jpg` | Polo System | Unsplash (Oskar Hagberg) |
 | `fotos/cancha-palas.jpg` | Franja antes de Visítanos | Unsplash (Vincenzo Morelli) |
 | `fotos/cancha.jpg` | Sin usar, disponible | Unsplash (Bruno Vaccaro) |
+| `equipo/fundadora.jpg`, `head-coach.jpg`, `coach-competicion.jpg`, `comunidad.jpg` | Equipo | Capturas de Instagram (en `originales/equipo/`): sin íconos ni bordes, recorte 4:5 con la cara a la misma altura y la misma gradación. La página las muestra en gris con tono azul y a color al pasar el mouse |
 | `fotos/pala-naranja.jpg`, `partido.jpg`, `palas.jpg` | Sin usar, disponibles | Unsplash |
 
 ## Pendientes
 
 | Archivo | Dónde aparece | Notas |
 |---|---|---|
-| `equipo/equipo-1.jpg` … `equipo-4.jpg` | Equipo | Vertical 4:5, mínimo 800×1000 px |
 
 Las fotos de Unsplash son de otras canchas (una muestra un letrero "SALIDA" y edificios de otra ciudad). Conviene reemplazarlas por fotos del club con el mismo nombre de archivo.
