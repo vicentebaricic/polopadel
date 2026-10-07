@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Polo Padel · Club de pádel en Chicureo, Colina</title>
-<meta name="description" content="Polo Padel es un club de pádel en Piedra Roja, Chicureo. Entrena con método, juega cada semana y forma parte de una comunidad. Av. El Valle 542, Colina.">
+<title>Precios · Polo Padel Chicureo</title>
+<meta name="description" content="Cuota de socio de Polo Padel: clases por nivel, partidos, torneos y comunidad en una sola cuota mensual. Chicureo, Colina.">
 <meta name="theme-color" content="#154075">
 <link rel="icon" href="assets/marca/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/marca/apple-touch-icon.png">
@@ -542,6 +542,90 @@ p{margin:0}
   .marquee ul{flex-wrap:wrap;justify-content:center;row-gap:24px}
   .reveal{opacity:1;transform:none}
 }
+/* =========================================================
+   PÁGINA DE PRECIOS
+   ========================================================= */
+.page{padding-top:calc(var(--header-h) + clamp(40px,6vw,80px))}
+.pricing{display:grid;gap:48px;align-items:start}
+.pricing h1{font-size:clamp(2.5rem,6.2vw,4.75rem);font-stretch:116%}
+@media (min-width: 1024px){ .pricing h1{font-size:clamp(2.75rem,4.4vw,4.25rem)} }
+.pricing h1 em{font-style:italic;color:var(--hl)}
+.pricing .lead{margin-top:22px}
+.perks{display:grid;gap:36px 40px;margin-top:44px}
+.perks h2{font-family:var(--font-mono);font-size:.75rem;font-weight:500;letter-spacing:.2em;color:var(--tone);margin-bottom:14px}
+.perks ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.perks li{display:grid;grid-template-columns:20px 1fr;gap:12px;align-items:start;font-size:1.0625rem;line-height:1.45}
+.perks li svg{width:18px;height:18px;margin-top:3px;color:var(--hl)}
+@media (min-width: 640px){ .perks{grid-template-columns:1fr 1fr} }
+
+.price-card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:clamp(24px,3.4vw,40px);position:relative}
+.price-card__label{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--tone)}
+.price{display:flex;align-items:baseline;gap:10px;margin-top:14px;font-variant-numeric:tabular-nums}
+.price strong{font-family:var(--font-display);font-stretch:112%;font-weight:900;font-size:clamp(3.25rem,7vw,4.75rem);line-height:.9}
+.price span{font-family:var(--font-display);font-weight:700;font-size:1.25rem;text-transform:uppercase;color:var(--text-2)}
+.price-note{margin-top:8px;font-size:.875rem;color:var(--text-3)}
+.group{border:0;margin:26px 0 0;padding:0;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.group legend{float:left;margin-right:4px;color:var(--text-2)}
+.seg{display:inline-flex;padding:4px;border-radius:var(--radius-pill);border:1px solid var(--line)}
+.seg label{position:relative}
+.seg input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.seg span{display:grid;place-items:center;width:48px;height:44px;border-radius:var(--radius-pill);font-family:var(--font-mono);font-weight:500;transition:background-color var(--dur) var(--ease), color var(--dur) var(--ease)}
+.seg input:checked + span{background:var(--btn-bg);color:var(--btn-text)}
+.seg input:focus-visible + span{outline:2px solid var(--focus);outline-offset:2px}
+.group__after{color:var(--text-2)}
+.toggle{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;margin-top:24px;padding:18px;border:1px solid var(--line);border-radius:16px;cursor:pointer}
+.toggle input{appearance:none;-webkit-appearance:none;margin:2px 0 0;width:46px;height:26px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);position:relative;cursor:pointer;transition:background-color var(--dur) var(--ease)}
+.toggle input::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:var(--text-3);transition:transform var(--dur) var(--ease), background-color var(--dur) var(--ease)}
+.toggle input:checked{background:var(--btn-bg)}
+.toggle input:checked::after{transform:translateX(20px);background:var(--btn-text)}
+.toggle b{display:block;font-family:var(--font-mono);font-weight:500;font-size:.8125rem;letter-spacing:.12em;text-transform:uppercase}
+.toggle small{display:block;margin-top:6px;color:var(--text-2);font-size:.9375rem}
+.price-card .btn{margin-top:28px;width:100%}
+.price-card__limit{margin-top:14px;font-weight:600;color:var(--tone);font-size:.9375rem}
+.price-card__alt{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:.9375rem;color:var(--text-2)}
+.price-card__alt strong{color:var(--text)}
+.price-card .sample{margin-top:16px}
+@media (min-width: 1024px){
+  .pricing{grid-template-columns:1.25fr 1fr;gap:clamp(48px,6vw,96px)}
+  .price-card{position:sticky;top:calc(var(--header-h) + 24px)}
+}
+
+/* Tarjetas del método */
+.cards{display:grid;gap:16px;margin-top:clamp(36px,5vw,56px);list-style:none;padding:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:clamp(22px,2.6vw,32px)}
+.card__n{font-family:var(--font-display);font-stretch:125%;font-weight:900;font-size:2.5rem;line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--tone)}
+.card__top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.card__pct{font-family:var(--font-mono);font-weight:500;color:var(--tone)}
+.card h3{font-size:1.375rem;font-stretch:115%;margin-top:14px}
+.card__top h3{margin-top:0}
+.card p{margin-top:12px;color:var(--text-2)}
+.card svg{width:26px;height:26px;color:var(--tone)}
+@media (min-width: 768px){ .cards--3{grid-template-columns:repeat(3,1fr)} .cards--4{grid-template-columns:repeat(2,1fr)} }
+@media (min-width: 1100px){ .cards--4{grid-template-columns:repeat(4,1fr)} }
+
+/* Tabla de niveles */
+.levels-table{margin-top:clamp(36px,5vw,56px);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.levels-table table{width:100%;border-collapse:collapse}
+.levels-table th{background:var(--surface);text-align:left;font-family:var(--font-mono);font-weight:500;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-3);padding:18px 20px}
+.levels-table td{padding:18px 20px;border-top:1px solid var(--line);vertical-align:top}
+.levels-table td:first-child{font-family:var(--font-display);font-stretch:112%;font-weight:800;text-transform:uppercase;white-space:nowrap}
+.levels-table td:nth-child(2){font-family:var(--font-mono);color:var(--tone);white-space:nowrap}
+.levels-table td:last-child{color:var(--text-2)}
+@media (max-width: 640px){
+  .levels-table thead{display:none}
+  .levels-table tr{display:grid;grid-template-columns:1fr auto;gap:6px 12px;padding:16px 18px;border-top:1px solid var(--line)}
+  .levels-table tr:first-child{border-top:0}
+  .levels-table td{padding:0;border:0}
+  .levels-table td:last-child{grid-column:1 / -1}
+}
+
+/* Cierre */
+.closing{text-align:center}
+.closing h2{font-size:clamp(2.25rem,5.4vw,4rem);max-width:20ch;margin-inline:auto}
+.closing p{margin:20px auto 0;max-width:46ch;font-size:var(--fs-lead);color:var(--text-2)}
+.closing .btn{margin-top:32px}
+.closing small{display:block;margin-top:18px;color:var(--text-3);font-size:.875rem}
+.nav a[aria-current="page"]::after{transform:scaleX(1)}
 </style>
 </head>
 <body class="no-js">
@@ -550,17 +634,17 @@ p{margin:0}
 <!-- =========================================================
      HEADER
      ========================================================= -->
-<header class="header is-over">
+<header class="header">
   <div class="wrap header__in">
-    <a class="brand" href="#top" aria-label="Polo Padel, ir al inicio">
+    <a class="brand" href="index.html" aria-label="Polo Padel, ir al inicio">
       <span class="brand__logo"></span>
     </a>
     <nav class="nav" aria-label="Principal">
       <ul>
-        <li><a href="#club">El club</a></li>
-        <li><a href="#polo-system">Polo System</a></li>
-        <li><a href="precios.html">Precios</a></li>
-        <li><a href="#visitanos">Horarios</a></li>
+        <li><a href="index.html#club">El club</a></li>
+        <li><a href="index.html#polo-system">Polo System</a></li>
+        <li><a href="precios.html" aria-current="page">Precios</a></li>
+        <li><a href="index.html#visitanos">Horarios</a></li>
       </ul>
     </nav>
     <div class="header__actions">
@@ -579,343 +663,175 @@ p{margin:0}
 
 <div class="drawer" id="drawer">
   <ul>
-    <li><a href="#club">El club <span>01</span></a></li>
-    <li><a href="#polo-system">Polo System <span>02</span></a></li>
-    <li><a href="precios.html">Precios <span>$</span></a></li>
-    <li><a href="#visitanos">Horarios y ubicación <span>06</span></a></li>
+    <li><a href="index.html#club">El club <span>01</span></a></li>
+    <li><a href="index.html#polo-system">Polo System <span>02</span></a></li>
+    <li><a href="precios.html" aria-current="page">Precios <span>$</span></a></li>
+    <li><a href="index.html#visitanos">Horarios y ubicación <span>06</span></a></li>
   </ul>
   <a class="btn btn--solid js-wa" data-wa="menu" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Hazte socio</a>
   <a class="btn btn--ghost js-book" href="#">Reservar cancha en EasyCancha</a>
 </div>
 
-<main id="main">
+<main id="main" class="page">
 
 <!-- =========================================================
-     HERO
+     CUOTA DE SOCIO
      ========================================================= -->
-<section class="hero" id="top" aria-label="Presentación">
-  <div class="hero__media">
-    <img src="assets/video/hero-poster.jpg" alt="" width="1920" height="1080" fetchpriority="high">
-    <video class="js-hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-      <source src="assets/video/hero.webm" type="video/webm">
-      <source src="assets/video/hero.mp4" type="video/mp4">
-    </video>
-  </div>
-  <button class="icon-btn hero__pause" type="button" aria-pressed="false" aria-label="Pausar video de fondo">
-    <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
-    <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-  </button>
-  <div class="wrap hero__in">
-    <p class="eyebrow reveal" style="color:rgba(255,255,255,.75)"><b style="color:var(--ball)">Piedra Roja</b> Chicureo · Colina</p>
-    <h1 class="reveal" data-delay="1">Aquí se juega <em>en serio.</em></h1>
-    <p class="hero__sub reveal" data-delay="2">Clases con método, partidos cada semana y una comunidad que te espera en la cancha.</p>
-    <div class="hero__ctas reveal" data-delay="3">
-      <a class="btn btn--ball js-wa" data-wa="hero" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Hazte socio</a>
-      <a class="btn btn--ghost-light js-book" href="#">Reservar cancha</a>
-    </div>
-    <div class="hero__stat reveal" data-delay="3">
-      <strong>+180</strong>
-      <span>socios jugando<br>cada semana</span>
-      <span class="sample sample--dark">Contenido de ejemplo</span>
-    </div>
-  </div>
-</section>
-
-<!-- =========================================================
-     01 · EL CLUB
-     ========================================================= -->
-<section class="section" id="club" aria-labelledby="club-title">
-  <div class="wrap club">
-    <div class="club__text">
-      <p class="eyebrow reveal"><b>/01</b> El club</p>
-      <h2 class="h2 reveal" id="club-title">Entrenas para mejorar. <em>Vuelves por la gente.</em></h2>
-      <div class="reveal" data-delay="1" style="margin-top:32px">
-        <p class="lead">Somos el club de pádel de Piedra Roja. Aquí aprendes con un método, juegas partidos a tu nivel y conoces a quienes van a ser tu cuarto los jueves.</p>
-        <p class="lead">No vienes a una clase suelta: <strong>llegas a un club.</strong></p>
-      </div>
-      <div class="club__links reveal" data-delay="2">
-        <a class="link-arrow" href="#polo-system">Ver Polo System <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="link-arrow js-wa" data-wa="club" href="#">Quiero conocer el club <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-    </div>
-
-    <div class="reveal" data-delay="1">
-      <div class="feats" id="feats">
-        <div class="feat is-active" data-title="Entrena" data-text="Clases por nivel con un plan claro: sabes qué estás trabajando y por qué.">
-          <div class="feat__media media" data-file="assets/video/entrena.mp4">
-            <video muted playsinline preload="metadata" poster="assets/video/entrena-poster.jpg" aria-hidden="true"><source src="assets/video/entrena.mp4" type="video/mp4"><source src="assets/video/entrena.webm" type="video/webm"></video>
-          </div>
-          <button class="feat__tab" type="button" aria-label="Ver Entrena"><span class="feat__num">01</span><span class="feat__label">Entrena</span></button>
-          <div class="feat__bar"><i></i></div>
-        </div>
-        <div class="feat" data-title="Conecta" data-text="Siempre hay con quién jugar. Te armamos el partido cuando te falta el cuarto.">
-          <div class="feat__media media" data-file="assets/video/conecta.mp4">
-            <video muted playsinline preload="none" poster="assets/video/conecta-poster.jpg" aria-hidden="true"><source src="assets/video/conecta.mp4" type="video/mp4"><source src="assets/video/conecta.webm" type="video/webm"></video>
-          </div>
-          <button class="feat__tab" type="button" aria-label="Ver Conecta"><span class="feat__num">02</span><span class="feat__label">Conecta</span></button>
-          <div class="feat__bar"><i></i></div>
-        </div>
-        <div class="feat" data-title="Compite" data-text="Americanos, ligas internas y torneos: el lugar donde compruebas cuánto has mejorado.">
-          <div class="feat__media media" data-file="assets/video/compite.mp4">
-            <video muted playsinline preload="none" poster="assets/video/compite-poster.jpg" aria-hidden="true"><source src="assets/video/compite.mp4" type="video/mp4"><source src="assets/video/compite.webm" type="video/webm"></video>
-          </div>
-          <button class="feat__tab" type="button" aria-label="Ver Compite"><span class="feat__num">03</span><span class="feat__label">Compite</span></button>
-          <div class="feat__bar"><i></i></div>
-        </div>
-      </div>
-      <div class="feat-caption" aria-live="polite">
-        <h3><span class="js-feat-title">Entrena</span><i>.</i></h3>
-        <p class="js-feat-text">Clases por nivel con un plan claro: sabes qué estás trabajando y por qué.</p>
-      </div>
-      <div class="feat-controls">
-        <button class="icon-btn js-feat-pause" type="button" aria-pressed="false" aria-label="Pausar videos">
-          <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
-          <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-        </button>
-        <div class="feat-dots">
-          <button type="button" aria-label="Entrena" aria-current="true"></button>
-          <button type="button" aria-label="Conecta"></button>
-          <button type="button" aria-label="Compite"></button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================================================
-     PARTNERS
-     ========================================================= -->
-<section class="partners" aria-labelledby="partners-title">
-  <div class="wrap partners__head">
-    <p class="eyebrow" id="partners-title"><b>/</b> Marcas que juegan con nosotros</p>
-  </div>
-  <div class="marquee">
-    <ul class="js-partners">
-      <li class="partner"><img src="assets/partners/gatorade.png" alt="Gatorade" width="155" height="120"></li>
-      <li class="partner partner--wide"><img src="assets/partners/isdin.png" alt="ISDIN" width="478" height="120"></li>
-      <li class="partner"><img src="assets/partners/smart.png" alt="smart" width="90" height="120"></li>
-      <li class="partner"><img src="assets/partners/yard.png" alt="Yard" width="196" height="120"></li>
-      <li class="partner"><img src="assets/partners/tilki.png" alt="Tilki" width="117" height="120"></li>
-      <li class="partner"><img src="assets/partners/adidas.png" alt="adidas" width="184" height="120"></li>
-      <li class="partner partner--wide"><img src="assets/partners/babolat.png" alt="Babolat" width="480" height="105"></li>
-      <li class="partner"><img src="assets/partners/bullpadel.png" alt="Bullpadel" width="147" height="120"></li>
-    </ul>
-  </div>
-</section>
-
-<!-- =========================================================
-     02 · POLO SYSTEM
-     ========================================================= -->
-<section class="section section--alt" id="polo-system" aria-labelledby="system-title">
-  <div class="wrap system">
-    <div class="system__intro">
-      <p class="eyebrow reveal"><b>/02</b> El método</p>
-      <h2 class="h2 reveal" id="system-title">Polo <em>System.</em></h2>
-      <p class="lead reveal" data-delay="1">Un plan de entrenamiento con principio, avance y prueba. Sabes dónde estás, qué te falta y cuándo lo lograste: <strong>no lo decimos nosotros, lo dice tu video.</strong></p>
-      <p class="reveal" data-delay="1" style="margin-top:16px"><span class="sample">Contenido de ejemplo · validar el método con el club</span></p>
-      <a class="btn btn--solid js-wa reveal" data-wa="system" data-delay="2" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Agendar mi evaluación</a>
-      <figure class="system__photo media reveal" data-delay="2" data-file="assets/fotos/pala-pelota.jpg"><img src="assets/fotos/pala-pelota.jpg" alt="Pala de pádel apoyada en la red junto a una pelota" loading="lazy" width="2200" height="1652"></figure>
-    </div>
+<section class="section" style="padding-top:0" aria-labelledby="pricing-title">
+  <div class="wrap pricing">
     <div>
-      <ol class="steps">
-        <li class="step reveal">
-          <span class="step__n" aria-hidden="true">01</span>
-          <h3>Diagnóstico<small>Semana 1</small></h3>
-          <p>Te grabamos jugando y un profe evalúa técnica, posición y lectura del juego. Sales con tu nivel y tres objetivos concretos.</p>
-        </li>
-        <li class="step reveal">
-          <span class="step__n" aria-hidden="true">02</span>
-          <h3>Plan<small>Semanas 1–2</small></h3>
-          <p>Te asignamos grupo de tu nivel (máximo 4 por cancha) y un bloque de trabajo de 4 semanas: golpes, defensa, red o transición.</p>
-        </li>
-        <li class="step reveal">
-          <span class="step__n" aria-hidden="true">03</span>
-          <h3>Clase + partido<small>Cada semana</small></h3>
-          <p>Lo que trabajas en clase lo aplicas en partidos guiados con socios de tu nivel. Así lo aprendido sale solo.</p>
-        </li>
-        <li class="step reveal">
-          <span class="step__n" aria-hidden="true">04</span>
-          <h3>Medición<small>Cada 30 días</small></h3>
-          <p>Volvemos a grabarte y comparamos. Ves tu avance lado a lado y definimos el siguiente bloque.</p>
-        </li>
-      </ol>
-      <ul class="levels reveal" aria-label="Niveles">
-        <li><b>N1</b> Inicio</li>
-        <li><b>N2</b> Base</li>
-        <li><b>N3</b> Intermedio</li>
-        <li><b>N4</b> Avanzado</li>
-        <li><b>N5</b> Competición</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- =========================================================
-     03 · CONVICCIÓN
-     ========================================================= -->
-<section class="belief" aria-labelledby="belief-title">
-  <div class="belief__media media" data-file="assets/video/garantia.mp4">
-    <video class="js-bg-video" muted loop playsinline preload="none" poster="assets/video/garantia-poster.jpg" aria-hidden="true"><source src="assets/video/garantia.mp4" type="video/mp4"><source src="assets/video/garantia.webm" type="video/webm"></video>
-  </div>
-  <div class="wrap belief__in">
-    <div>
-      <p class="eyebrow reveal"><b>/03</b> Nuestra convicción</p>
-      <h2 class="reveal" id="belief-title">Confiamos en el método. Por eso lo firmamos.</h2>
-      <p class="reveal" data-delay="1">Entrena con nosotros <strong>90 días</strong>. Si cumples el plan y tu video comparativo no muestra que subiste de nivel, el 4º mes corre por nuestra cuenta.</p>
-      <p class="reveal" data-delay="1" style="margin-top:16px"><span class="sample">Contenido de ejemplo · confirmar condiciones</span></p>
-      <a class="btn btn--solid js-wa reveal" data-wa="garantia" data-delay="2" href="#" style="background:var(--navy);color:#fff">Quiero empezar mis 90 días</a>
-    </div>
-    <div class="seal reveal" data-delay="2" role="img" aria-label="Sello: garantía Polo System, 90 días">
-      <svg viewBox="0 0 200 200" aria-hidden="true">
-        <defs><path id="ring" d="M100,100 m-82,0 a82,82 0 1,1 164,0 a82,82 0 1,1 -164,0"/></defs>
-        <circle cx="100" cy="100" r="96" fill="none" stroke="currentColor" stroke-width="1.5"/>
-        <circle cx="100" cy="100" r="62" fill="none" stroke="currentColor" stroke-width="1"/>
-        <g class="seal__ring">
-          <text font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="4.2" fill="currentColor"><textPath href="#ring">GARANTÍA POLO SYSTEM · POLO PADEL CHICUREO ·</textPath></text>
-        </g>
-      </svg>
-      <div class="seal__core"><strong>90</strong><span>DÍAS</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================================================
-     04 · EQUIPO
-     ========================================================= -->
-<section class="section" id="equipo" aria-labelledby="team-title">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <p class="eyebrow reveal"><b>/04</b> Equipo</p>
-        <h2 class="h2 reveal" id="team-title">El equipo <em>detrás del club.</em></h2>
-      </div>
-      <p class="lead reveal" data-delay="1">Las personas que te reciben, te entrenan y te arman el partido. <span class="sample">Nombres y bios de ejemplo</span></p>
-    </div>
-    <ul class="team">
-      <li class="member reveal">
-        <div class="member__photo media" data-file="assets/equipo/fundadora.jpg"><img src="assets/equipo/fundadora.jpg" alt="Daniela, fundadora del club" loading="lazy" width="640" height="800"><span class="initials" aria-hidden="true">D</span></div>
-        <h3>Daniela</h3>
-        <p class="member__role">Fundadora del club</p>
-        <p>Levantó Polo Padel para que Piedra Roja tuviera su club: canchas de primer nivel y un lugar donde todos se conocen por su nombre.</p>
-      </li>
-      <li class="member reveal" data-delay="1">
-        <div class="member__photo media" data-file="assets/equipo/head-coach.jpg"><img src="assets/equipo/head-coach.jpg" alt="Matías Rojas, head coach · polo system" loading="lazy" width="640" height="800"><span class="initials" aria-hidden="true">MR</span></div>
-        <h3>Matías Rojas</h3>
-        <p class="member__role">Head coach · Polo System</p>
-        <p>Diseñó el método del club. Si llegas por primera vez, él hace tu diagnóstico y arma tu plan.</p>
-      </li>
-      <li class="member reveal" data-delay="2">
-        <div class="member__photo media" data-file="assets/equipo/coach-competicion.jpg"><img src="assets/equipo/coach-competicion.jpg" alt="Diego Araya, entrenador · competición" loading="lazy" width="640" height="800"><span class="initials" aria-hidden="true">DA</span></div>
-        <h3>Diego Araya</h3>
-        <p class="member__role">Entrenador · Competición</p>
-        <p>Prepara a los equipos del club para ligas y torneos. Táctica, físico y cabeza fría en el tie-break.</p>
-      </li>
-      <li class="member reveal" data-delay="3">
-        <div class="member__photo media" data-file="assets/equipo/comunidad.jpg"><img src="assets/equipo/comunidad.jpg" alt="Camila Fuentes, comunidad y eventos" loading="lazy" width="640" height="800"><span class="initials" aria-hidden="true">CF</span></div>
-        <h3>Camila Fuentes</h3>
-        <p class="member__role">Comunidad y eventos</p>
-        <p>Arma los partidos, los americanos y el tercer tiempo. Si te falta el cuarto, escríbele a ella.</p>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- =========================================================
-     05 · RESEÑAS
-     ========================================================= -->
-<section class="section section--alt" id="resenas" aria-labelledby="reviews-title">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <p class="eyebrow reveal"><b>/05</b> Lo que dicen los socios</p>
-        <h2 class="h2 reveal" id="reviews-title">Reseñas <em>en Google.</em></h2>
-      </div>
-      <div class="rating reveal" data-delay="1">
-        <strong>4,8</strong>
+      <p class="eyebrow reveal"><b>/$</b> La cuota de socio</p>
+      <h1 class="reveal" id="pricing-title">Una sola cuota. <em>Todo el club dentro.</em></h1>
+      <p class="lead reveal" data-delay="1">Sin extras ni sorpresas. Mientras más sean en la clase, menos paga cada uno.</p>
+      <div class="perks reveal" data-delay="2">
         <div>
-          <span class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg></span>
-          <small>Calificación promedio · 96 reseñas</small>
+          <h2>Entrena</h2>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Clase semanal en grupo de tu nivel</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Diagnóstico y tu nivel Polo System</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Video comparativo cada 30 días</li>
+          </ul>
         </div>
-        <span class="sample">Contenido de ejemplo</span>
+        <div>
+          <h2>Conecta</h2>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Grupo privado de socios</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Te armamos partido cuando te falta el cuarto</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Eventos y tercer tiempo del club</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Compite</h2>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>1 clase-partido al mes con feedback del profe</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Americano mensual de socios</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Liga interna por niveles</li>
+          </ul>
+        </div>
+        <div>
+          <h2>De socio</h2>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Descuento en arriendo de canchas</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Kit de bienvenida</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>1 invitado al mes</li>
+          </ul>
+        </div>
       </div>
     </div>
-    <ul class="reviews">
-      <li class="review reveal">
-        <span class="stars" role="img" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg></span>
-        <blockquote>“Canchas impecables y muy buena onda. Llegué sin conocer a nadie y a las dos semanas ya tenía partido fijo los martes.”</blockquote>
-        <footer><span class="avatar" aria-hidden="true">F</span><span><b>Francisca V.</b>Socia · hace 2 meses</span></footer>
-      </li>
-      <li class="review reveal" data-delay="1">
-        <span class="stars" role="img" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg></span>
-        <blockquote>“Lo mejor son los profes. Te explican qué estás haciendo mal y te lo corrigen de verdad. Subí de nivel en tres meses.”</blockquote>
-        <footer><span class="avatar" aria-hidden="true">R</span><span><b>Rodrigo P.</b>Socio · hace 1 mes</span></footer>
-      </li>
-      <li class="review reveal" data-delay="2">
-        <span class="stars" role="img" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg></span>
-        <blockquote>“Súper cerca de la casa, fácil de reservar y los americanos del viernes son lo mejor de la semana.”</blockquote>
-        <footer><span class="avatar" aria-hidden="true">C</span><span><b>Cristóbal M.</b>Jugador · hace 3 semanas</span></footer>
-      </li>
-    </ul>
-    <p class="reviews__more reveal"><a class="link-arrow" href="https://www.google.com/maps/search/?api=1&query=Polo+Padel+Av.+El+Valle+542+Colina" target="_blank" rel="noopener">Ver todas en Google <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
-  </div>
-</section>
 
-<div class="band media" data-file="assets/fotos/cancha-palas.jpg"><img src="assets/fotos/cancha-palas.jpg" alt="Palas y pelotas sobre una cancha de pádel azul" loading="lazy" width="2200" height="1467"></div>
-
-<!-- =========================================================
-     06 · HORARIOS + UBICACIÓN
-     ========================================================= -->
-<section class="section" id="visitanos" aria-labelledby="visit-title">
-  <div class="wrap visit">
-    <div>
-      <p class="eyebrow reveal"><b>/06</b> Visítanos</p>
-      <h2 class="h2 reveal" id="visit-title">Te esperamos <em>en la cancha.</em></h2>
-      <ul class="hours reveal" data-delay="1" aria-label="Horario de atención">
-        <li data-day="1"><span>Lunes</span><span>08:00 – 23:00</span></li>
-        <li data-day="2"><span>Martes</span><span>08:00 – 23:00</span></li>
-        <li data-day="3"><span>Miércoles</span><span>08:00 – 23:00</span></li>
-        <li data-day="4"><span>Jueves</span><span>08:00 – 23:00</span></li>
-        <li data-day="5"><span>Viernes</span><span>08:00 – 23:00</span></li>
-        <li data-day="6"><span>Sábado</span><span>08:30 – 23:00</span></li>
-        <li data-day="0"><span>Domingo</span><span>08:30 – 23:00</span></li>
-      </ul>
-      <p class="hours-note">En feriados el horario puede variar. Confírmalo por WhatsApp.</p>
-      <address class="address reveal">Av. El Valle 542, Piedra Roja<small>Chicureo, Colina · frente a Carabineros</small></address>
-      <div class="visit__ctas reveal">
-        <a class="btn btn--solid js-wa" data-wa="ubicacion" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Escríbenos</a>
-        <a class="btn btn--ghost" href="https://www.google.com/maps/dir/?api=1&destination=Av.+El+Valle+542,+Colina,+Chile" target="_blank" rel="noopener">Cómo llegar</a>
-      </div>
-    </div>
-    <div class="map reveal" data-delay="1">
-      <iframe title="Mapa: Polo Padel, Av. El Valle 542, Colina" src="https://www.google.com/maps?q=Av.+El+Valle+542,+9340000+Colina,+Chile&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
+    <aside class="price-card reveal" data-delay="1" aria-labelledby="price-label">
+      <p class="price-card__label" id="price-label">Cuota por persona</p>
+      <p class="price" aria-live="polite"><strong class="js-price">$59.990</strong><span>/mes</span></p>
+      <p class="price-note js-price-note">Plan mensual, sin permanencia.</p>
+      <fieldset class="group">
+        <legend>Son</legend>
+        <div class="seg">
+          <label><input type="radio" name="size" value="4" checked><span>4</span></label>
+          <label><input type="radio" name="size" value="3"><span>3</span></label>
+          <label><input type="radio" name="size" value="2"><span>2</span></label>
+        </div>
+        <span class="group__after">en la clase</span>
+      </fieldset>
+      <label class="toggle">
+        <input type="checkbox" class="js-annual" role="switch">
+        <span><b>Plan anual · 2 meses gratis</b><small>Pagas 10 meses y entrenas 12.</small></span>
+      </label>
+      <a class="btn btn--solid js-wa js-price-cta" data-wa="precios" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Solicita tu cupo</a>
+      <p class="price-card__limit">Cupos mensuales limitados.</p>
+      <p class="price-card__alt">¿Prefieres clases solo para ti? <strong>Plan individual</strong>, $189.990/mes.</p>
+      <span class="sample">Precios de ejemplo · confirmar con el club</span>
+    </aside>
   </div>
 </section>
 
 <!-- =========================================================
-     CTA FINAL
+     TU PRIMER DÍA
      ========================================================= -->
-<section class="section cta" aria-labelledby="cta-title">
+<section class="section section--alt" aria-labelledby="first-title">
   <div class="wrap">
-    <h2 class="reveal" id="cta-title">Tu próximo partido <em>empieza aquí.</em></h2>
-    <p class="reveal" data-delay="1">Escríbenos y te contamos cómo hacerte socio, o reserva una cancha y ven a conocernos.</p>
-    <div class="cta__btns reveal" data-delay="2">
-      <a class="btn btn--solid js-wa" data-wa="cta" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Hazte socio</a>
-      <a class="btn btn--ghost js-book" href="#">Reservar cancha</a>
+    <p class="eyebrow reveal"><b>/01</b> Tu primer día</p>
+    <h2 class="h2 reveal" id="first-title">Sin milagros en 20 minutos. <em>Sales sabiendo dónde estás.</em></h2>
+    <ol class="cards cards--3">
+      <li class="card reveal"><span class="card__n" aria-hidden="true">01</span><h3>Diagnóstico</h3><p>Un profe evalúa tu técnica, tu posición y cómo lees el juego.</p></li>
+      <li class="card reveal" data-delay="1"><span class="card__n" aria-hidden="true">02</span><h3>Tu punto de partida en video</h3><p>Te grabamos jugando: es el "antes" de tu temporada.</p></li>
+      <li class="card reveal" data-delay="2"><span class="card__n" aria-hidden="true">03</span><h3>Tu nivel Polo System</h3><p>Sales con tu nivel asignado y tres objetivos concretos para medir tu avance.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- =========================================================
+     LA SESIÓN
+     ========================================================= -->
+<section class="section" aria-labelledby="session-title">
+  <div class="wrap">
+    <p class="eyebrow reveal"><b>/02</b> La sesión</p>
+    <h2 class="h2 reveal" id="session-title">Cuatro fases. <em>La misma estructura con todos los profes.</em></h2>
+    <ol class="cards cards--4">
+      <li class="card reveal"><div class="card__top"><h3>Activa</h3><span class="card__pct">10%</span></div><p>Calentamiento, repaso del partido de la semana y el objetivo del día en voz alta.</p></li>
+      <li class="card reveal" data-delay="1"><div class="card__top"><h3>Entiende</h3><span class="card__pct">40%</span></div><p>Bloque técnico-táctico del foco. Se explica el porqué, no solo el cómo.</p></li>
+      <li class="card reveal" data-delay="2"><div class="card__top"><h3>Aplica</h3><span class="card__pct">40%</span></div><p>El mismo foco en juego dirigido: el puente hacia tus partidos.</p></li>
+      <li class="card reveal" data-delay="3"><div class="card__top"><h3>Cierra</h3><span class="card__pct">10%</span></div><p>Feedback para cada socio y una consigna para tu próximo partido.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- =========================================================
+     NIVELES
+     ========================================================= -->
+<section class="section section--alt" aria-labelledby="levels-title">
+  <div class="wrap">
+    <p class="eyebrow reveal"><b>/03</b> Niveles Polo System</p>
+    <h2 class="h2 reveal" id="levels-title">Tu nivel, medido <em>y comparable.</em></h2>
+    <div class="levels-table reveal" data-delay="1">
+      <table>
+        <thead><tr><th scope="col">Nivel</th><th scope="col">Equivalente Playtomic</th><th scope="col">Qué cambia en este nivel</th></tr></thead>
+        <tbody>
+          <tr><td>N1 · Inicio</td><td>0 – 1</td><td>Todos los golpes a ritmo bajo, con foco en seguridad y ubicación.</td></tr>
+          <tr><td>N2 · Base</td><td>1 – 2</td><td>Más consistencia, menos errores no forzados y lectura básica del punto.</td></tr>
+          <tr><td>N3 · Intermedio</td><td>2 – 3</td><td>Definición, comunicación con tu pareja y ataque coordinado.</td></tr>
+          <tr><td>N4 · Avanzado</td><td>3 – 4</td><td>Efectos y variantes, patrones de juego, lectura del rival y presión.</td></tr>
+          <tr><td>N5 · Competición</td><td>4 +</td><td>Automatismos bajo presión, plan de partido y ajustes en caliente.</td></tr>
+        </tbody>
+      </table>
     </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     GARANTÍAS
+     ========================================================= -->
+<section class="section" aria-labelledby="promise-title">
+  <div class="wrap">
+    <p class="eyebrow reveal"><b>/04</b> Nuestra convicción</p>
+    <h2 class="h2 reveal" id="promise-title">Creemos en el método. <em>Y lo garantizamos.</em></h2>
+    <ul class="cards cards--3">
+      <li class="card reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><h3>Sin riesgo de entrada</h3><p>Si después de tu primera sesión no es lo que esperabas, te devolvemos el 100% de lo que pagaste.</p></li>
+      <li class="card reveal" data-delay="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg><h3>Progreso en 90 días</h3><p>Si cumples el plan y tu video comparativo no muestra que subiste de nivel, el 4º mes corre por nuestra cuenta.</p></li>
+      <li class="card reveal" data-delay="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-3.9 3.1-7 7-7 1.6 0 3 .5 4.2 1.4"/><path d="M15 18l2 2 4-4"/></svg><h3>Cambio de profe</h3><p>Si no conectas con tu profesor, te cambiamos de grupo sin costo.</p></li>
+    </ul>
+    <p class="reveal" style="margin-top:20px"><span class="sample">Contenido de ejemplo · confirmar método y condiciones</span></p>
+  </div>
+</section>
+
+<!-- =========================================================
+     CIERRE
+     ========================================================= -->
+<section class="section section--alt closing" aria-labelledby="closing-title">
+  <div class="wrap">
+    <h2 class="h2 reveal" id="closing-title">Reserva tu primera sesión y <em>empieza a medir tu progreso.</em></h2>
+    <p class="reveal" data-delay="1">Todo el club incluido, con el método detrás de cada clase.</p>
+    <a class="btn btn--solid js-wa reveal" data-wa="primera-sesion" data-delay="2" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Solicita tu cupo</a>
+    <small class="reveal" data-delay="2">Los grupos nuevos parten el día 1 de cada mes, según cupos de los profes.</small>
   </div>
 </section>
 
 </main>
 
-<!-- =========================================================
-     FOOTER
-     ========================================================= -->
 <footer class="footer">
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <a class="brand" href="#top" aria-label="Polo Padel, ir al inicio">
+        <a class="brand" href="index.html" aria-label="Polo Padel, ir al inicio">
           <span class="brand__logo"></span>
         </a>
         <p class="footer__tag">El club de pádel de Piedra Roja. Entrena, conecta, compite.</p>
@@ -923,11 +839,11 @@ p{margin:0}
       <div>
         <h4>Club</h4>
         <ul>
-          <li><a href="#club">El club</a></li>
-          <li><a href="#polo-system">Polo System</a></li>
+          <li><a href="index.html#club">El club</a></li>
+          <li><a href="index.html#polo-system">Polo System</a></li>
           <li><a href="precios.html">Precios</a></li>
-          <li><a href="#equipo">Equipo</a></li>
-          <li><a href="#visitanos">Horarios</a></li>
+          <li><a href="index.html#equipo">Equipo</a></li>
+          <li><a href="index.html#visitanos">Horarios</a></li>
         </ul>
       </div>
       <div>
@@ -971,9 +887,6 @@ p{margin:0}
 </svg>
 
 <script>
-/* =========================================================
-   CONFIG — WhatsApp y enlaces centralizados
-   ========================================================= */
 const CONFIG = {
   whatsapp: {
     number: "56991281970",          // +56 9 9128 1970
@@ -998,83 +911,55 @@ const CONFIG = {
     facebook:  "https://www.facebook.com/people/Polo-Padel-Chicureo/61566704670748/"
   }
 };
+CONFIG.whatsapp.messages.precios = "Hola Polo Padel, quiero solicitar mi cupo de socio.";
+CONFIG.whatsapp.messages["primera-sesion"] = "Hola Polo Padel, quiero reservar mi primera sesión (diagnóstico y video).";
+
+/* Precios de ejemplo (por persona, CLP) — reemplazar por los reales */
+const PRICES = {
+  monthly: { 4: 59990, 3: 69990, 2: 89990 },
+  annual:  { 4: 49990, 3: 57990, 2: 74990 }
+};
 
 function waLink(key, customText){
   const w = CONFIG.whatsapp;
   const text = customText || w.messages[key] || w.messages.default;
   return "https://wa.me/" + w.number + "?text=" + encodeURIComponent(text);
 }
-
 document.body.classList.remove("no-js");
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* Botones de WhatsApp y enlaces externos */
-document.querySelectorAll(".js-wa").forEach(el => {
-  el.href = waLink(el.dataset.wa);
-  el.target = "_blank";
-  el.rel = "noopener";
-});
+document.querySelectorAll(".js-wa").forEach(el => { el.href = waLink(el.dataset.wa); el.target = "_blank"; el.rel = "noopener"; });
 document.querySelectorAll("[data-wa-label]").forEach(el => { el.textContent = CONFIG.whatsapp.display; });
 const setLinks = (sel, url) => document.querySelectorAll(sel).forEach(el => { el.href = url; el.target = "_blank"; el.rel = "noopener"; });
 setLinks(".js-book", CONFIG.links.booking);
 setLinks(".js-ig", CONFIG.links.instagram);
 setLinks(".js-fb", CONFIG.links.facebook);
-
-/* Año */
 document.getElementById("year").textContent = new Date().getFullYear();
 
-
-/* Propuesta de color A/B (también con ?paleta=blanco en la URL) */
+/* Propuesta de color y tema: mismas claves que la portada */
 (function(){
   const root = document.documentElement;
-  const KEY = "polopadel-palette";
+  let pal = null, theme = null;
+  try { pal = localStorage.getItem("polopadel-palette"); theme = localStorage.getItem("polopadel-theme"); } catch(e) {}
+  const q = new URLSearchParams(location.search).get("paleta");
+  if (q) pal = q;
   const btns = document.querySelectorAll(".palette-switch button");
-  const set = p => {
-    root.dataset.palette = p;
-    btns.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.palette === p)));
-    try { localStorage.setItem(KEY, p); } catch(e) {}
-  };
-  let initial = new URLSearchParams(location.search).get("paleta");
-  if (!initial) { try { initial = localStorage.getItem(KEY); } catch(e) {} }
-  if (initial === "azul" || initial === "blanco") set(initial);
-  // Cada propuesta está pensada en claro: al elegirla se muestra en modo claro
-  btns.forEach(b => b.addEventListener("click", () => {
-    set(b.dataset.palette);
-    root.dataset.theme = "light";
-    try { localStorage.setItem("polopadel-theme", "light"); } catch(e) {}
-  }));
-})();
-
-/* Tema claro / oscuro (preferencia guardada solo en este navegador) */
-(function(){
-  const root = document.documentElement;
-  const KEY = "polopadel-theme";
-  let saved = null;
-  try { saved = localStorage.getItem(KEY); } catch(e) {}
-  if (saved === "light" || saved === "dark") root.dataset.theme = saved;
+  const setPal = p => { root.dataset.palette = p; btns.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.palette === p))); try { localStorage.setItem("polopadel-palette", p); } catch(e) {} };
+  if (pal === "azul" || pal === "blanco") setPal(pal);
+  if (theme === "light" || theme === "dark") root.dataset.theme = theme;
+  btns.forEach(b => b.addEventListener("click", () => { setPal(b.dataset.palette); root.dataset.theme = "light"; try { localStorage.setItem("polopadel-theme", "light"); } catch(e) {} }));
   const isDark = () => root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
-  document.querySelector(".theme-toggle").addEventListener("click", () => {
-    const next = isDark() ? "light" : "dark";
-    root.dataset.theme = next;
-    try { localStorage.setItem(KEY, next); } catch(e) {}
-  });
+  document.querySelector(".theme-toggle").addEventListener("click", () => { const n = isDark() ? "light" : "dark"; root.dataset.theme = n; try { localStorage.setItem("polopadel-theme", n); } catch(e) {} });
 })();
 
-/* Header transparente sobre el hero + botón flotante */
+/* Header y botón flotante */
 (function(){
   const header = document.querySelector(".header");
-  const float = document.querySelector(".wa-float");
-  const hero = document.querySelector(".hero");
-  const onScroll = () => {
-    const menuOpen = document.getElementById("drawer").classList.contains("is-open");
-    const overHero = window.scrollY < hero.offsetHeight - 80;
-    header.classList.toggle("is-scrolled", window.scrollY > 8);
-    header.classList.toggle("is-over", overHero && !menuOpen);
-    float.classList.toggle("is-visible", window.scrollY > hero.offsetHeight * 0.6);
-  };
+  const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 8);
   window.updateHeader = onScroll;
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
+  document.querySelector(".wa-float").classList.add("is-visible");
 })();
 
 /* Menú móvil */
@@ -1086,7 +971,6 @@ document.getElementById("year").textContent = new Date().getFullYear();
     btn.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
     drawer.classList.toggle("is-open", open);
     document.body.classList.toggle("no-scroll", open);
-    window.updateHeader();
   };
   btn.addEventListener("click", () => set(btn.getAttribute("aria-expanded") !== "true"));
   drawer.querySelectorAll("a").forEach(a => a.addEventListener("click", () => set(false)));
@@ -1094,175 +978,30 @@ document.getElementById("year").textContent = new Date().getFullYear();
   matchMedia("(min-width: 1024px)").addEventListener("change", e => { if (e.matches) set(false); });
 })();
 
-/* Fotos, videos y logos de partners: si el archivo aún no existe, se muestra el marcador */
-document.querySelectorAll(".media > img, .partner > img").forEach(img => {
-  const fail = () => img.parentElement.classList.add("is-missing");
-  if (img.complete && img.naturalWidth === 0) fail();
-  img.addEventListener("error", fail);
-});
-document.querySelectorAll(".media > video").forEach(video => {
-  const sources = video.querySelectorAll("source");
-  const fail = () => video.parentElement.classList.add("is-missing");
-  sources[sources.length - 1].addEventListener("error", fail);
-  video.addEventListener("error", fail);
-  if (video.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) fail();
-});
-
-/* Partners: se repite la fila hasta cubrir la pantalla y se duplica para el desplazamiento continuo */
+/* Cuota: cambia según el tamaño del grupo y el plan anual; el WhatsApp lleva la elección */
 (function(){
-  if (reduceMotion) return;
-  const list = document.querySelector(".js-partners");
-  const base = [...list.children];
-  for (let i = 0; i < 3 && list.scrollWidth < window.innerWidth * 1.1; i++) {
-    base.forEach(li => { const c = li.cloneNode(true); c.setAttribute("aria-hidden", "true"); c.querySelector("img").alt = ""; list.append(c); });
-  }
-  const copy = list.cloneNode(true);
-  copy.setAttribute("aria-hidden", "true");
-  copy.querySelectorAll("img").forEach(img => {
-    img.alt = "";
-    img.addEventListener("error", () => img.parentElement.classList.add("is-missing"));
-    if (img.complete && img.naturalWidth === 0) img.parentElement.classList.add("is-missing");
-  });
-  list.after(copy);
-})();
-
-/* Hero: video de fondo con pausa; se detiene fuera de pantalla */
-(function(){
-  const hero = document.querySelector(".hero");
-  const video = document.querySelector(".js-hero-video");
-  const btn = document.querySelector(".hero__pause");
-  // Sin video de hero: queda la foto de fondo
-  const sources = video.querySelectorAll("source");
-  const noVideo = () => hero.classList.add("no-video");
-  sources[sources.length - 1].addEventListener("error", noVideo);
-  if (video.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) noVideo();
-  let paused = reduceMotion;
-  const sync = () => {
-    btn.setAttribute("aria-pressed", String(paused));
-    btn.setAttribute("aria-label", paused ? "Reproducir video de fondo" : "Pausar video de fondo");
-    paused ? video.pause() : video.play().catch(() => {});
+  const price = document.querySelector(".js-price");
+  const note = document.querySelector(".js-price-note");
+  const annual = document.querySelector(".js-annual");
+  const cta = document.querySelector(".js-price-cta");
+  const fmt = n => "$" + n.toLocaleString("es-CL");
+  const update = () => {
+    const size = document.querySelector('input[name="size"]:checked').value;
+    const plan = annual.checked ? "annual" : "monthly";
+    const value = PRICES[plan][size];
+    price.textContent = fmt(value);
+    note.textContent = annual.checked ? "Plan anual: 12 meses por el precio de 10." : "Plan mensual, sin permanencia.";
+    cta.href = waLink(null, "Hola Polo Padel, quiero solicitar mi cupo de socio: grupo de " + size + " en la clase, " + (annual.checked ? "plan anual" : "plan mensual") + " (" + fmt(value) + "/mes por persona).");
   };
-  btn.addEventListener("click", () => { paused = !paused; sync(); });
-  if ("IntersectionObserver" in window) {
-    new IntersectionObserver(([e]) => { if (!paused) e.isIntersecting ? video.play().catch(() => {}) : video.pause(); }).observe(video);
-  }
-  sync();
-})();
-
-/* Video de fondo de la garantía: carga y reproduce solo al estar visible */
-(function(){
-  const video = document.querySelector(".js-bg-video");
-  if (reduceMotion || !("IntersectionObserver" in window)) return;
-  new IntersectionObserver(([e]) => {
-    if (e.isIntersecting) { if (video.preload === "none") { video.preload = "auto"; video.load(); } video.play().catch(() => {}); }
-    else video.pause();
-  }, { threshold: .2 }).observe(video);
-})();
-
-/* El club: Entrena → Conecta → Compite. Cada video pasa al siguiente al terminar;
-   si falta un video, avanza con un temporizador. */
-(function(){
-  const feats = [...document.querySelectorAll("#feats .feat")];
-  const dots = [...document.querySelectorAll(".feat-dots button")];
-  const title = document.querySelector(".js-feat-title");
-  const text = document.querySelector(".js-feat-text");
-  const caption = document.querySelector(".feat-caption");
-  const pauseBtn = document.querySelector(".js-feat-pause");
-  const FALLBACK_MS = 7000;
-  let index = 0, paused = reduceMotion, visible = false, timer = null, t0 = 0, elapsed = 0, raf = null;
-
-  const bar = i => feats[i].querySelector(".feat__bar i");
-  const videoOf = i => feats[i].querySelector("video");
-  const missing = i => feats[i].querySelector(".media").classList.contains("is-missing");
-
-  function stopTimer(){ clearTimeout(timer); cancelAnimationFrame(raf); timer = null; }
-  function runTimer(){
-    stopTimer();
-    t0 = performance.now() - elapsed;
-    const tick = now => { elapsed = now - t0; bar(index).style.setProperty("--p", Math.min(elapsed / FALLBACK_MS, 1)); if (elapsed < FALLBACK_MS) raf = requestAnimationFrame(tick); };
-    raf = requestAnimationFrame(tick);
-    timer = setTimeout(() => go(index + 1), FALLBACK_MS - elapsed);
-  }
-
-  function play(){
-    if (paused || !visible) return;
-    const v = videoOf(index);
-    if (missing(index)) { runTimer(); return; }
-    v.play().catch(err => {
-      // La carga recién iniciada puede abortar el primer intento: se reintenta cuando el video esté listo
-      if (err && err.name === "AbortError") {
-        const retry = () => { if (videoOf(index) === v && !paused && visible) v.play().catch(runTimer); };
-        v.readyState >= 3 ? retry() : v.addEventListener("canplay", retry, { once: true });
-      } else runTimer();
-    });
-  }
-  function hold(){
-    stopTimer();
-    videoOf(index).pause();
-  }
-
-  function go(i){
-    hold();
-    const prev = videoOf(index);
-    index = (i + feats.length) % feats.length;
-    elapsed = 0;
-    feats.forEach((f, n) => {
-      const on = n === index;
-      f.classList.toggle("is-active", on);
-      f.querySelector(".feat__tab").tabIndex = on ? -1 : 0;
-      f.querySelector(".feat__bar i").style.setProperty("--p", 0);
-    });
-    dots.forEach((d, n) => n === index ? d.setAttribute("aria-current", "true") : d.removeAttribute("aria-current"));
-    if (prev !== videoOf(index)) prev.currentTime = 0;
-    const v = videoOf(index);
-    if (v.preload === "none") { v.preload = "auto"; v.load(); }
-    else v.currentTime = 0;
-    title.textContent = feats[index].dataset.title;
-    text.textContent = feats[index].dataset.text;
-    caption.classList.remove("is-swapping"); void caption.offsetWidth; caption.classList.add("is-swapping");
-    play();
-  }
-
-  feats.forEach((f, n) => {
-    const v = f.querySelector("video");
-    v.addEventListener("ended", () => { if (n === index) go(index + 1); });
-    // Video ausente: pasa al temporizador
-    const srcs = v.querySelectorAll("source");
-    srcs[srcs.length - 1].addEventListener("error", () => { if (n === index && !paused && visible) runTimer(); });
-    v.addEventListener("timeupdate", () => { if (n === index && v.duration) f.querySelector(".feat__bar i").style.setProperty("--p", v.currentTime / v.duration); });
-    f.querySelector(".feat__tab").addEventListener("click", () => { if (n !== index) go(n); });
-  });
-  dots.forEach((d, n) => d.addEventListener("click", () => go(n)));
-
-  pauseBtn.addEventListener("click", () => {
-    paused = !paused;
-    pauseBtn.setAttribute("aria-pressed", String(paused));
-    pauseBtn.setAttribute("aria-label", paused ? "Reproducir videos" : "Pausar videos");
-    paused ? hold() : play();
-  });
-  pauseBtn.setAttribute("aria-pressed", String(paused));
-  if (paused) pauseBtn.setAttribute("aria-label", "Reproducir videos");
-
-  // Solo corre mientras la sección está en pantalla
-  if ("IntersectionObserver" in window) {
-    new IntersectionObserver(([e]) => { visible = e.isIntersecting; visible ? play() : hold(); }, { threshold: .35 }).observe(document.getElementById("feats"));
-  } else { visible = true; play(); }
-  document.addEventListener("visibilitychange", () => { document.hidden ? hold() : play(); });
-})();
-
-/* Horario: marca el día de hoy (hora de Chile) */
-(function(){
-  const day = new Date(new Date().toLocaleString("en-US", { timeZone: "America/Santiago" })).getDay();
-  const li = document.querySelector('.hours li[data-day="' + day + '"]');
-  if (li) li.classList.add("is-today");
+  document.querySelectorAll('input[name="size"]').forEach(r => r.addEventListener("change", update));
+  annual.addEventListener("change", update);
+  update();
 })();
 
 /* Animaciones de entrada */
 (function(){
   const items = document.querySelectorAll(".reveal");
-  if (!("IntersectionObserver" in window) || reduceMotion) {
-    items.forEach(el => el.classList.add("is-in")); return;
-  }
+  if (!("IntersectionObserver" in window) || reduceMotion) { items.forEach(el => el.classList.add("is-in")); return; }
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
   }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });

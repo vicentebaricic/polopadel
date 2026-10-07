@@ -1,0 +1,344 @@
+Fuente de precios.html. Se arma con tools/build-precios.py, que toma estilos, encabezado y pie de index.html.
+
+<!-- @css -->
+/* =========================================================
+   PÁGINA DE PRECIOS
+   ========================================================= */
+.page{padding-top:calc(var(--header-h) + clamp(40px,6vw,80px))}
+.pricing{display:grid;gap:48px;align-items:start}
+.pricing h1{font-size:clamp(2.5rem,6.2vw,4.75rem);font-stretch:116%}
+@media (min-width: 1024px){ .pricing h1{font-size:clamp(2.75rem,4.4vw,4.25rem)} }
+.pricing h1 em{font-style:italic;color:var(--hl)}
+.pricing .lead{margin-top:22px}
+.perks{display:grid;gap:36px 40px;margin-top:44px}
+.perks h2{font-family:var(--font-mono);font-size:.75rem;font-weight:500;letter-spacing:.2em;color:var(--tone);margin-bottom:14px}
+.perks ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.perks li{display:grid;grid-template-columns:20px 1fr;gap:12px;align-items:start;font-size:1.0625rem;line-height:1.45}
+.perks li svg{width:18px;height:18px;margin-top:3px;color:var(--hl)}
+@media (min-width: 640px){ .perks{grid-template-columns:1fr 1fr} }
+
+.price-card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:clamp(24px,3.4vw,40px);position:relative}
+.price-card__label{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--tone)}
+.price{display:flex;align-items:baseline;gap:10px;margin-top:14px;font-variant-numeric:tabular-nums}
+.price strong{font-family:var(--font-display);font-stretch:112%;font-weight:900;font-size:clamp(3.25rem,7vw,4.75rem);line-height:.9}
+.price span{font-family:var(--font-display);font-weight:700;font-size:1.25rem;text-transform:uppercase;color:var(--text-2)}
+.price-note{margin-top:8px;font-size:.875rem;color:var(--text-3)}
+.group{border:0;margin:26px 0 0;padding:0;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.group legend{float:left;margin-right:4px;color:var(--text-2)}
+.seg{display:inline-flex;padding:4px;border-radius:var(--radius-pill);border:1px solid var(--line)}
+.seg label{position:relative}
+.seg input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.seg span{display:grid;place-items:center;width:48px;height:44px;border-radius:var(--radius-pill);font-family:var(--font-mono);font-weight:500;transition:background-color var(--dur) var(--ease), color var(--dur) var(--ease)}
+.seg input:checked + span{background:var(--btn-bg);color:var(--btn-text)}
+.seg input:focus-visible + span{outline:2px solid var(--focus);outline-offset:2px}
+.group__after{color:var(--text-2)}
+.toggle{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;margin-top:24px;padding:18px;border:1px solid var(--line);border-radius:16px;cursor:pointer}
+.toggle input{appearance:none;-webkit-appearance:none;margin:2px 0 0;width:46px;height:26px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);position:relative;cursor:pointer;transition:background-color var(--dur) var(--ease)}
+.toggle input::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:var(--text-3);transition:transform var(--dur) var(--ease), background-color var(--dur) var(--ease)}
+.toggle input:checked{background:var(--btn-bg)}
+.toggle input:checked::after{transform:translateX(20px);background:var(--btn-text)}
+.toggle b{display:block;font-family:var(--font-mono);font-weight:500;font-size:.8125rem;letter-spacing:.12em;text-transform:uppercase}
+.toggle small{display:block;margin-top:6px;color:var(--text-2);font-size:.9375rem}
+.price-card .btn{margin-top:28px;width:100%}
+.price-card__limit{margin-top:14px;font-weight:600;color:var(--tone);font-size:.9375rem}
+.price-card__alt{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:.9375rem;color:var(--text-2)}
+.price-card__alt strong{color:var(--text)}
+.price-card .sample{margin-top:16px}
+@media (min-width: 1024px){
+  .pricing{grid-template-columns:1.25fr 1fr;gap:clamp(48px,6vw,96px)}
+  .price-card{position:sticky;top:calc(var(--header-h) + 24px)}
+}
+
+/* Tarjetas del método */
+.cards{display:grid;gap:16px;margin-top:clamp(36px,5vw,56px);list-style:none;padding:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:clamp(22px,2.6vw,32px)}
+.card__n{font-family:var(--font-display);font-stretch:125%;font-weight:900;font-size:2.5rem;line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--tone)}
+.card__top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.card__pct{font-family:var(--font-mono);font-weight:500;color:var(--tone)}
+.card h3{font-size:1.375rem;font-stretch:115%;margin-top:14px}
+.card__top h3{margin-top:0}
+.card p{margin-top:12px;color:var(--text-2)}
+.card svg{width:26px;height:26px;color:var(--tone)}
+@media (min-width: 768px){ .cards--3{grid-template-columns:repeat(3,1fr)} .cards--4{grid-template-columns:repeat(2,1fr)} }
+@media (min-width: 1100px){ .cards--4{grid-template-columns:repeat(4,1fr)} }
+
+/* Tabla de niveles */
+.levels-table{margin-top:clamp(36px,5vw,56px);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.levels-table table{width:100%;border-collapse:collapse}
+.levels-table th{background:var(--surface);text-align:left;font-family:var(--font-mono);font-weight:500;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-3);padding:18px 20px}
+.levels-table td{padding:18px 20px;border-top:1px solid var(--line);vertical-align:top}
+.levels-table td:first-child{font-family:var(--font-display);font-stretch:112%;font-weight:800;text-transform:uppercase;white-space:nowrap}
+.levels-table td:nth-child(2){font-family:var(--font-mono);color:var(--tone);white-space:nowrap}
+.levels-table td:last-child{color:var(--text-2)}
+@media (max-width: 640px){
+  .levels-table thead{display:none}
+  .levels-table tr{display:grid;grid-template-columns:1fr auto;gap:6px 12px;padding:16px 18px;border-top:1px solid var(--line)}
+  .levels-table tr:first-child{border-top:0}
+  .levels-table td{padding:0;border:0}
+  .levels-table td:last-child{grid-column:1 / -1}
+}
+
+/* Cierre */
+.closing{text-align:center}
+.closing h2{font-size:clamp(2.25rem,5.4vw,4rem);max-width:20ch;margin-inline:auto}
+.closing p{margin:20px auto 0;max-width:46ch;font-size:var(--fs-lead);color:var(--text-2)}
+.closing .btn{margin-top:32px}
+.closing small{display:block;margin-top:18px;color:var(--text-3);font-size:.875rem}
+.nav a[aria-current="page"]::after{transform:scaleX(1)}
+<!-- @/css -->
+
+<!-- @main -->
+<main id="main" class="page">
+
+<!-- =========================================================
+     CUOTA DE SOCIO
+     ========================================================= -->
+<section class="section" style="padding-top:0" aria-labelledby="pricing-title">
+  <div class="wrap pricing">
+    <div>
+      <p class="eyebrow reveal"><b>/$</b> La cuota de socio</p>
+      <h1 class="reveal" id="pricing-title">Una sola cuota. <em>Todo el club dentro.</em></h1>
+      <p class="lead reveal" data-delay="1">Sin extras ni sorpresas. Mientras más sean en la clase, menos paga cada uno.</p>
+      <div class="perks reveal" data-delay="2">
+        <div>
+          <h2>Entrena</h2>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Clase semanal en grupo de tu nivel</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Diagnóstico y tu nivel Polo System</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Video comparativo cada 30 días</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Conecta</h2>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Grupo privado de socios</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Te armamos partido cuando te falta el cuarto</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Eventos y tercer tiempo del club</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Compite</h2>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>1 clase-partido al mes con feedback del profe</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Americano mensual de socios</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Liga interna por niveles</li>
+          </ul>
+        </div>
+        <div>
+          <h2>De socio</h2>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Descuento en arriendo de canchas</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Kit de bienvenida</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>1 invitado al mes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <aside class="price-card reveal" data-delay="1" aria-labelledby="price-label">
+      <p class="price-card__label" id="price-label">Cuota por persona</p>
+      <p class="price" aria-live="polite"><strong class="js-price">$59.990</strong><span>/mes</span></p>
+      <p class="price-note js-price-note">Plan mensual, sin permanencia.</p>
+      <fieldset class="group">
+        <legend>Son</legend>
+        <div class="seg">
+          <label><input type="radio" name="size" value="4" checked><span>4</span></label>
+          <label><input type="radio" name="size" value="3"><span>3</span></label>
+          <label><input type="radio" name="size" value="2"><span>2</span></label>
+        </div>
+        <span class="group__after">en la clase</span>
+      </fieldset>
+      <label class="toggle">
+        <input type="checkbox" class="js-annual" role="switch">
+        <span><b>Plan anual · 2 meses gratis</b><small>Pagas 10 meses y entrenas 12.</small></span>
+      </label>
+      <a class="btn btn--solid js-wa js-price-cta" data-wa="precios" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Solicita tu cupo</a>
+      <p class="price-card__limit">Cupos mensuales limitados.</p>
+      <p class="price-card__alt">¿Prefieres clases solo para ti? <strong>Plan individual</strong>, $189.990/mes.</p>
+      <span class="sample">Precios de ejemplo · confirmar con el club</span>
+    </aside>
+  </div>
+</section>
+
+<!-- =========================================================
+     TU PRIMER DÍA
+     ========================================================= -->
+<section class="section section--alt" aria-labelledby="first-title">
+  <div class="wrap">
+    <p class="eyebrow reveal"><b>/01</b> Tu primer día</p>
+    <h2 class="h2 reveal" id="first-title">Sin milagros en 20 minutos. <em>Sales sabiendo dónde estás.</em></h2>
+    <ol class="cards cards--3">
+      <li class="card reveal"><span class="card__n" aria-hidden="true">01</span><h3>Diagnóstico</h3><p>Un profe evalúa tu técnica, tu posición y cómo lees el juego.</p></li>
+      <li class="card reveal" data-delay="1"><span class="card__n" aria-hidden="true">02</span><h3>Tu punto de partida en video</h3><p>Te grabamos jugando: es el "antes" de tu temporada.</p></li>
+      <li class="card reveal" data-delay="2"><span class="card__n" aria-hidden="true">03</span><h3>Tu nivel Polo System</h3><p>Sales con tu nivel asignado y tres objetivos concretos para medir tu avance.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- =========================================================
+     LA SESIÓN
+     ========================================================= -->
+<section class="section" aria-labelledby="session-title">
+  <div class="wrap">
+    <p class="eyebrow reveal"><b>/02</b> La sesión</p>
+    <h2 class="h2 reveal" id="session-title">Cuatro fases. <em>La misma estructura con todos los profes.</em></h2>
+    <ol class="cards cards--4">
+      <li class="card reveal"><div class="card__top"><h3>Activa</h3><span class="card__pct">10%</span></div><p>Calentamiento, repaso del partido de la semana y el objetivo del día en voz alta.</p></li>
+      <li class="card reveal" data-delay="1"><div class="card__top"><h3>Entiende</h3><span class="card__pct">40%</span></div><p>Bloque técnico-táctico del foco. Se explica el porqué, no solo el cómo.</p></li>
+      <li class="card reveal" data-delay="2"><div class="card__top"><h3>Aplica</h3><span class="card__pct">40%</span></div><p>El mismo foco en juego dirigido: el puente hacia tus partidos.</p></li>
+      <li class="card reveal" data-delay="3"><div class="card__top"><h3>Cierra</h3><span class="card__pct">10%</span></div><p>Feedback para cada socio y una consigna para tu próximo partido.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- =========================================================
+     NIVELES
+     ========================================================= -->
+<section class="section section--alt" aria-labelledby="levels-title">
+  <div class="wrap">
+    <p class="eyebrow reveal"><b>/03</b> Niveles Polo System</p>
+    <h2 class="h2 reveal" id="levels-title">Tu nivel, medido <em>y comparable.</em></h2>
+    <div class="levels-table reveal" data-delay="1">
+      <table>
+        <thead><tr><th scope="col">Nivel</th><th scope="col">Equivalente Playtomic</th><th scope="col">Qué cambia en este nivel</th></tr></thead>
+        <tbody>
+          <tr><td>N1 · Inicio</td><td>0 – 1</td><td>Todos los golpes a ritmo bajo, con foco en seguridad y ubicación.</td></tr>
+          <tr><td>N2 · Base</td><td>1 – 2</td><td>Más consistencia, menos errores no forzados y lectura básica del punto.</td></tr>
+          <tr><td>N3 · Intermedio</td><td>2 – 3</td><td>Definición, comunicación con tu pareja y ataque coordinado.</td></tr>
+          <tr><td>N4 · Avanzado</td><td>3 – 4</td><td>Efectos y variantes, patrones de juego, lectura del rival y presión.</td></tr>
+          <tr><td>N5 · Competición</td><td>4 +</td><td>Automatismos bajo presión, plan de partido y ajustes en caliente.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     GARANTÍAS
+     ========================================================= -->
+<section class="section" aria-labelledby="promise-title">
+  <div class="wrap">
+    <p class="eyebrow reveal"><b>/04</b> Nuestra convicción</p>
+    <h2 class="h2 reveal" id="promise-title">Creemos en el método. <em>Y lo garantizamos.</em></h2>
+    <ul class="cards cards--3">
+      <li class="card reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><h3>Sin riesgo de entrada</h3><p>Si después de tu primera sesión no es lo que esperabas, te devolvemos el 100% de lo que pagaste.</p></li>
+      <li class="card reveal" data-delay="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg><h3>Progreso en 90 días</h3><p>Si cumples el plan y tu video comparativo no muestra que subiste de nivel, el 4º mes corre por nuestra cuenta.</p></li>
+      <li class="card reveal" data-delay="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-3.9 3.1-7 7-7 1.6 0 3 .5 4.2 1.4"/><path d="M15 18l2 2 4-4"/></svg><h3>Cambio de profe</h3><p>Si no conectas con tu profesor, te cambiamos de grupo sin costo.</p></li>
+    </ul>
+    <p class="reveal" style="margin-top:20px"><span class="sample">Contenido de ejemplo · confirmar método y condiciones</span></p>
+  </div>
+</section>
+
+<!-- =========================================================
+     CIERRE
+     ========================================================= -->
+<section class="section section--alt closing" aria-labelledby="closing-title">
+  <div class="wrap">
+    <h2 class="h2 reveal" id="closing-title">Reserva tu primera sesión y <em>empieza a medir tu progreso.</em></h2>
+    <p class="reveal" data-delay="1">Todo el club incluido, con el método detrás de cada clase.</p>
+    <a class="btn btn--solid js-wa reveal" data-wa="primera-sesion" data-delay="2" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Solicita tu cupo</a>
+    <small class="reveal" data-delay="2">Los grupos nuevos parten el día 1 de cada mes, según cupos de los profes.</small>
+  </div>
+</section>
+
+</main>
+<!-- @/main -->
+
+<!-- @js -->
+CONFIG.whatsapp.messages.precios = "Hola Polo Padel, quiero solicitar mi cupo de socio.";
+CONFIG.whatsapp.messages["primera-sesion"] = "Hola Polo Padel, quiero reservar mi primera sesión (diagnóstico y video).";
+
+/* Precios de ejemplo (por persona, CLP) — reemplazar por los reales */
+const PRICES = {
+  monthly: { 4: 59990, 3: 69990, 2: 89990 },
+  annual:  { 4: 49990, 3: 57990, 2: 74990 }
+};
+
+function waLink(key, customText){
+  const w = CONFIG.whatsapp;
+  const text = customText || w.messages[key] || w.messages.default;
+  return "https://wa.me/" + w.number + "?text=" + encodeURIComponent(text);
+}
+document.body.classList.remove("no-js");
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+document.querySelectorAll(".js-wa").forEach(el => { el.href = waLink(el.dataset.wa); el.target = "_blank"; el.rel = "noopener"; });
+document.querySelectorAll("[data-wa-label]").forEach(el => { el.textContent = CONFIG.whatsapp.display; });
+const setLinks = (sel, url) => document.querySelectorAll(sel).forEach(el => { el.href = url; el.target = "_blank"; el.rel = "noopener"; });
+setLinks(".js-book", CONFIG.links.booking);
+setLinks(".js-ig", CONFIG.links.instagram);
+setLinks(".js-fb", CONFIG.links.facebook);
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* Propuesta de color y tema: mismas claves que la portada */
+(function(){
+  const root = document.documentElement;
+  let pal = null, theme = null;
+  try { pal = localStorage.getItem("polopadel-palette"); theme = localStorage.getItem("polopadel-theme"); } catch(e) {}
+  const q = new URLSearchParams(location.search).get("paleta");
+  if (q) pal = q;
+  const btns = document.querySelectorAll(".palette-switch button");
+  const setPal = p => { root.dataset.palette = p; btns.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.palette === p))); try { localStorage.setItem("polopadel-palette", p); } catch(e) {} };
+  if (pal === "azul" || pal === "blanco") setPal(pal);
+  if (theme === "light" || theme === "dark") root.dataset.theme = theme;
+  btns.forEach(b => b.addEventListener("click", () => { setPal(b.dataset.palette); root.dataset.theme = "light"; try { localStorage.setItem("polopadel-theme", "light"); } catch(e) {} }));
+  const isDark = () => root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  document.querySelector(".theme-toggle").addEventListener("click", () => { const n = isDark() ? "light" : "dark"; root.dataset.theme = n; try { localStorage.setItem("polopadel-theme", n); } catch(e) {} });
+})();
+
+/* Header y botón flotante */
+(function(){
+  const header = document.querySelector(".header");
+  const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 8);
+  window.updateHeader = onScroll;
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+  document.querySelector(".wa-float").classList.add("is-visible");
+})();
+
+/* Menú móvil */
+(function(){
+  const btn = document.querySelector(".menu-toggle");
+  const drawer = document.getElementById("drawer");
+  const set = open => {
+    btn.setAttribute("aria-expanded", String(open));
+    btn.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+    drawer.classList.toggle("is-open", open);
+    document.body.classList.toggle("no-scroll", open);
+  };
+  btn.addEventListener("click", () => set(btn.getAttribute("aria-expanded") !== "true"));
+  drawer.querySelectorAll("a").forEach(a => a.addEventListener("click", () => set(false)));
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && drawer.classList.contains("is-open")) { set(false); btn.focus(); } });
+  matchMedia("(min-width: 1024px)").addEventListener("change", e => { if (e.matches) set(false); });
+})();
+
+/* Cuota: cambia según el tamaño del grupo y el plan anual; el WhatsApp lleva la elección */
+(function(){
+  const price = document.querySelector(".js-price");
+  const note = document.querySelector(".js-price-note");
+  const annual = document.querySelector(".js-annual");
+  const cta = document.querySelector(".js-price-cta");
+  const fmt = n => "$" + n.toLocaleString("es-CL");
+  const update = () => {
+    const size = document.querySelector('input[name="size"]:checked').value;
+    const plan = annual.checked ? "annual" : "monthly";
+    const value = PRICES[plan][size];
+    price.textContent = fmt(value);
+    note.textContent = annual.checked ? "Plan anual: 12 meses por el precio de 10." : "Plan mensual, sin permanencia.";
+    cta.href = waLink(null, "Hola Polo Padel, quiero solicitar mi cupo de socio: grupo de " + size + " en la clase, " + (annual.checked ? "plan anual" : "plan mensual") + " (" + fmt(value) + "/mes por persona).");
+  };
+  document.querySelectorAll('input[name="size"]').forEach(r => r.addEventListener("change", update));
+  annual.addEventListener("change", update);
+  update();
+})();
+
+/* Animaciones de entrada */
+(function(){
+  const items = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window) || reduceMotion) { items.forEach(el => el.classList.add("is-in")); return; }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+  items.forEach(el => io.observe(el));
+})();
+<!-- @/js -->
