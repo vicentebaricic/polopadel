@@ -1,12 +1,13 @@
 # =====================================================================
 #  POLO PADEL — datos del club
-#  Todo lo que no está aquí sale de la plantilla (textos.yml / estilos.yml).
+#  Todo lo que no está aquí sale de la plantilla (repo plantilla-padel).
+#  Para regenerar el sitio:  python3 ../plantilla-padel/build.py club.yml
 #  Las rutas de fotos y videos son relativas a la carpeta del sitio publicado.
 # =====================================================================
 
 nombre: Polo Padel
 slug: polo-padel
-salida: ../../..            # se publica en la raíz del repo polopadel
+salida: .                  # el sitio se genera en la raíz de este repo
 
 seo:
   titulo: Polo Padel · Club de pádel en Chicureo, Colina
