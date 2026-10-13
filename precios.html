@@ -27,6 +27,7 @@
   --display-stretch: 112%;
   --display-case: uppercase;
   --display-tracking: -.01em;
+  --display-style: normal;
 
   --brand: #154075;
   --navy: #0C2340;
@@ -123,6 +124,8 @@ img,video{display:block;max-width:100%}
 a{color:inherit}
 button{font:inherit;color:inherit}
 h1,h2,h3{margin:0;font-family:var(--font-display);font-stretch:var(--display-stretch);font-weight:var(--display-weight);line-height:.98;letter-spacing:var(--display-tracking);text-transform:var(--display-case);text-wrap:balance}
+/* Títulos, botones y cifras: cursiva solo si la tipografía lo pide (estilos.yml → estilo) */
+h1,h2,h3,.btn,.link-arrow,.nav a,.drawer ul a,.hero__stat strong,.feat__label,.step__n,.seal__core strong,.rating strong,.price strong,.card__n{font-style:var(--display-style)}
 p{margin:0}
 :focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:4px}
 .skip{position:absolute;left:12px;top:-60px;z-index:1000;background:var(--btn-bg);color:var(--btn-text);padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600}
@@ -195,9 +198,10 @@ p{margin:0}
 .header.is-over .btn--solid{background:var(--ball);color:var(--navy)}
 .header.is-scrolled{border-bottom-color:var(--line)}
 .header__in{height:100%;display:flex;align-items:center;gap:24px}
-.brand{display:flex;align-items:center;text-decoration:none;flex:none}
+/* El logo se achica si no cabe: los botones del encabezado nunca quedan fuera de la pantalla */
+.brand{display:flex;align-items:center;text-decoration:none;flex:0 1 auto;min-width:0}
 .brand{color:var(--logo)}
-.brand__logo{display:block;height:44px;aspect-ratio:347/240;background:currentColor;
+.brand__logo{display:block;height:auto;width:calc(44px * 347 / 240);max-width:100%;aspect-ratio:347/240;background:currentColor;
   -webkit-mask:url("assets/marca/polo-padel-logo.png") center/contain no-repeat;mask:url("assets/marca/polo-padel-logo.png") center/contain no-repeat;
   transition:background-color var(--dur) var(--ease)}
 .header.is-over .brand{color:#fff}
@@ -206,10 +210,16 @@ p{margin:0}
 .nav a{font-family:var(--font-display);font-stretch:105%;font-weight:600;font-size:.8125rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:12px 0;position:relative}
 .nav a::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:2px;background:var(--ball);transform:scaleX(0);transform-origin:left;transition:transform var(--dur) var(--ease)}
 .nav a:hover::after{transform:scaleX(1)}
-.header__actions{display:flex;align-items:center;gap:8px;margin-left:auto}
+.header__actions{display:flex;align-items:center;gap:8px;margin-left:auto;flex:none}
 .nav + .header__actions{margin-left:24px}
 .header__actions .btn{min-height:44px;padding:0 18px;font-size:.75rem}
 .header__book{display:none}
+/* Celulares angostos: logo + botón + modo + menú tienen que caber sin desbordar */
+@media (max-width: 420px){
+  .header__in{gap:12px}
+  .header__actions{gap:4px}
+  .header__actions .btn{padding:0 14px}
+}
 .icon-btn{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;border:0;background:transparent;cursor:pointer}
 .icon-btn svg{width:20px;height:20px}
 .icon-btn:hover{background:rgba(127,127,127,.15)}
@@ -534,7 +544,7 @@ p{margin:0}
    PÁGINA DE PRECIOS
    ========================================================= */
 .page{padding-top:calc(var(--header-h) + clamp(40px,6vw,80px))}
-.pricing{display:grid;gap:48px;align-items:start}
+.pricing{display:grid;grid-template-columns:minmax(0,1fr);gap:48px;align-items:start}
 .pricing h1{font-size:clamp(2.5rem,6.2vw,4.75rem);font-stretch:116%}
 @media (min-width: 1024px){ .pricing h1{font-size:clamp(2.75rem,4.4vw,4.25rem)} }
 .pricing h1 em{font-style:italic;color:var(--hl)}
@@ -574,7 +584,7 @@ p{margin:0}
 .price-card__alt strong{color:var(--text)}
 .price-card .sample{margin-top:16px}
 @media (min-width: 1024px){
-  .pricing{grid-template-columns:1.25fr 1fr;gap:clamp(48px,6vw,96px)}
+  .pricing{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(48px,6vw,96px)}
   .price-card{position:sticky;top:calc(var(--header-h) + 24px)}
 }
 
